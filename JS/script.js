@@ -25,11 +25,19 @@ Example: (Input1, Input2 -->Output)
 "2", "" --> "2"
 "-5", "3" --> "-2"*/
 
-const well = (x) => {
-  const good_count = x.filter((x) => x == "good").length;
-  return good_count < 1
-    ? "Fail!"
-    : good_count < 3
-    ? "Publish!"
-    : "I smell a series!";
-};
+function sumStr(a, b) {
+  return String(Number(a) + Number(b));
+}
+// Question4 | ky8
+/*Unfinished Loop - Bug Fixing #1
+Oh no, Timmy's created an infinite loop! Help Timmy find and fix the bug in his unfinished for loop!*/
+
+function createArray(number) {
+  var newArray = [];
+
+  for (var counter = 1; counter <= number; counter++) {
+    newArray.push(counter);
+  }
+
+  return newArray;
+}
