@@ -1,0 +1,97 @@
+//CODEWAR 8KATA//
+
+//-----------------------------------------------------------------------------------------------------------------------
+// .sort() method sorts the elements as strings in alphabetical and ascending order.
+// 1 - Given an array of integers, your solution should find the smallest integer.
+
+function findSmallestInt(args) {
+  return args.sort((a, b) => a - b)[0];                                                        
+}   
+
+//-----------------------------------------------------------------------------------------------------------------------
+// .map() method creates a new array populated with the results of calling a provided function
+Given an array of integers, return a new array with each value doubled.
+
+function maps(x) {
+  return x.map((n) => n * 2);                                                                  
+}
+
+//-----------------------------------------------------------------------------------------------------------------------
+// .reduce() method returns a single value: the function's accumulated result.
+// 2 - Complete the square sum function so that it squares each number passed into it and then sums the results together.
+
+function squareSum(numbers) {
+  return numbers.reduce((sum, num) => sum + num * num, 0);                                    
+}
+
+//-----------------------------------------------------------------------------------------------------------------------
+// .repeat() method returns a string with a number of copies of a string
+// 3 - Write a function that accepts an integer n and a string s as parameters, and returns a string of s repeated exactly n times.
+
+function repeatStr(n, s) {
+  return s.repeat(n);                                                                          
+}
+
+//-----------------------------------------------------------------------------------------------------------------------
+// .slice() method allows you to extract subset elements of an array and add them to the new array
+// 4 - Your goal is to create a function that removes the first and last characters of a string. 
+
+function removeChar(str) {
+  return str.slice(1, -1);                                                                    
+}
+
+//-----------------------------------------------------------------------------------------------------------------------
+// .trim() method removes the whitespace at the edge of the string
+// .repeat() method returns a new string that contains the specified number of copies of the string
+// This is the last lesson about the string object, we will learn the two pieces of knowledge used to format the string.
+
+function fiveLine(s){
+  s = s.trim();                                                                               
+  return `${s}\n${s.repeat(2)}\n${s.repeat(3)}\n${s.repeat(4)}\n${s.repeat(5)}`;              
+}
+
+//-----------------------------------------------------------------------------------------------------------------------
+
+//Simple, remove the spaces from the string, then return the resultant string.
+//split(' ') method splits a string into an array of substrings.
+//join('') method  method creates and returns a new string by concatenating all of the elements in an array
+
+function noSpace(x){
+	return x.split(' ').join('')
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
