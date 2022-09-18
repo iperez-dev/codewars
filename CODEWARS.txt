@@ -53,20 +53,34 @@ function fiveLine(s){
 //-----------------------------------------------------------------------------------------------------------------------
 
 //Simple, remove the spaces from the string, then return the resultant string.
-//split(' ') method splits a string into an array of substrings.
-//join('') method  method creates and returns a new string by concatenating all of the elements in an array
+//.split(' ') method splits a string into an array of substrings.
+//.join('') method  method creates and returns a new string by concatenating all of the elements in an array
 
 function noSpace(x){
 	return x.split(' ').join('')
 }
 
+//-----------------------------------------------------------------------------------------------------------------------
 
+// Return string to lower case, no spaces, with hyphen between words
+// .toLowerCase() method returns the value of the string converted to lower case.
+//.replace(/[ -]+/g, "-")  method replaces a specified phrase with another specified phrase (hyphen)
 
+function getSpellName(){
+	return str.trim().toLowerCase().replace(/[ -]+/g, "-")
+}
 
+//-----------------------------------------------------------------------------------------------------------------------
 
+// createElement('li') create an li
+// li.textContent -> add text to li
+// .appendChild(li) append the li to the ul
 
+const li = document.createElement('li')
+li.textContent = obj.name
+document.querySelector('ul').appendChild(li)
 
-
+//-----------------------------------------------------------------------------------------------------------------------
 
 
 
