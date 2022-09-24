@@ -129,13 +129,22 @@ function correctTail (body, tail){
 
 //-----------------------------------------------------------------------------------------------------------------------
 
+// .unshift() method adds one or more elements to the beginning of an array
 
+function addElemStart (name)
+	return name.unshift('John')
+}
+// John Stoomer
 
+//-----------------------------------------------------------------------------------------------------------------------
 
+// .toFixed() method 
 
+let num = 5.56789;
+let n = num.toFixed(2);
+// 5.56
 
-
-
+//-----------------------------------------------------------------------------------------------------------------------
 
 
 
@@ -349,6 +358,7 @@ function take(arr, n) {
 // -----------------------------------------------------------------------------------------------------------------------
 // 16 - Your goal is to return multiplication table for number that is always an integer from 1 to 10.
 
+
 function multiTable(number) {
   let array = []
   for (let i = 1; i <= 10; i++){
@@ -358,3 +368,40 @@ function multiTable(number) {
 }
 
 // -----------------------------------------------------------------------------------------------------------------------
+// 17 - For example, if a bottle cost £10 normally and the discount in duty free was 10%, you would save £1 per bottle. If your holiday cost £500, the answer you should return would be 500.
+
+
+function dutyFree(normPrice, discount, hol){
+  return(Math.floor(hol / normPrice / discount * 100))
+}
+
+// -----------------------------------------------------------------------------------------------------------------------
+// 17 - 39.99 becomes $39.99 / 3.1 needs to become $3.10
+
+function formatMoney(amount){
+  return "$"+amount.toFixed(2)
+}
+
+// -----------------------------------------------------------------------------------------------------------------------
+// 18 - Your inputs: a positive integer, n, greater than or equal to one. n is provided, you have NO CONTROL over its value. Your expected output is an array of positive integers from 1 to n (inclusive).
+
+
+function preFizz(n) {
+  var output = [];
+  for (var i=1; i<=n; i++)
+  {
+    output.push(i);
+  }
+  return output;
+}
+
+// -----------------------------------------------------------------------------------------------------------------------
+// 19 - Given a non-negative integer n, write a function to_binary/ToBinary which returns that number in a binary format.
+
+
+function toBinary(n){
+  return +(n.toString(2))
+}
+
+// -----------------------------------------------------------------------------------------------------------------------
+// 20 -
