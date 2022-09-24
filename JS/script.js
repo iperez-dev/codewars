@@ -62,7 +62,7 @@ function noSpace(x) {
 
 //-----------------------------------------------------------------------------------------------------------------------
 
-// .replace(/[ -]+/g, "-")  method replaces a specified phrase with another specified phrase (hyphen)
+// .replace(/[ ]/g," ")  method replaces a specified phrase with another specified phrase (hyphen)
 // 7 - Return string to lower case, no spaces, with hyphen between words
 
 function getSpellName() {
@@ -122,6 +122,28 @@ function findIndex(x) {
 }
 //-----------------------------------------------------------------------------------------------------------------------
 
+// .endsWith() method determines whether a string ends with the characters of a specified string
+
+function correctTail (body, tail){
+	const correctTail = (body, tail) => body.endsWith(tail)
+
+//-----------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // -------------------------------------------------------------------------------------------------------------------------
 // FUNCTIONS
 // -------------------------------------------------------------------------------------------------------------------------
@@ -156,6 +178,30 @@ Math.ceil(0.95);
 function sumOfValues(arr) {
   return arr.reduce((acc, c) => acc + Number(c), 0);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // -----------------------------------------------------------------------------------------------------------------------
 // CODEWARS (DO AGAIN)
@@ -283,6 +329,32 @@ function countPositivesSumNegatives(input) {
         input.filter((n) => n < 0).reduce((a, b) => a + b, 0),
       ]
     : [];
+}
+
+// -----------------------------------------------------------------------------------------------------------------------
+// 14 - Create a function called shortcut to remove the lowercase vowels (a, e, i, o, u ) in a given string.
+
+
+function shortcut(string){
+  return string.replace(/[aeiou]/g,'')
+}
+
+// -----------------------------------------------------------------------------------------------------------------------
+// 15 - Create a function that accepts a list/array and a number n, and returns a list/array of the first n elements from the list/array.
+
+function take(arr, n) {
+  return arr.slice(0, n)
+}
+
+// -----------------------------------------------------------------------------------------------------------------------
+// 16 - Your goal is to return multiplication table for number that is always an integer from 1 to 10.
+
+function multiTable(number) {
+  let array = []
+  for (let i = 1; i <= 10; i++){
+    array.push(`${i} * ${number} = ${number * i}`)
+  }
+  return array.join('\n')
 }
 
 // -----------------------------------------------------------------------------------------------------------------------
