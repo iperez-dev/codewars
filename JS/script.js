@@ -51,7 +51,6 @@ function fiveLine(s) {
 }
 
 //-----------------------------------------------------------------------------------------------------------------------
-
 //.split(' ') method splits a string into an array of substrings.
 //.join('') method  method creates and returns a new string by concatenating all of the elements in an array
 // 6 - Simple, remove the spaces from the string, then return the resultant string.
@@ -61,7 +60,6 @@ function noSpace(x) {
 }
 
 //-----------------------------------------------------------------------------------------------------------------------
-
 // .replace(/[ ]/g," ")  method replaces a specified phrase with another specified phrase (hyphen)
 // 7 - Return string to lower case, no spaces, with hyphen between words
 
@@ -70,7 +68,6 @@ function getSpellName() {
 }
 
 //-----------------------------------------------------------------------------------------------------------------------
-
 // .reverse() method reverses the order of the elements in an array.
 
 function reverseList(list) {
@@ -78,7 +75,6 @@ function reverseList(list) {
 }
 
 //-----------------------------------------------------------------------------------------------------------------------
-
 // .filter() method creates a new array filled with elements that pass a test provided by a function.
 // //Return a new array consisting of elements which are multiple of their own index in input array (length > 1).
 
@@ -87,7 +83,6 @@ function isMultiple(arr) {
 }
 
 //-----------------------------------------------------------------------------------------------------------------------
-
 // .toString() method converts a boolean to a String
 // Convert a Boolean to a String
 
@@ -96,7 +91,6 @@ function booleanToString(b) {
 }
 
 //-----------------------------------------------------------------------------------------------------------------------
-
 // String(x) method converts a number to a String
 // Convert a number to a String
 
@@ -105,7 +99,6 @@ function numberToString(b) {
 }
 
 //-----------------------------------------------------------------------------------------------------------------------
-
 // .toLowerCase() method returns the value of the string converted to lower case.
 
 function firtstName(firstName) {
@@ -113,7 +106,6 @@ function firtstName(firstName) {
 }
 
 //-----------------------------------------------------------------------------------------------------------------------
-
 // .indexOf() method returns the first index at which a given element can be found in the array
 // Find the index of x element in an array and return "found x at position ___"
 
@@ -137,14 +129,33 @@ function addElemStart (name)
 // John Stoomer
 
 //-----------------------------------------------------------------------------------------------------------------------
+// .toFixed(2) method rounds the string to a specified number of decimals. //2 in this case
 
-// .toFixed() method 
 
 let num = 5.56789;
 let n = num.toFixed(2);
 // 5.56
 
+
 //-----------------------------------------------------------------------------------------------------------------------
+// .charAt(0) method, at index 0 select the specified character of the string. / the first one in this case
+
+function areYouPlayingBanjo(name) {
+  return name.charAt(0)
+}
+
+//-----------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -404,4 +415,21 @@ function toBinary(n){
 }
 
 // -----------------------------------------------------------------------------------------------------------------------
-// 20 -
+// 20 - Given a set of numbers, return the additive inverse of each. Each positive becomes negatives, and the negatives become positives.
+
+
+function invert(array) {
+   return array.map((num) => -num)
+}
+
+// -----------------------------------------------------------------------------------------------------------------------
+// 21 - Given a string of digits, you should replace any digit below 5 with '0' and any digit 5 and above with '1'. Return the resulting string
+
+
+function fakeBin(x) {
+    return x.split('').map(n => n < 5 ? 0 : 1).join('');
+}
+
+
+// -----------------------------------------------------------------------------------------------------------------------
+// 22 -
