@@ -24,6 +24,12 @@ function squareSum(a, b) {
   return numbers.reduce((acc, cv) => acc + cv * cv, 0);
 }
 
+
+
+function betterThanAverage(classPoints, yourPoints) {
+  return yourPoints > classPoints.reduce((a, b) => a + b, 0) / classPoints.length; 
+}
+
 //-----------------------------------------------------------------------------------------------------------------------
 // .repeat() method returns a string with a number of copies of a string
 // 3 - Write a function that accepts an integer n and a string s as parameters, and returns a string of s repeated exactly n times.
@@ -60,12 +66,11 @@ function noSpace(x) {
 }
 
 //-----------------------------------------------------------------------------------------------------------------------
-// .replace(/[ ]/g," ")  method replaces a specified phrase with another specified phrase (hyphen)
-// 7 - Return string to lower case, no spaces, with hyphen between words
+// .replace('dog', 'monkey') method replaces a specified phrase with another specified phrase 
 
-function getSpellName() {
-  return str.trim().toLowerCase().replace(/[ -]+/g, "-");
-}
+const p = 'The quick brown fox jumps over the lazy dog. If the dog reacted, was it really lazy?';
+console.log(p.replace('dog', 'monkey'));
+// expected output: "The quick brown fox jumps over the lazy monkey. If the dog reacted, was it really lazy?"
 
 //-----------------------------------------------------------------------------------------------------------------------
 // .reverse() method reverses the order of the elements in an array.
@@ -78,13 +83,23 @@ function reverseList(list) {
 // .filter() method creates a new array filled with elements that pass a test provided by a function.
 // //Return a new array consisting of elements which are multiple of their own index in input array (length > 1).
 
+
 function isMultiple(arr) {
   return arr.filter((e, i) => e % i === 0);
 }
 
+
+
+const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+const result = words.filter(word => word.length > 6);
+console.log(result);
+
+// expected output: Array ["exuberant", "destruction", "present"]
+
+
 //-----------------------------------------------------------------------------------------------------------------------
-// .toString() method converts a boolean to a String
-// Convert a Boolean to a String
+// .toString() method converts a boolean or array to a String
+
 
 function booleanToString(b) {
   return b.toString();
@@ -152,17 +167,32 @@ fruits.includes("Mango");
 
 
 //-----------------------------------------------------------------------------------------------------------------------
+// .padStart() adds white spaces at the beginning of a sentence
+
+
+padStart()
+
+//-----------------------------------------------------------------------------------------------------------------------
+// .padEnd() adds white spaces at the end of a sentence
+
+padEnd()
+
+//-----------------------------------------------------------------------------------------------------------------------
 //
 
 
 
 
-//-----------------------------------------------------------------------------------------------------------------------
 
 
 
-//-----------------------------------------------------------------------------------------------------------------------
-//
+
+
+
+
+
+
+
 
 
 
@@ -221,6 +251,12 @@ console.log(Math.min(...list));
 // expected output: 1
 
 //-----------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
 
 
 
@@ -467,4 +503,24 @@ const min = (list) => Math.min(...list);
 const max = (list) => Math.max(...list);
 
 
+// -----------------------------------------------------------------------------------------------------------------------
+// 24 - Create a function which translates a given DNA (GCAT) string into RNA (GCAU). 
+
+
+function DNAtoRNA(dna) {
+  return dna.split("T").join("U");
+}
+
+
+// -----------------------------------------------------------------------------------------------------------------------
+// 25 - You receive an array with your peers' test scores. Now calculate the average and compare your score! Return True if you're better, else False!
+
+
+function betterThanAverage(classPoints, yourPoints) {
+  return yourPoints > classPoints.reduce((a, b) => a + b, 0) / classPoints.length; 
+}
+
+
+// -----------------------------------------------------------------------------------------------------------------------
+//
 
