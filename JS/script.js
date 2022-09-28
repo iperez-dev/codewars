@@ -24,6 +24,11 @@ function maps(x) {
 
 //-----------------------------------------------------------------------------------------------------------------------
 
+const doubleChar = (str) => str.split("").map(c => c + c).join("");
+
+
+//-----------------------------------------------------------------------------------------------------------------------
+
 function maps(x) {
   return x.map((n) => n * 2);
 }
@@ -117,14 +122,6 @@ function fiveLine(s) {
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// .repeat() method returns a new string that contains the specified number of copies of the string
-
-function fiveLine(s) {
-  s = s.trim();
-  return `${s}\n${s.repeat(2)}\n${s.repeat(3)}\n${s.repeat(4)}\n${s.repeat(5)}`;
-}
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // .split(' ') method splits a string into an array of substrings.
 // .split('') => characters
 // .split(' ') => words
@@ -141,8 +138,11 @@ function DNAtoRNA(dna) {
 
 }
 
+//-----------------------------------------------------------------------------------------------------------------------
 
-
+function removeExclamationMarks(s) {
+  return s.split('!').join('');
+}
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //.join('') method  method creates and returns a new string by concatenating all of the elements in an array
@@ -162,6 +162,13 @@ console.log(p.replace('dog', 'monkey'));
 function shortcut(string){
   return string.replace(/[aeiou]/g,'')
 }
+
+//-----------------------------------------------------------------------------------------------------------------------
+
+function removeExclamationMarks(s) {
+  return s.replace('!', '')
+}
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // .reverse() method reverses the order of the elements in an array.
 
@@ -265,7 +272,7 @@ function arrayPlusArray(arr1, arr2) {
 // .charAt(0) method, at index 0 select the specified character of the string. / the first one in this case
 
 function areYouPlayingBanjo(name) {
-  return name.charAt(0)
+  return name.charAt(0
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -324,7 +331,7 @@ console.log(Math.floor(5));
 
 console.log(Math.floor(-5.05));
 // expected output: -6
-
+}
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // The Math.ceil() function rounds down to the largest integer
@@ -401,7 +408,7 @@ function getGrade (s1, s2, s3) {
 
 //-----------------------------------------------------------------------------------------------------------------------
 
-const point=games=>games.reduce((output,current)=>{
+const points=games=>games.reduce((output,current)=>{
     return output += current[0]>current[2] ? 3 : current[0]===current[2] ? 1 : 0;
   },0)
 
@@ -410,6 +417,17 @@ const point=games=>games.reduce((output,current)=>{
 const rentalCarCost = d => d * 40 - ((d > 6) ? 50 : ((d > 2) ? 20 : 0));
 
 //-----------------------------------------------------------------------------------------------------------------------
+
+function updateLight(current) {
+  return current === 'green' ? 'yellow' : current === "yellow" ? 'red' : 'green'
+}
+
+//-----------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
 
 
 
@@ -423,7 +441,7 @@ const rentalCarCost = d => d * 40 - ((d > 6) ? 50 : ((d > 2) ? 20 : 0));
 // The function should take three arguments - operation(string/char), value1(number), value2(number).
 // The function should return result of numbers after applying the chosen operation.
 
-function basicOp(operation, value1, value2) {
+
   function basicOp(operation, value1, value2) {
     switch (operation) {
       case "+":
@@ -438,7 +456,7 @@ function basicOp(operation, value1, value2) {
         return 0;
     }
   }
-}
+
 
 // -----------------------------------------------------------------------------------------------------------------------
 // 2 - Given a random non-negative number, you have to return the digits of this number within an array in reverse order.
@@ -522,3 +540,4 @@ let arr = [];
 // 11 - Sum all the numbers of a given array ( cq. list ), except the highest and the lowest element ( by value, not by index! ). The highest or lowest element respectively is a single element at each edge, even if there are more than one with the same value.
 
 sumArray = a => a ? a.sort((x, y) => x - y).slice(1, -1).reduce((s, e) => s + e, 0) : 0
+
