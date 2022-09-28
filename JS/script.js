@@ -1,6 +1,7 @@
-// -------------------------------------------------------------------------------------------------------------------------
+//==============================================================================================================================
 // METHODS
-// -------------------------------------------------------------------------------------------------------------------------
+//==============================================================================================================================
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // .sort() method sorts the elements as strings in alphabetical and ascending order.
 // 1 - Given an array of integers, your solution should find the smallest integer.
 
@@ -8,7 +9,7 @@ function findSmallestInt(args) {
   return args.sort((a, b) => a - b)[0];
 }
 
-//-----------------------------------------------------------------------------------------------------------------------
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // .map() method creates a new array populated with the results of calling a provided function
 // Given an array of integers, return a new array with each value doubled.
 
@@ -16,37 +17,40 @@ function maps(x) {
   return x.map((n) => n * 2);
 }
 
-//-----------------------------------------------------------------------------------------------------------------------
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // .reduce() method adds two values together
-// 2 - Complete the square sum function so that it squares each number passed into it and then sums the results together.
 
 function squareSum(a, b) {
   return numbers.reduce((acc, cv) => acc + cv * cv, 0);
 }
 
-
+//-----------------------------------------------------------------------------------------------------------------------
 
 function betterThanAverage(classPoints, yourPoints) {
   return yourPoints > classPoints.reduce((a, b) => a + b, 0) / classPoints.length; 
 }
 
 //-----------------------------------------------------------------------------------------------------------------------
+
+const newPoints=games=>games.reduce((output,current)=>{
+    return output += current[0]>current[2] ? 3 : current[0]===current[2] ? 1 : 0;
+  },0)
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // .repeat() method returns a string with a number of copies of a string
-// 3 - Write a function that accepts an integer n and a string s as parameters, and returns a string of s repeated exactly n times.
 
 function repeatStr(n, s) {
   return s.repeat(n);
 }
 
-//-----------------------------------------------------------------------------------------------------------------------
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // .slice() method allows you to extract subset elements of an array and add them to the new array
-// 4 - Your goal is to create a function that removes the first and last characters of a string.
 
 function removeChar(str) {
   return str.slice(1, -1);
 }
 
-//-----------------------------------------------------------------------------------------------------------------------
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // .trim() method removes the whitespace at the edge of the string
 // .repeat() method returns a new string that contains the specified number of copies of the string
 // 5 - This is the last lesson about the string object, we will learn the two pieces of knowledge used to format the string.
@@ -56,7 +60,7 @@ function fiveLine(s) {
   return `${s}\n${s.repeat(2)}\n${s.repeat(3)}\n${s.repeat(4)}\n${s.repeat(5)}`;
 }
 
-//-----------------------------------------------------------------------------------------------------------------------
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //.split(' ') method splits a string into an array of substrings.
 //.join('') method  method creates and returns a new string by concatenating all of the elements in an array
 // 6 - Simple, remove the spaces from the string, then return the resultant string.
@@ -65,21 +69,26 @@ function noSpace(x) {
   return x.split(" ").join("");
 }
 
-//-----------------------------------------------------------------------------------------------------------------------
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // .replace('dog', 'monkey') method replaces a specified phrase with another specified phrase 
 
 const p = 'The quick brown fox jumps over the lazy dog. If the dog reacted, was it really lazy?';
 console.log(p.replace('dog', 'monkey'));
 // expected output: "The quick brown fox jumps over the lazy monkey. If the dog reacted, was it really lazy?"
 
-//-----------------------------------------------------------------------------------------------------------------------
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // .reverse() method reverses the order of the elements in an array.
 
 function reverseList(list) {
   return list.reverse();
 }
 
-//-----------------------------------------------------------------------------------------------------------------------
+
+function reverseListOfWords(str){
+  return str.split(' ').reverse().join(' ')
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // .filter() method creates a new array filled with elements that pass a test provided by a function.
 // //Return a new array consisting of elements which are multiple of their own index in input array (length > 1).
 
@@ -97,7 +106,7 @@ console.log(result);
 // expected output: Array ["exuberant", "destruction", "present"]
 
 
-//-----------------------------------------------------------------------------------------------------------------------
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // .toString() method converts a boolean or array to a String
 
 
@@ -105,7 +114,7 @@ function booleanToString(b) {
   return b.toString();
 }
 
-//-----------------------------------------------------------------------------------------------------------------------
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // String(x) method converts a number to a String
 // Convert a number to a String
 
@@ -113,29 +122,27 @@ function numberToString(b) {
   return String(b);
 }
 
-//-----------------------------------------------------------------------------------------------------------------------
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // .toLowerCase() method returns the value of the string converted to lower case.
 
 function firtstName(firstName) {
   return firstName.toLowerCase();
 }
 
-//-----------------------------------------------------------------------------------------------------------------------
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // .indexOf() method returns the first index at which a given element can be found in the array
 // Find the index of x element in an array and return "found x at position ___"
 
 function findIndex(x) {
   return `found x at position ${findIndex.indexOf("x")}`;
 }
-//-----------------------------------------------------------------------------------------------------------------------
-
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // .endsWith() method determines whether a string ends with the characters of a specified string
 
 function correctTail (body, tail){
 	const correctTail = (body, tail) => body.endsWith(tail)
 
-//-----------------------------------------------------------------------------------------------------------------------
-
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // .unshift() method adds one or more elements to the beginning of an array
 
 function addElemStart (name)
@@ -143,7 +150,7 @@ function addElemStart (name)
 }
 // John Stoomer
 
-//-----------------------------------------------------------------------------------------------------------------------
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // .toFixed(2) method rounds the string to a specified number of decimals. //2 in this case
 
 
@@ -151,43 +158,45 @@ let num = 5.56789;
 let n = num.toFixed(2);
 // 5.56
 
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// .concat() method is used to merge two or more arrays
 
-//-----------------------------------------------------------------------------------------------------------------------
+function arrayPlusArray(arr1, arr2) {
+  return arr1.concat(arr2).reduce((acc, cur) => acc + cur);
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // .charAt(0) method, at index 0 select the specified character of the string. / the first one in this case
 
 function areYouPlayingBanjo(name) {
   return name.charAt(0)
 }
 
-//-----------------------------------------------------------------------------------------------------------------------
-// . includes() method returns true if an array contains a specified value.
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// .includes() method returns true if an array contains a specified value.
 
 const fruits = ["Banana", "Orange", "Apple", "Mango"];
 fruits.includes("Mango");
 
 
-//-----------------------------------------------------------------------------------------------------------------------
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // .padStart() adds white spaces at the beginning of a sentence
 
 
 padStart()
 
-//-----------------------------------------------------------------------------------------------------------------------
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // .padEnd() adds white spaces at the end of a sentence
 
 padEnd()
 
-//-----------------------------------------------------------------------------------------------------------------------
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// .toArray() method is used to convert the given collection into a normal array
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
-
-
-
-
-
-
-
-
-
 
 
 
@@ -201,27 +210,46 @@ padEnd()
 // -------------------------------------------------------------------------------------------------------------------------
 // FUNCTIONS
 // -------------------------------------------------------------------------------------------------------------------------
-
 //  Math.pow() method returns the value of a base raised to a power.
 
 Math.pow(4, 0.5);
 // expected output: 2
 
 //-----------------------------------------------------------------------------------------------------------------------
+// Math.floor() function always rounds down and returns the largest integer less than or equal to a given number.
 
-// Math.floor() method always rounds down and returns the largest integer
-// Nathan drinks 0.5 litres of water per hour of cycling. You get given the time in hours and you need to return the number of litres
-// Nathan will drink, rounded to the smallest value.
+console.log(Math.floor(5.95));
+// expected output: 5
 
-function litres(time) {
-  return Math.floor(time / 2);
-}
+console.log(Math.floor(5.05));
+// expected output: 5
+
+console.log(Math.floor(5));
+// expected output: 5
+
+console.log(Math.floor(-5.05));
+// expected output: -6
+
 
 //-----------------------------------------------------------------------------------------------------------------------
+// The Math.ceil() function always rounds up and returns the smaller integer greater than or equal to a given number.
 
-// Math.ceil() function always rounds up and returns the smaller integer greater than or equal to a given number.
+console.log(Math.ceil(.95));
+// expected output: 1
 
-Math.ceil(0.95);
+console.log(Math.ceil(4));
+// expected output: 4
+
+console.log(Math.ceil(7.004));
+// expected output: 8
+
+console.log(Math.ceil(-7.004));
+// expected output: -7
+
+//-----------------------------------------------------------------------------------------------------------------------
+// Math.round() method rounds a number to the nearest integer.
+
+Math.round(0.95);
 // expected output: 1
 
 //-----------------------------------------------------------------------------------------------------------------------
@@ -251,21 +279,11 @@ console.log(Math.min(...list));
 // expected output: 1
 
 //-----------------------------------------------------------------------------------------------------------------------
+// Ternary Operators
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+const quarterOf = (month) => {
+ return month <=3 ? 1 : month <= 6 ? 2 : month <=9 ? 3 : month <=12 ? 4 : 0;
+}
 
 
 
@@ -520,7 +538,26 @@ function betterThanAverage(classPoints, yourPoints) {
   return yourPoints > classPoints.reduce((a, b) => a + b, 0) / classPoints.length; 
 }
 
+// -----------------------------------------------------------------------------------------------------------------------
+// 26 - Our football team finished the championship. The result of each match look like "x:y". Results of all matches are recorded in the collection. For example: ["3:1", "2:2", "0:1", ...]
+
+
+const points=games=>games.reduce((output,current)=>{
+    return output += current[0]>current[2] ? 3 : current[0]===current[2] ? 1 : 0;
+  },0)
+
+
 
 // -----------------------------------------------------------------------------------------------------------------------
-//
+// 27 - Every day you rent the car costs $40. If you rent the car for 7 or more days, you get $50 off your total. Alternatively, if you rent the car for 3 or more days, you get $20 off your total. Every day you // rent the car costs $40. If you rent the car for 7 or more days, you get $50 off your total. Alternatively, if you rent the car for 3 or more days, you get $20 off your total.
+
+
+const rentalCarCost = d => d * 40 - ((d > 6) ? 50 : ((d > 2) ? 20 : 0));
+
+
+
+
+const points=games=>games.reduce((output,current)=>{
+    return output += current[0]>current[2] ? 3 : current[0]===current[2] ? 1 : 0;
+  },0)
 
