@@ -275,6 +275,12 @@ function areYouPlayingBanjo(name) {
   return name.charAt(0
 }
 
+//-----------------------------------------------------------------------------------------------------------------------
+
+function getAge(inputString){
+ return +(inputString.charAt(0))
+}
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // .includes() method returns true if an array contains a specified value.
 
@@ -384,6 +390,20 @@ console.log(Math.max(...list));
  
 console.log(Math.min(...list));
 // expected output: 1
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Math.abs() function returns the absolute value of a number.
+
+function difference(a, b) {
+  return Math.abs(a - b);
+}
+
+console.log(difference(3, 5));
+// expected output: 2
+
+console.log(difference(5, 3));
+// expected output: 2
+
 
 //==========================================================================================================================
 // Ternary Operators
@@ -540,4 +560,3 @@ let arr = [];
 // 11 - Sum all the numbers of a given array ( cq. list ), except the highest and the lowest element ( by value, not by index! ). The highest or lowest element respectively is a single element at each edge, even if there are more than one with the same value.
 
 sumArray = a => a ? a.sort((x, y) => x - y).slice(1, -1).reduce((s, e) => s + e, 0) : 0
-
