@@ -204,6 +204,12 @@ console.log(result);
 
 //-----------------------------------------------------------------------------------------------------------------------
 
+function removeEveryOther(arr){
+  return arr.filter(function(elem, index) {
+	return index % 2 === 0;
+  });
+}
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // .toString() method converts a boolean or array to a String
 
@@ -404,6 +410,11 @@ console.log(difference(3, 5));
 console.log(difference(5, 3));
 // expected output: 2
 
+//-----------------------------------------------------------------------------------------------------------------------
+
+function enough(cap, on, wait) {
+  return (cap - on - wait) > 0 ? 0 : Math.abs(cap - on - wait)
+}
 
 //==========================================================================================================================
 // Ternary Operators
@@ -560,3 +571,14 @@ let arr = [];
 // 11 - Sum all the numbers of a given array ( cq. list ), except the highest and the lowest element ( by value, not by index! ). The highest or lowest element respectively is a single element at each edge, even if there are more than one with the same value.
 
 sumArray = a => a ? a.sort((x, y) => x - y).slice(1, -1).reduce((s, e) => s + e, 0) : 0
+
+
+// -----------------------------------------------------------------------------------------------------------------------
+// 12 - Take an array and remove every second element from the array. Always keep the first element and start removing it with the next element.
+
+
+function removeEveryOther(arr){
+  return arr.filter(function(elem, index) {
+	return index % 2 === 0;
+  });
+}
