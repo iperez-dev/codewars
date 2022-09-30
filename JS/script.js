@@ -54,6 +54,12 @@ function digitize(n) {
 
 //-----------------------------------------------------------------------------------------------------------------------
 
+String.prototype.toAlternatingCase = function () {
+    return this.split("").map(a => a === a.toUpperCase()? a.toLowerCase(): a.toUpperCase()).join('')
+}
+
+//-----------------------------------------------------------------------------------------------------------------------
+
 function fakeBin(x) {
     return x.split('').map(n => n < 5 ? 0 : 1).join('');
 }
@@ -144,6 +150,13 @@ function removeExclamationMarks(s) {
   return s.split('!').join('');
 }
 
+//-----------------------------------------------------------------------------------------------------------------------
+
+String.prototype.toAlternatingCase = function () {
+    return this.split("").map(a => a === a.toUpperCase()? a.toLowerCase(): a.toUpperCase()).join('')
+}
+
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //.join('') method  method creates and returns a new string by concatenating all of the elements in an array
 
@@ -226,6 +239,12 @@ function numberToString(b) {      //number to string
 
 function firtstName(firstName) {
   return firstName.toLowerCase();
+}
+
+//-----------------------------------------------------------------------------------------------------------------------
+
+String.prototype.toAlternatingCase = function () {
+    return this.split("").map(a => a === a.toUpperCase()? a.toLowerCase(): a.toUpperCase()).join('')
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -328,6 +347,13 @@ padEnd()
 
 Math.pow(4, 2);
 // expected output: 16
+
+//-----------------------------------------------------------------------------------------------------------------------
+
+function square(num){
+  let num = Math.pow(num, 2);
+  return num;
+};
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Math.floor() function rounds down to the smallest integer
@@ -582,3 +608,6 @@ function removeEveryOther(arr){
 	return index % 2 === 0;
   });
 }
+
+// -----------------------------------------------------------------------------------------------------------------------
+// 13 -
