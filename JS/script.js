@@ -84,7 +84,7 @@ function betterThanAverage(classPoints, yourPoints) {
 
 //-----------------------------------------------------------------------------------------------------------------------
 
-const points=games=>games.reduce((output,current)=>{
+const point=games=>games.reduce((output,current)=>{
     return output += current[0]>current[2] ? 3 : current[0]===current[2] ? 1 : 0;
   },0)
 
@@ -293,11 +293,19 @@ function arrayPlusArray(arr1, arr2) {
   return arr1.concat(arr2).reduce((acc, cur) => acc + cur);
 }
 
+//-----------------------------------------------------------------------------------------------------------------------
+
+function solution(a, b){
+  let strA = a.length
+  let strB = b.length
+  return strA > strB ? b.concat(a, b) : a.concat(b, a)
+}
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // .charAt(0) method, at index 0 select the specified character of the string. / the first one in this case
 
 function areYouPlayingBanjo(name) {
-  return name.charAt(0
+  return name.charAt(0)
 }
 
 //-----------------------------------------------------------------------------------------------------------------------
@@ -370,6 +378,10 @@ console.log(Math.floor(5));
 console.log(Math.floor(-5.05));
 // expected output: -6
 }
+
+//-----------------------------------------------------------------------------------------------------------------------
+
+const oddCount = n => Math.floor(n/2) ;
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // The Math.ceil() function rounds down to the largest integer
@@ -610,4 +622,9 @@ function removeEveryOther(arr){
 }
 
 // -----------------------------------------------------------------------------------------------------------------------
-// 13 -
+// 13 - Given a number n, return the number of positive odd numbers below n, EASY!
+
+function oddCount(n){
+  return Math.floor(n/2);
+}
+
