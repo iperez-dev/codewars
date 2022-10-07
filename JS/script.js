@@ -2,6 +2,60 @@
 // METHODS
 //==============================================================================================================================
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// for loops()
+
+function findMultiples(int,limit){
+  let multiples = [];
+  for(let i = int; i <= limit; i += int){ multiples.push(i); }
+  return multiples;
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// while loop()
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// (...arg) the spread operator separates and array in single elements
+
+findSmallesInt(args){
+	return Math.min(...args)
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// .reduce() method adds two values together
+
+function squareSum(a, b) {
+  return numbers.reduce((acc, cv) => acc + cv * cv, 0);
+}
+
+//-----------------------------------------------------------------------------------------------------------------------
+
+function positiveSum(arr) {
+  return arr.reduce((a, b) => a + (b > 0 ? b : 0), 0);
+}
+
+//-----------------------------------------------------------------------------------------------------------------------
+
+function betterThanAverage(classPoints, yourPoints) {
+  return yourPoints > classPoints.reduce((a, b) => a + b, 0) / classPoints.length; 
+}
+
+//-----------------------------------------------------------------------------------------------------------------------
+
+const points=games=>games.reduce((output,current)=>{
+    return output += current[0]>current[2] ? 3 : current[0]===current[2] ? 1 : 0;
+  },0)
+
+//-----------------------------------------------------------------------------------------------------------------------
+
+function sumMix(x){
+  return x.reduce((a, b) => a + Number(b),0)
+}
+
+//-----------------------------------------------------------------------------------------------------------------------
+
+function betterThanAverage(classPoints, yourPoints) {
+  return yourPoints > classPoints.reduce((a, b) => a + b, 0) / classPoints.length; 
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // .sort() method sorts the elements as strings in alphabetical and ascending order.
 // 1 - Given an array of integers, your solution should find the smallest integer.
 
@@ -63,42 +117,65 @@ String.prototype.toAlternatingCase = function () {
 function fakeBin(x) {
     return x.split('').map(n => n < 5 ? 0 : 1).join('');
 }
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// .reduce() method adds two values together
+// .filter() method creates a new array filled with elements that pass a test provided by a function.
 
-function squareSum(a, b) {
-  return numbers.reduce((acc, cv) => acc + cv * cv, 0);
+
+function isMultiple(arr) {
+  return arr.filter((e, i) => e % i === 0);
 }
 
 //-----------------------------------------------------------------------------------------------------------------------
 
-function positiveSum(arr) {
-  return arr.reduce((a, b) => a + (b > 0 ? b : 0), 0);
+function countSheeps(arrayOfSheeps) {
+  return arrayOfSheeps.filter(Boolean).length;
 }
 
 //-----------------------------------------------------------------------------------------------------------------------
 
-function betterThanAverage(classPoints, yourPoints) {
-  return yourPoints > classPoints.reduce((a, b) => a + b, 0) / classPoints.length; 
+const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+const result = words.filter(word => word.length > 6);
+console.log(result);
+
+//-----------------------------------------------------------------------------------------------------------------------
+
+function removeEveryOther(arr){
+  return arr.filter(function(elem, index) {
+	return index % 2 === 0;
+  });
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// .reverse() method reverses the order of the elements in an array.
+
+function reverseList(list) {
+  return list.reverse();
 }
 
 //-----------------------------------------------------------------------------------------------------------------------
 
-const points=games=>games.reduce((output,current)=>{
-    return output += current[0]>current[2] ? 3 : current[0]===current[2] ? 1 : 0;
-  },0)
+function reverseListOfWords(str){
+  return str.split(' ').reverse().join(' ')
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// .replace('dog', 'monkey') method replaces a specified phrase with another specified phrase 
+
+const p = 'The quick brown fox jumps over the lazy dog. If the dog reacted, was it really lazy?';
+console.log(p.replace('dog', 'monkey'));
 
 //-----------------------------------------------------------------------------------------------------------------------
 
-function sumMix(x){
-  return x.reduce((a, b) => a + Number(b),0)
+function shortcut(string){
+  return string.replace(/[aeiou]/g,'')
 }
 
 //-----------------------------------------------------------------------------------------------------------------------
 
-function betterThanAverage(classPoints, yourPoints) {
-  return yourPoints > classPoints.reduce((a, b) => a + b, 0) / classPoints.length; 
+function removeExclamationMarks(s) {
+  return s.replace('!', '')
 }
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // .repeat() method returns a string with a number of copies of a string
 
@@ -165,64 +242,58 @@ function noSpace(x) {
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// .replace('dog', 'monkey') method replaces a specified phrase with another specified phrase 
+// .concat() method is used to merge two or more arrays
 
-const p = 'The quick brown fox jumps over the lazy dog. If the dog reacted, was it really lazy?';
-console.log(p.replace('dog', 'monkey'));
-
-//-----------------------------------------------------------------------------------------------------------------------
-
-function shortcut(string){
-  return string.replace(/[aeiou]/g,'')
+function arrayPlusArray(arr1, arr2) {
+  return arr1.concat(arr2).reduce((acc, cur) => acc + cur);
 }
 
 //-----------------------------------------------------------------------------------------------------------------------
 
-function removeExclamationMarks(s) {
-  return s.replace('!', '')
+function solution(a, b){
+  let strA = a.length
+  let strB = b.length
+  return strA > strB ? b.concat(a, b) : a.concat(b, a)
 }
-
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// .reverse() method reverses the order of the elements in an array.
+// .substring() method is used to convert into a normal array
 
-function reverseList(list) {
-  return list.reverse();
-}
+
+const str = 'Mozilla';
+
+console.log(str.substring(1, 3));
+// expected output: "oz"
+
+console.log(str.substring(2));
+// expected output: "zilla"
 
 //-----------------------------------------------------------------------------------------------------------------------
 
-function reverseListOfWords(str){
-  return str.split(' ').reverse().join(' ')
-}
 
+function pigIt(str){
+  
+  return str.split(' ').map(word => {
+    return word.substring(1) + word[0] + 'ay';
+  }).join(' ');
+}
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// .filter() method creates a new array filled with elements that pass a test provided by a function.
+// .indexOf() method returns the first index at which a given element can be found in the array
 
-
-function isMultiple(arr) {
-  return arr.filter((e, i) => e % i === 0);
+function findIndex(x) {
+  return `found x at position ${findIndex.indexOf("x")}`;
 }
 
 //-----------------------------------------------------------------------------------------------------------------------
 
-function countSheeps(arrayOfSheeps) {
-  return arrayOfSheeps.filter(Boolean).length;
+function findNeedle(haystack) {
+  return `found the needle at position ${haystack.indexOf("needle")}`;
 }
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// .endsWith() method determines whether a string ends with the characters of a specified string
 
-//-----------------------------------------------------------------------------------------------------------------------
-
-const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
-const result = words.filter(word => word.length > 6);
-console.log(result);
-
-//-----------------------------------------------------------------------------------------------------------------------
-
-function removeEveryOther(arr){
-  return arr.filter(function(elem, index) {
-	return index % 2 === 0;
-  });
+function correctTail (body, tail){
+	const correctTail = (body, tail) => body.endsWith(tail)
 }
-
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // .toString() method converts a boolean or array to a String
 
@@ -246,27 +317,6 @@ function firtstName(firstName) {
 String.prototype.toAlternatingCase = function () {
     return this.split("").map(a => a === a.toUpperCase()? a.toLowerCase(): a.toUpperCase()).join('')
 }
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// .indexOf() method returns the first index at which a given element can be found in the array
-
-function findIndex(x) {
-  return `found x at position ${findIndex.indexOf("x")}`;
-}
-
-//-----------------------------------------------------------------------------------------------------------------------
-
-function findNeedle(haystack) {
-  return `found the needle at position ${haystack.indexOf("needle")}`;
-}
-
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// .endsWith() method determines whether a string ends with the characters of a specified string
-
-function correctTail (body, tail){
-	const correctTail = (body, tail) => body.endsWith(tail)
-
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // .unshift() method adds elements to the beginning of an array
 
@@ -286,21 +336,6 @@ let n = num.toFixed(2);
 function formatMoney(amount){
   return "$"+amount.toFixed(2)
 }
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// .concat() method is used to merge two or more arrays
-
-function arrayPlusArray(arr1, arr2) {
-  return arr1.concat(arr2).reduce((acc, cur) => acc + cur);
-}
-
-//-----------------------------------------------------------------------------------------------------------------------
-
-function solution(a, b){
-  let strA = a.length
-  let strB = b.length
-  return strA > strB ? b.concat(a, b) : a.concat(b, a)
-}
-
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // .charAt(0) method, at index 0 select the specified character of the string. / the first one in this case
 
@@ -335,26 +370,22 @@ padEnd()
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// .substring() method is used to convert into a normal array
+// .date.getHours();
+// .date.getMinutes();
+// .date.getSeconds();
 
 
-const str = 'Mozilla';
-
-console.log(str.substring(1, 3));
-// expected output: "oz"
-
-console.log(str.substring(2));
-// expected output: "zilla"
-
-//-----------------------------------------------------------------------------------------------------------------------
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// 
 
 
-function pigIt(str){
-  //Code here
-  return str.split(' ').map(word => {
-    return word.substring(1) + word[0] + 'ay';
-  }).join(' ');
-}
+
+
+
+
+
+
+
 
 
 
@@ -671,6 +702,20 @@ function pigIt(str){
 
 
 
+
+
+
+
+
+// -----------------------------------------------------------------------------------------------------------------------
+// 15 - In this simple exercise, you will build a program that takes a value, integer , and returns a list of its multiples up to another value, limit . If limit is a multiple of integer, it should be included as well. There will only ever be positive integers passed into the function, not consisting of 0. The limit will always be higher than the base. For example, if the parameters passed are (2, 6), the function should return [2, 4, 6] as 2, 4, and 6 are the multiples of 2 up to 6.
+
+
+function findMultiples(int,limit){
+  let multiples = [];
+  for(let i = int; i <= limit; i += int){ multiples.push(i); }
+  return multiples;
+}
 
 
 
