@@ -1,4 +1,4 @@
-
+/*
 //==============================================================================================================================
 // METHODS
 //==============================================================================================================================
@@ -68,6 +68,25 @@ function findSmallestInt(args) {
 
 sumArray = a => a ? a.sort((x, y) => x - y).slice(1, -1).reduce((s, e) => s + e, 0) : 0
 
+//-----------------------------------------------------------------------------------------------------------------------
+
+function sortByLength (array) {
+  return array.sort((a, b) => a.length - b.length)
+};
+
+//-----------------------------------------------------------------------------------------------------------------------
+// sort the smallest to largest
+
+function fromSmallestToLargest(arr){
+	return array.sort((a, b) => a - b)
+}
+
+//-----------------------------------------------------------------------------------------------------------------------
+// sort the largest to smallest
+
+function fromLargesttoSmallest(arr){
+	return array.sort((a, b) => b - a)
+}
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // .map() method creates a new array populated with the results of calling a provided function
@@ -338,7 +357,7 @@ function formatMoney(amount){
   return "$"+amount.toFixed(2)
 }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// .charAt(0) method, at index 0 select the specified character of the string. / the first one in this case
+// .charAt(0) method select the specified character of the string. / the first one in this case
 
 function areYouPlayingBanjo(name) {
   return name.charAt(0
@@ -349,6 +368,25 @@ function areYouPlayingBanjo(name) {
 function getAge(inputString){
  return +(inputString.charAt(0))
 }
+
+//-----------------------------------------------------------------------------------------------------------------------
+
+let text1 = "Sample Text";
+console.log(1, text1.charAt(0));                     //First character in a string
+console.log(2, text1.charAt(text1.length - 1));      //Last character
+console.log(3, text1.charAt("0"));                  //Last character
+console.log(4, text1.charAt("test"));               //Last character
+let test1 = "";
+console.log(5, text1.charAt(""));                   //Last character
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// .charCodeAt() method returns the ascii code of the charater at that position
+
+let text2 = "Sample Text";
+console.log(1, text2.charCodeAt());
+// 83     
+
+
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // .includes() method returns true if an array contains a specified value.
@@ -631,7 +669,7 @@ function take(arr, n) {
 }
 
 // -----------------------------------------------------------------------------------------------------------------------
-//+ 7 - Your inputs: a positive integer, n, greater than or equal to one. n is provided, you have NO CONTROL over its value. Your expected output is an array of positive integers from 1 to n (inclusive).
+// 7 - Your inputs: a positive integer, n, greater than or equal to one. n is provided, you have NO CONTROL over its value. Your expected output is an array of positive integers from 1 to n (inclusive).
 
 function preFizz(n) {
   var output = [];
@@ -701,6 +739,13 @@ function pigIt(str){
   }).join(' ');
 }
 
+
+
+
+
+
+
+
 // -----------------------------------------------------------------------------------------------------------------------
 // 15 - In this simple exercise, you will build a program that takes a value, integer , and returns a list of its multiples up to another value, limit . If limit is a multiple of integer, it should be included as well. There will only ever be positive integers passed into the function, not consisting of 0. The limit will always be higher than the base. For example, if the parameters passed are (2, 6), the function should return [2, 4, 6] as 2, 4, and 6 are the multiples of 2 up to 6.
 
@@ -711,6 +756,45 @@ function findMultiples(int,limit){
   return multiples;
 }
 
+
+
+// -----------------------------------------------------------------------------------------------------------------------
+// 16 - remove all values from list a, which are present in list b keeping their order.
+
+function arrayDiff(a, b) {
+  return arrayDiff.filter( ( a ) => !toRemove.includes( a ) );
+}
+
+
+// -----------------------------------------------------------------------------------------------------------------------
+// 17 - Who remembers back to their time in the schoolyard, when girls would take a flower and tear its petals, saying each of the following phrases each time a petal was torn:
+
+"I love you"
+"a little"
+"a lot"
+"passionately"
+"madly"
+"not at all"
+If there are more than 6 petals, you start over with "I love you" for 7 petals, "a little" for 8 petals and so on.
+
+When the last petal was torn there were cries of excitement, dreams, surging thoughts and emotions.
+
+Your goal in this kata is to determine which phrase the girls would say at the last petal for a flower of a given number of petals. The number of petals is always greater than 0.
+
+
+const phrases = [
+    'I love you',
+    'a little',
+    'a lot',
+    'passionately',
+    'madly',
+    'not at all',
+]
+
+function howMuchILoveYou(n) {
+     return phrases[(n - 1) % phrases.length] 
+}
+*/
 //-----------------------------------------------------------------------------------
 let text1 = "Sample Text";
 console.log(1, text1.charAt(0)); //First character
