@@ -1,7 +1,33 @@
 /*
 //==============================================================================================================================
-// METHODS
+// ARRAYS METHODS 
 //==============================================================================================================================
+// for loops()
+// while loop()
+// (...arg)
+// .reduce()
+// .sort()
+// .map()
+// .filter()
+// .reverse()
+// .replace()
+// .repeat()
+// .slice()
+// .trim()
+// .split(' ')
+//.join('')
+// .substring()
+// .indexOf()
+// .endsWith()
+// .toString()
+// .toLowerCase()
+// .unshift()
+// .toFixed(0)
+// .padStart()
+// .padEnd()
+// .toArray()
+
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // for loops()
 
@@ -261,20 +287,8 @@ function noSpace(x) {
   return x.split(" ").join("");
 }
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// .concat() method is used to merge two or more arrays
 
-function arrayPlusArray(arr1, arr2) {
-  return arr1.concat(arr2).reduce((acc, cur) => acc + cur);
-}
 
-//-----------------------------------------------------------------------------------------------------------------------
-
-function solution(a, b){
-  let strA = a.length
-  let strB = b.length
-  return strA > strB ? b.concat(a, b) : a.concat(b, a)
-}
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // .substring() method is used to convert into a normal array
 
@@ -356,6 +370,57 @@ let n = num.toFixed(2);
 function formatMoney(amount){
   return "$"+amount.toFixed(2)
 }
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// .padStart() adds white spaces at the beginning of a sentence
+
+padStart()
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// .padEnd() adds white spaces at the end of a sentence
+
+padEnd()
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// .toArray() method is used to convert into a normal array
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// .date.getHours();
+// .date.getMinutes();
+// .date.getSeconds();
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//==============================================================================================================================
+// STRINSG METHODS 
+//==============================================================================================================================
+// .charAt(0)
+// .charCodeAt()
+// .concat()
+// .includes()
+
+
+//==============================================================================================================================
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // .charAt(0) method select the specified character of the string. / the first one in this case
 
@@ -386,36 +451,61 @@ let text2 = "Sample Text";
 console.log(1, text2.charCodeAt());
 // 83     
 
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// .concat() method is used to merge two or more arrays
+
+function arrayPlusArray(arr1, arr2) {
+  return arr1.concat(arr2).reduce((acc, cur) => acc + cur);
+}
+
+//-----------------------------------------------------------------------------------------------------------------------
+
+function solution(a, b){
+  let strA = a.length
+  let strB = b.length
+  return strA > strB ? b.concat(a, b) : a.concat(b, a)
+}
+
+//-----------------------------------------------------------------------------------------------------------------------
+
+let text3 = "Sample Text";
+console.log(1, text3.concat("!"));
+console.log(2, text3.concat("!", "this is an argument"));
+console.log(3, text3.concat("!", 9000));
+console.log(4, text3.concat(true));
+// console.log(5, text3.concat({ thing: other_thing }));
+console.log(6, text3.concat(null));
+console.log(7, text3.concat([1, 2, 3]));
+console.log(7, text3.concat("🌱🌱"));
+console.log(7, text3.concat("🏅"));
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// .includes() method returns true if an array contains a specified value.
+// .includes(searchString) 
+// .includes(searchString, position) method takes in a string as argument and checks to see if the calling string contains the argument and returns a boolean. The method is case-sensitive. Also has an optional argument for the position at which to begin the search. Defaults to (0) is not specified
 
 const fruits = ["Banana", "Orange", "Apple", "Mango"];
 fruits.includes("Mango");
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// .padStart() adds white spaces at the beginning of a sentence
+//-----------------------------------------------------------------------------------------------------------------------
 
-padStart()
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// .padEnd() adds white spaces at the end of a sentence
-
-padEnd()
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// .toArray() method is used to convert into a normal array
+let text4 = "To be, or not to be, that is the questions.";
+console.log(1, text4.includes("To be")); //true
+console.log(2, text4.includes("question")); //true
+console.log(3, text4.includes("noneexistent")); //false
+console.log(4, text4.includes("To be", 1)); //false
+console.log(5, text4.includes("TO BE")); //false
+console.log(6, text4.includes("")); //true
 
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// .date.getHours();
-// .date.getMinutes();
-// .date.getSeconds();
 
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// 
+
+
+
+
+
+
 
 
 
@@ -792,10 +882,11 @@ const phrases = [
 ]
 
 function howMuchILoveYou(n) {
-     return phrases[(n - 1) % phrases.length] 
-}
+     return phrases[(n - 1) % phrases.length]
 */
 //-----------------------------------------------------------------------------------
+//*charAt
+
 let text1 = "Sample Text";
 console.log(1, text1.charAt(0)); //First character
 console.log(2, text1.charAt(text1.length - 1)); //Last character
@@ -805,8 +896,32 @@ let test1 = "";
 console.log(5, text1.charAt(""));
 
 //-----------------------------------------------------------------------------------
+//*charCodeAt
 
 let text2 = "Sample Text";
 console.log(1, text2.charCodeAt()); //returns the ascii code of the charater at that position
 
 //-----------------------------------------------------------------------------------
+//* concat
+
+let text3 = "Sample Text";
+console.log(1, text3.concat("!"));
+console.log(2, text3.concat("!", "this is an argument"));
+console.log(3, text3.concat("!", 9000));
+console.log(4, text3.concat(true));
+// console.log(5, text3.concat({ thing: other_thing }));
+console.log(6, text3.concat(null));
+console.log(7, text3.concat([1, 2, 3]));
+console.log(7, text3.concat("🌱🌱"));
+console.log(7, text3.concat("🏅"));
+
+//-----------------------------------------------------------------------------------
+//* incudes
+
+let text4 = "To be, or not to be, that is the questions.";
+console.log(1, text4.includes("To be")); //true
+console.log(2, text4.includes("question")); //true
+console.log(3, text4.includes("noneexistent")); //false
+console.log(4, text4.includes("To be", 1)); //false
+console.log(5, text4.includes("TO BE")); //false
+console.log(6, text4.includes("")); //true
