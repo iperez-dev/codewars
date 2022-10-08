@@ -1,3 +1,4 @@
+
 //==============================================================================================================================
 // METHODS
 //==============================================================================================================================
@@ -630,7 +631,7 @@ function take(arr, n) {
 }
 
 // -----------------------------------------------------------------------------------------------------------------------
-// 7 - Your inputs: a positive integer, n, greater than or equal to one. n is provided, you have NO CONTROL over its value. Your expected output is an array of positive integers from 1 to n (inclusive).
+//+ 7 - Your inputs: a positive integer, n, greater than or equal to one. n is provided, you have NO CONTROL over its value. Your expected output is an array of positive integers from 1 to n (inclusive).
 
 function preFizz(n) {
   var output = [];
@@ -700,13 +701,6 @@ function pigIt(str){
   }).join(' ');
 }
 
-
-
-
-
-
-
-
 // -----------------------------------------------------------------------------------------------------------------------
 // 15 - In this simple exercise, you will build a program that takes a value, integer , and returns a list of its multiples up to another value, limit . If limit is a multiple of integer, it should be included as well. There will only ever be positive integers passed into the function, not consisting of 0. The limit will always be higher than the base. For example, if the parameters passed are (2, 6), the function should return [2, 4, 6] as 2, 4, and 6 are the multiples of 2 up to 6.
 
@@ -717,29 +711,18 @@ function findMultiples(int,limit){
   return multiples;
 }
 
+//-----------------------------------------------------------------------------------
+let text1 = "Sample Text";
+console.log(1, text1.charAt(0)); //First character
+console.log(2, text1.charAt(text1.length - 1)); //Last character
+console.log(3, text1.charAt("0")); //Last character
+console.log(4, text1.charAt("test")); //Last character
+let test1 = "";
+console.log(5, text1.charAt(""));
 
+//-----------------------------------------------------------------------------------
 
+let text2 = "Sample Text";
+console.log(1, text2.charCodeAt()); //returns the ascii code of the charater at that position
 
-// Tech Questions/cold message template
-
-// "I'm a freelance web developer who's interested in [whatever things they do that interests me] and I'm really inspired how you [whatever I could cobble together from their LinkedIn resume] and how you got your role in the company. Do you have 15 minutes to chat with me about x, and y?" And then ahead of the meeting, I research them and the company they work for, write down a bunch of questions and go from there.
-
-// 1. How did you get your foot in the door at _?
-// 2. What education, experience, or training do you find the most useful in your current role? (i.e. did the stuff you learned in college/self-taught help you most or job experience over time)
-// 3. How does your job affect your general lifestyle?
-// 4. What are the typical challenges you face in the tech industry?
-// 5. Do employers care if you don’t have a degree in CS?
-// 6. As a __, what steps would you recommend I take to prepare to enter this field?
-// 7. What tips can you give to make someone stand out, especially in competitive places?
-// 8. Looking back at your careers so far, are there things you wish you would have done differently?
-// 9. Can you suggest a few names of people I could contact for additional info?
-// 10. What is a project you’re excited about working on? 
-// 11. What is one thing that you have always wanted to try but never have?
-// 12. What is something that you have always wanted to learn?
-// 13. What has been the highlight of your year so far? 
-// 14. “How did you land your first job?”
-// 15. “What’s your current company like, and what’s your role there?”
-// 16. “How will I know when I’m ready to start looking for a job?”
-
-// Here is a link to one of Leon's past streams, he has some goods in here on networking :meowcoffee: 
-// https://www.youtube.com/watch?v=OaglXfjsBaE
+//-----------------------------------------------------------------------------------
