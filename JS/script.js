@@ -499,3 +499,4 @@ function findNeedle(haystack) {
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // match() method takess xpression as an argument and matches it against the calling string. Returns and array of all matching values.
+// match() method takess xpression as an argument and matches it against the calling string. Returns and array of all matching values.
