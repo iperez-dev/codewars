@@ -870,3 +870,14 @@ function howMuchILoveYou(n) {
      return phrases[(n - 1) % phrases.length] 
 }
 */
+
+//-----------------------------------------------------------------------------------
+
+// (tail, body, head) => (head, body, tail).
+
+function fixTheMeerkat(args) {
+  return args.split(" ").reverse().join(" ");
+}
+
+const args = ["tail", "body", "head"];
+console.log(fixTheMeerkat());
