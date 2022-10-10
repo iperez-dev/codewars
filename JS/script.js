@@ -1,3 +1,4 @@
+/*
 //==============================================================================================================================
 // ARRAYS METHODS 
 //==============================================================================================================================
@@ -7,6 +8,7 @@
 // .reduce()
 // .sort()
 // .map()
+// .concat()
 // .filter()
 // .reverse()
 // .replace()
@@ -17,6 +19,9 @@
 //.join('')
 // .substring()
 // .endsWith()
+// .includes()
+// .indexOf()
+// .match()
 // .toString()
 // .toLowerCase()
 // .unshift()
@@ -24,7 +29,8 @@
 // .padStart()
 // .padEnd()
 // .toArray()
-
+// .charAt(0)
+// .charCodeAt()
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -163,6 +169,19 @@ function fakeBin(x) {
     return x.split('').map(n => n < 5 ? 0 : 1).join('');
 }
 
+//-----------------------------------------------------------------------------------------------------------------------
+
+function digitize(n) {
+  return String(n).split("").map(number).reverse();
+}
+
+//-----------------------------------------------------------------------------------------------------------------------
+
+function abbrevName(name) {
+  return name.split(" ").map((i) => i[0].toUpperCase()).join(".");
+}
+
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // .filter() method creates a new array filled with elements that pass a test provided by a function.
 
@@ -189,6 +208,16 @@ function removeEveryOther(arr){
   return arr.filter(function(elem, index) {
 	return index % 2 === 0;
   });
+}
+
+//-----------------------------------------------------------------------------------------------------------------------
+
+function countPositivesSumNegatives(input) {
+  return input && input.length ? [
+        input.filter((p) => p > 0).length,
+        input.filter((n) => n < 0).reduce((a, b) => a + b, 0),
+      ]
+    : [];
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -233,6 +262,12 @@ function repeatStr(n, s) {
 
 function removeChar(str) {
   return str.slice(1, -1);
+}
+
+//-----------------------------------------------------------------------------------------------------------------------
+
+function take(arr, n) {
+  return arr.slice(0, n)
 }
 
 //-----------------------------------------------------------------------------------------------------------------------
@@ -381,32 +416,10 @@ padEnd()
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// 
+//
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-//==============================================================================================================================
-// STRINSG METHODS 
-//==============================================================================================================================
-// .charAt(0)
-// .charCodeAt()
-// .concat()
-// .includes()
-// .indexOf()
-// .match()
 //==============================================================================================================================
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -499,4 +512,361 @@ function findNeedle(haystack) {
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // match() method takess xpression as an argument and matches it against the calling string. Returns and array of all matching values.
-// match() method takess xpression as an argument and matches it against the calling string. Returns and array of all matching values.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//==============================================================================================================================
+// FUNCTIONS
+//==============================================================================================================================
+//  Math.pow()
+// Math.floor()
+// The Math.ceil()
+// Math.round()
+// Math.max()
+// Math.min()
+// Math.abs()
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//  Math.pow() method returns the value of a base raised to a power.
+
+Math.pow(4, 2);
+// expected output: 16
+
+//-----------------------------------------------------------------------------------------------------------------------
+
+function square(num){
+  let num = Math.pow(num, 2);
+  return num;
+};
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Math.floor() function rounds down to the smallest integer
+
+console.log(Math.floor(5.95));
+// expected output: 5
+
+console.log(Math.floor(5.05));
+// expected output: 5
+
+console.log(Math.floor(5));
+// expected output: 5
+
+console.log(Math.floor(-5.05));
+// expected output: -6
+}
+
+//-----------------------------------------------------------------------------------------------------------------------
+
+const oddCount = n => Math.floor(n/2) ;
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// The Math.ceil() function rounds down to the largest integer
+
+console.log(Math.ceil(.95));
+// expected output: 1
+
+console.log(Math.ceil(4));
+// expected output: 4
+
+console.log(Math.ceil(7.004));
+// expected output: 8
+
+console.log(Math.ceil(-7.004));
+// expected output: -7
+
+//-----------------------------------------------------------------------------------------------------------------------
+
+function century(year) {
+  return Math.ceil(year / 100); //using ceiling method to round up to nearest century (100)
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Math.round() function rounds down the number to the smallest or largest integer
+
+Math.round(0.95);
+// expected output: 1
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Number(),0 converts all values to numbers
+
+function sumOfValues(arr) {
+  return arr.reduce((acc, c) => acc + Number(c), 0);
+}
+
+//-----------------------------------------------------------------------------------------------------------------------
+
+function toBinary(n){
+  return +(n.toString(2))
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Math.max() function returns the largest of the numbers given as input
+ 
+console.log(Math.max(...list));
+// expected output: 3
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Math.min() function returns the smallest of the numbers given as input
+ 
+console.log(Math.min(...list));
+// expected output: 1
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Math.abs() function returns the absolute value of a number.
+
+function difference(a, b) {
+  return Math.abs(a - b);
+}
+
+console.log(difference(3, 5));
+// expected output: 2
+
+console.log(difference(5, 3));
+// expected output: 2
+
+//-----------------------------------------------------------------------------------------------------------------------
+
+function enough(cap, on, wait) {
+  return (cap - on - wait) > 0 ? 0 : Math.abs(cap - on - wait)
+}
+
+//==========================================================================================================================
+// Ternary Operators
+//==========================================================================================================================
+
+const quarterOf = (month) => {
+ return month <=3 ? 1 : month <= 6 ? 2 : month <=9 ? 3 : month <=12 ? 4 : 0;
+}
+
+//-----------------------------------------------------------------------------------------------------------------------
+
+const areaOrPerimeter = function(l , w) {
+  return l == w ? l * l : 2 * (l + w);
+};
+
+//-----------------------------------------------------------------------------------------------------------------------
+
+function getGrade (s1, s2, s3) {
+  let ave = (s1 + s2 + s3) / 3
+  return ave >= 90 ? "A" : s >= 80 ? "B" : s >= 70 ? "C" : s >= 60 ? "D" : "F"
+}
+
+//-----------------------------------------------------------------------------------------------------------------------
+
+const points=games=>games.reduce((output,current)=>{
+    return output += current[0]>current[2] ? 3 : current[0]===current[2] ? 1 : 0;
+  },0)
+
+//-----------------------------------------------------------------------------------------------------------------------
+
+const rentalCarCost = d => d * 40 - ((d > 6) ? 50 : ((d > 2) ? 20 : 0));
+
+//-----------------------------------------------------------------------------------------------------------------------
+
+function updateLight(current) {
+  return current === 'green' ? 'yellow' : current === "yellow" ? 'red' : 'green'
+}
+
+//-----------------------------------------------------------------------------------------------------------------------
+
+function finalGrade (exam, projects) {
+  return exam > 90 || projects > 10 ? 100 : exam > 75 && projects >= 5 ? 90 : exam > 50 && projects >= 2 ? 75 : 0;
+}
+
+//-----------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+//==========================================================================================================================
+// CODEWARS (DO AGAIN)
+//==========================================================================================================================
+// 1 - Your task is to create a function that does four basic mathematical operations.
+
+// The function should take three arguments - operation(string/char), value1(number), value2(number).
+// The function should return result of numbers after applying the chosen operation.
+
+
+  function basicOp(operation, value1, value2) {
+    switch (operation) {
+      case "+":
+        return value1 + value2;
+      case "-":
+        return value1 - value2;
+      case "*":
+        return value1 * value2;
+      case "/":
+        return value1 / value2;
+      default:
+        return 0;
+    }
+  }
+
+// -----------------------------------------------------------------------------------------------------------------------
+// 4 - Clock shows h hours, m minutes and s seconds after midnight. Your task is to write a function which returns the time since midnight in milliseconds.
+
+function past(h, m, s) {
+  return (h * 3600 + m * 60 + s) * 1000;
+}
+
+// -----------------------------------------------------------------------------------------------------------------------
+// 7 - Your inputs: a positive integer, n, greater than or equal to one. n is provided, you have NO CONTROL over its value. Your expected output is an array of positive integers from 1 to n (inclusive).
+
+function preFizz(n) {
+  var output = [];
+  for (var i=1; i<=n; i++)
+  {
+    output.push(i);
+  }
+  return output;
+}
+
+// -----------------------------------------------------------------------------------------------------------------------
+// 8 - Given a non-negative integer n, write a function to_binary/ToBinary which returns that number in a binary format.
+
+function toBinary(n){
+  return +(n.toString(2))
+}
+
+// -----------------------------------------------------------------------------------------------------------------------
+// 9 - Given a string of digits, you should replace any digit below 5 with '0' and any digit 5 and above with '1'. Return the resulting string
+
+
+function fakeBin(x) {
+    return x.split('').map(n => n < 5 ? 0 : 1).join('');
+}
+
+// -----------------------------------------------------------------------------------------------------------------------
+// 10 - Build a function that returns an array of integers from n to 1 where n>0.
+
+const reverseSeq = n => {
+let arr = [];
+  for (let i=n; i>0; i--) {
+    arr.push(i);
+    } return arr;
+};
+
+// -----------------------------------------------------------------------------------------------------------------------
+// 11 - Sum all the numbers of a given array ( cq. list ), except the highest and the lowest element ( by value, not by index! ). The highest or lowest element respectively is a single element at each edge, even if there are more than one with the same value.
+
+sumArray = a => a ? a.sort((x, y) => x - y).slice(1, -1).reduce((s, e) => s + e, 0) : 0
+
+
+// -----------------------------------------------------------------------------------------------------------------------
+// 12 - Take an array and remove every second element from the array. Always keep the first element and start removing it with the next element.
+
+
+function removeEveryOther(arr){
+  return arr.filter(function(elem, index) {
+	return index % 2 === 0;
+  });
+}
+
+// -----------------------------------------------------------------------------------------------------------------------
+// 13 - Given a number n, return the number of positive odd numbers below n, EASY!
+
+function oddCount(n){
+  return Math.floor(n/2);
+}
+
+
+// -----------------------------------------------------------------------------------------------------------------------
+// 14 - Move the first letter of each word to the end of it, then add "ay" to the end of the word. Leave punctuation marks untouched.
+
+function pigIt(str){
+  //Code here
+  return str.split(' ').map(word => {
+    return word.substring(1) + word[0] + 'ay';
+  }).join(' ');
+}
+
+
+
+
+
+
+
+
+// -----------------------------------------------------------------------------------------------------------------------
+// 15 - In this simple exercise, you will build a program that takes a value, integer , and returns a list of its multiples up to another value, limit . If limit is a multiple of integer, it should be included as well. There will only ever be positive integers passed into the function, not consisting of 0. The limit will always be higher than the base. For example, if the parameters passed are (2, 6), the function should return [2, 4, 6] as 2, 4, and 6 are the multiples of 2 up to 6.
+
+
+function findMultiples(int,limit){
+  let multiples = [];
+  for(let i = int; i <= limit; i += int){ multiples.push(i); }
+  return multiples;
+}
+
+
+
+// -----------------------------------------------------------------------------------------------------------------------
+// 16 - remove all values from list a, which are present in list b keeping their order.
+
+function arrayDiff(a, b) {
+  return arrayDiff.filter( ( a ) => !toRemove.includes( a ) );
+}
+
+
+// -----------------------------------------------------------------------------------------------------------------------
+// 17 - Who remembers back to their time in the schoolyard, when girls would take a flower and tear its petals, saying each of the following phrases each time a petal was torn:
+
+"I love you"
+"a little"
+"a lot"
+"passionately"
+"madly"
+"not at all"
+If there are more than 6 petals, you start over with "I love you" for 7 petals, "a little" for 8 petals and so on.
+
+When the last petal was torn there were cries of excitement, dreams, surging thoughts and emotions.
+
+Your goal in this kata is to determine which phrase the girls would say at the last petal for a flower of a given number of petals. The number of petals is always greater than 0.
+
+
+const phrases = [
+    'I love you',
+    'a little',
+    'a lot',
+    'passionately',
+    'madly',
+    'not at all',
+]
+
+function howMuchILoveYou(n) {
+     return phrases[(n - 1) % phrases.length] 
+}
+*/
