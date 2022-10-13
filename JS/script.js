@@ -21,7 +21,7 @@
 // .includes()
 // .indexOf()
 // .match()
-// .toString()
+//  String()
 // .toLowerCase()
 // .unshift()
 // .toFixed(0)
@@ -228,7 +228,7 @@ function abbrevName(name) {
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// .filter() The filter() method creates a shallow copy of a portion of a given array, filtered down to just the elements from the given array that pass the test implemented by the provided function.
+// .filter() method creates a shallow copy of a portion of a given array, filtered down to just the elements from the given array that pass the test implemented by the provided function.
 //-----------------------------------------------------------------------------------------------------------------------
 
 const array = [-3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
@@ -244,6 +244,20 @@ function isPrime(num) {
 
 
 console.log(array.filter(isPrime)); // [2, 3, 5, 7, 11, 13]
+
+//-----------------------------------------------------------------------------------------------------------------------
+
+function well(x) {
+  switch (x.filter(i => i === 'good').length) {
+    case 0:
+      return 'Fail!'
+    case 1:
+    case 2:
+      return 'Publish!'
+    default:
+      return 'I smell a series!'
+  }
+}
 //-----------------------------------------------------------------------------------------------------------------------
 const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
 
@@ -961,6 +975,3 @@ const phrases = [
 function howMuchILoveYou(n) {
      return phrases[(n - 1) % phrases.length] 
 }
-
-
-
