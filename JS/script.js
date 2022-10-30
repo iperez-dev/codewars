@@ -1502,3 +1502,49 @@ function arrayDiff(a, b) {
 // Your goal in this kata is to determine which phrase the girls would say at the last petal for a flower of a given number of petals. The number of petals is always greater than 0.
 
 
+//================================================================================================
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// for loops()
+
+function findMultiples(int,limit){
+  let multiples = [];
+  for(let i = int; i <= limit; i += int){ multiples.push(i); }
+  return multiples;
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// while loop()
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// (...arg) the spread operator separates and array in single elements
+
+findSmallesInt(args){
+	return Math.min(...args)
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// .reduce() method adds two values together
+
+function squareSum(a, b) {
+  return numbers.reduce((acc, cv) => acc + cv * cv, 0);
+}
+
+//-----------------------------------------------------------------------------------------------------------------------
+
+function positiveSum(arr) {
+  return arr.reduce((a, b) => a + (b > 0 ? b : 0), 0);
+}
+
+//-----------------------------------------------------------------------------------------------------------------------
+
+function betterThanAverage(classPoints, yourPoints) {
+  return yourPoints > classPoints.reduce((a, b) => a + b, 0) / classPoints.length; 
+}
+
+//-----------------------------------------------------------------------------------------------------------------------
+
+const points=games=>games.reduce((output,current)=>{
+    return output += current[0]>current[2] ? 3 : current[0]===current[2] ? 1 : 0;
+  },0)
+
+//-----------------------------------------------------------------------------------------------------------------------
