@@ -1595,3 +1595,148 @@ padEnd()
 
 
 //==============================================================================================================================
+
+function toBinary(n){
+  return +(n.toString(2))
+}
+
+// -----------------------------------------------------------------------------------------------------------------------
+// 9 - Given a string of digits, you should replace any digit below 5 with '0' and any digit 5 and above with '1'. Return the resulting string
+
+
+function fakeBin(x) {
+    return x.split('').map(n => n < 5 ? 0 : 1).join('');
+}
+
+// -----------------------------------------------------------------------------------------------------------------------
+// 10 - Build a function that returns an array of integers from n to 1 where n>0.
+
+const reverseSeq = n => {
+let arr = [];
+  for (let i=n; i>0; i--) {
+    arr.push(i);
+    } return arr;
+};
+
+// -----------------------------------------------------------------------------------------------------------------------
+// 11 - Sum all the numbers of a given array ( cq. list ), except the highest and the lowest element ( by value, not by index! ). The highest or lowest element respectively is a single element at each edge, even if there are more than one with the same value.
+
+sumArray = a => a ? a.sort((x, y) => x - y).slice(1, -1).reduce((s, e) => s + e, 0) : 0
+
+
+// -----------------------------------------------------------------------------------------------------------------------
+// 12 - Take an array and remove every second element from the array. Always keep the first element and start removing it with the next element.
+
+
+function removeEveryOther(arr){
+  return arr.filter(function(elem, index) {
+	return index % 2 === 0;
+  });
+}
+
+// -----------------------------------------------------------------------------------------------------------------------
+// 13 - Given a number n, return the number of positive odd numbers below n, EASY!
+
+function oddCount(n){
+  return Math.floor(n/2);
+}
+
+
+// -----------------------------------------------------------------------------------------------------------------------
+// 14 - Move the first letter of each word to the end of it, then add "ay" to the end of the word. Leave punctuation marks untouched.
+
+function pigIt(str){
+  //Code here
+  return str.split(' ').map(word => {
+    return word.substring(1) + word[0] + 'ay';
+  }).join(' ');
+}
+
+
+
+
+
+
+
+
+// -----------------------------------------------------------------------------------------------------------------------
+// 15 - In this simple exercise, you will build a program that takes a value, integer , and returns a list of its multiples up to another value, limit . If limit is a multiple of integer, it should be included as well. There will only ever be positive integers passed into the function, not consisting of 0. The limit will always be higher than the base. For example, if the parameters passed are (2, 6), the function should return [2, 4, 6] as 2, 4, and 6 are the multiples of 2 up to 6.
+
+
+function findMultiples(int,limit){
+  let multiples = [];
+  for(let i = int; i <= limit; i += int){ multiples.push(i); }
+  return multiples;
+}
+
+
+
+// -----------------------------------------------------------------------------------------------------------------------
+// 16 - remove all values from list a, which are present in list b keeping their order.
+
+function arrayDiff(a, b) {
+  return arrayDiff.filter( ( a ) => !toRemove.includes( a ) );
+}
+
+
+// -----------------------------------------------------------------------------------------------------------------------
+// 17 - Who remembers back to their time in the schoolyard, when girls would take a flower and tear its petals, saying each of the following phrases each time a petal was torn:
+
+"I love you"
+"a little"
+"a lot"
+"passionately"
+"madly"
+"not at all"
+// If there are more than 6 petals, you start over with "I love you" for 7 petals, "a little" for 8 petals and so on.
+
+// When the last petal was torn there were cries of excitement, dreams, surging thoughts and emotions.
+
+// Your goal in this kata is to determine which phrase the girls would say at the last petal for a flower of a given number of petals. The number of petals is always greater than 0.
+
+
+
+
+
+
+
+
+
+
+//========================================================================================================================
+
+// .toString() method converts a boolean or array to a String
+
+function booleanToString(b) {     //boolean to string
+  return b.toString();
+}
+
+function numberToString(b) {      //number to string
+  return String(b);
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// .toLowerCase() method returns the value of the string converted to lower case.
+
+function firtstName(firstName) {
+  return firstName.toLowerCase();
+}
+
+//-----------------------------------------------------------------------------------------------------------------------
+
+String.prototype.toAlternatingCase = function () {
+    return this.split("").map(a => a === a.toUpperCase()? a.toLowerCase(): a.toUpperCase()).join('')
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// .unshift() method adds elements to the beginning of an array
+
+function addElemStart (name)
+	return name.unshift('John')
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// .toFixed(2) method rounds the string to a specified number of decimals. //2 in this case
+
+let num = 5.56789;
+let n = num.toFixed(2);
+// 5.56
