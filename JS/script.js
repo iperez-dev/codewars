@@ -1595,3 +1595,131 @@ padEnd()
 
 
 //==============================================================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//==========================================================================================================================
+// CODEWARS (DO AGAIN)
+//==========================================================================================================================
+// 1 - Your task is to create a function that does four basic mathematical operations.
+
+// The function should take three arguments - operation(string/char), value1(number), value2(number).
+// The function should return result of numbers after applying the chosen operation.
+
+
+function basicOp(operation, value1, value2) {
+  switch (operation) {
+    case "+":
+      return value1 + value2;
+    case "-":
+      return value1 - value2;
+    case "*":
+      return value1 * value2;
+    case "/":
+      return value1 / value2;
+    default:
+      return 0;
+  }
+}
+
+// -----------------------------------------------------------------------------------------------------------------------
+// 4 - Clock shows h hours, m minutes and s seconds after midnight. Your task is to write a function which returns the time since midnight in milliseconds.
+
+function past(h, m, s) {
+return (h * 3600 + m * 60 + s) * 1000;
+}
+
+// -----------------------------------------------------------------------------------------------------------------------
+// 7 - Your inputs: a positive integer, n, greater than or equal to one. n is provided, you have NO CONTROL over its value. Your expected output is an array of positive integers from 1 to n (inclusive).
+
+function preFizz(n) {
+var output = [];
+for (var i=1; i<=n; i++)
+{
+  output.push(i);
+}
+return output;
+}
+
+// -----------------------------------------------------------------------------------------------------------------------
+// 8 - Given a non-negative integer n, write a function to_binary/ToBinary which returns that number in a binary format.
+
+function toBinary(n){
+return +(n.toString(2))
+}
+
+// -----------------------------------------------------------------------------------------------------------------------
+// 9 - Given a string of digits, you should replace any digit below 5 with '0' and any digit 5 and above with '1'. Return the resulting string
+
+
+function fakeBin(x) {
+  return x.split('').map(n => n < 5 ? 0 : 1).join('');
+}
+
+// -----------------------------------------------------------------------------------------------------------------------
+// 10 - Build a function that returns an array of integers from n to 1 where n>0.
+
+const reverseSeq = n => {
+let arr = [];
+for (let i=n; i>0; i--) {
+  arr.push(i);
+  } return arr;
+};
+
+// -----------------------------------------------------------------------------------------------------------------------
+// 11 - Sum all the numbers of a given array ( cq. list ), except the highest and the lowest element ( by value, not by index! ). The highest or lowest element respectively is a single element at each edge, even if there are more than one with the same value.
+
+sumArray = a => a ? a.sort((x, y) => x - y).slice(1, -1).reduce((s, e) => s + e, 0) : 0
+
+
+// -----------------------------------------------------------------------------------------------------------------------
+// 12 - Take an array and remove every second element from the array. Always keep the first element and start removing it with the next element.
+
+
+function removeEveryOther(arr){
+return arr.filter(function(elem, index) {
+return index % 2 === 0;
+});
+}
+
+// -----------------------------------------------------------------------------------------------------------------------
+// 13 - Given a number n, return the number of positive odd numbers below n, EASY!
+
+function oddCount(n){
+return Math.floor(n/2);
+}
+
+
+// -----------------------------------------------------------------------------------------------------------------------
+// 14 - Move the first letter of each word to the end of it, then add "ay" to the end of the word. Leave punctuation marks untouched.
+
+function pigIt(str){
+//Code here
+return str.split(' ').map(word => {
+  return word.substring(1) + word[0] + 'ay';
+}).join(' ');
+}
+
