@@ -1503,3 +1503,31 @@ function arrayDiff(a, b) {
 
 
 //================================================================================================
+
+// 12 - Take an array and remove every second element from the array. Always keep the first element and start removing it with the next element.
+
+
+function removeEveryOther(arr){
+  return arr.filter(function(elem, index) {
+	return index % 2 === 0;
+  });
+}
+
+// -----------------------------------------------------------------------------------------------------------------------
+// 13 - Given a number n, return the number of positive odd numbers below n, EASY!
+
+function oddCount(n){
+  return Math.floor(n/2);
+}
+
+
+// -----------------------------------------------------------------------------------------------------------------------
+// 14 - Move the first letter of each word to the end of it, then add "ay" to the end of the word. Leave punctuation marks untouched.
+
+function pigIt(str){
+  //Code here
+  return str.split(' ').map(word => {
+    return word.substring(1) + word[0] + 'ay';
+  }).join(' ');
+}
+
