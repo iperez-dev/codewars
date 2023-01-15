@@ -4344,3 +4344,33 @@ function sortGiftCode(code) {
 console.log(sortGiftCode("abcdef")); // => "abcdef"
 console.log(sortGiftCode("pqksuvy")); // => "kpqsuvy"
 console.log(sortGiftCode("zyxwvutsrqponmlkjihgfedcba")); // => "abcdefghijklmnopqrstuvwxyz"
+/*
+Question172 | ky7 | Divide and Conquer
+Given a mixed array of number and string representations of integers, add up the non-string integers and subtract the total of the string integers.
+Return as a number.
+*/
+
+function calculateSumAndDifference(arr) {
+  // Initialize totals for numbers and strings
+  let totalNumbers = 0;
+  let totalStrings = 0;
+
+  // Loop through each element in the array
+  arr.forEach((element) => {
+    // Check if the element is a string
+    if (typeof element === "string") {
+      // Convert string to number and add to totalStrings
+      totalStrings += parseInt(element);
+    } else {
+      // Add number to totalNumbers
+      totalNumbers += element;
+    }
+  });
+
+  // Subtract the total of string integers from the total of non-string integers
+  return totalNumbers - totalStrings;
+}
+
+// Example usage
+const mixedArray = [1, "2", 3, "4", 5]; // This should return 3 (9 - 6)
+console.log(calculateSumAndDifference(mixedArray));
