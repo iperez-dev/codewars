@@ -4859,6 +4859,31 @@ function multiplyAll(arr) {
   };
 }
 
+/*
+Question189 | ky7 | Functional Addition
+
+Create a function add(n)/Add(n) which returns a function that always adds n to any number
+
+Note for Java: the return type and methods have not been provided to make it a bit more challenging.
+
+var addOne = add(1);
+addOne(3); // 4
+
+var addThree = add(3);
+addThree(3); // 6
+
+*/
+
+function add(n) {
+  // Return a new function that takes a single argument and adds n to it
+  return function (number) {
+    return n + number;
+  };
+}
+
 // Example usage
-const result = multiplyAll([1, 2, 3])(2); // => [2, 4, 6]
-console.log(result);
+var addOne = add(1);
+console.log(addOne(3)); // Output: 4
+
+var addThree = add(3);
+console.log(addThree(3)); // Output: 6
