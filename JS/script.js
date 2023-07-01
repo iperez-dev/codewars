@@ -204,3 +204,17 @@ Floats with decimal part non equal to zero are considered UNeven for this kata.*
 function testEven(n) {
   return n % 2 === 0;
 }
+// Question14 | ky5 | Simple Pig Latin
+
+/*Move the first letter of each word to the end of it, then add "ay" to the end of the word. Leave punctuation marks untouched.
+
+Examples
+pigIt('Pig latin is cool'); // igPay atinlay siay oolcay
+pigIt('Hello world !');     // elloHay orldway !*/
+
+function pigIt(str) {
+  return str
+    .split(" ")
+    .map((item) => `${item.substr(1)}${item[0]}ay`)
+    .join(" ");
+}
