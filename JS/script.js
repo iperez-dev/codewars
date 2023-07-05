@@ -249,7 +249,6 @@ function finalGrade(exam, projects) {
   if ((exam > 50) & (projects >= 2)) return 75;
   return 0;
 }
-<<<<<<< HEAD
 // Question16 | ky8 | Grasshopper - Terminal game move function
 
 /*Terminal game move function
@@ -261,5 +260,3 @@ Example:
 move(3, 6) should equal 15*/
 
 const move = (position, roll) => position + roll * 2;
-=======
->>>>>>> eadc7949a8c649e2c382885eb560b19115ba41a5
