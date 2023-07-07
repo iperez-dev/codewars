@@ -294,3 +294,8 @@ function oddCount(n) {
 /*Now you have to write a function that takes an argument and returns the square of it.*/
 
 const square = (n) => n * n;
+
+// Question20 | ky8 | Basic variable assignment
+
+/*This code should store "codewa.rs" as a variable called name but it's not working. Can you figure out why?*/
+let name = "codewa.rs";
