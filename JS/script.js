@@ -289,3 +289,8 @@ Expect large Inputs!*/
 function oddCount(n) {
   return Math.floor(n / 2);
 }
+// Question19 | ky8 | Function 2 - squaring an argument
+
+/*Now you have to write a function that takes an argument and returns the square of it.*/
+
+const square = (n) => n * n;
