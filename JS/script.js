@@ -661,3 +661,32 @@ false    | true     => false
 false    | false    => false
 */
 const setAlarm = (employed, vacation) => employed && !vacation;
+// Question39 | ky8 | Thinkful - Logic Drills: Traffic light
+
+/*
+You're writing code to control your town's traffic lights. You need a function to handle each change from green, to yellow, to red, and then to green again.
+
+Complete the function that takes a string as an argument representing the current state of the light and returns a string representing the state the light should change to.
+
+For example, when the input is green, output should be yellow.
+*/
+
+//function passes in string (current state of light) -> 'string', no num, no caps
+//return -> string (displays next light)
+//
+function nextLight(currentLight) {
+  //currentLight -> change to nextLight
+  if (currentLight === "red") {
+    return "green";
+  } else if (currentLight === "green") {
+    return "yellow";
+  } else {
+    return "red";
+  }
+}
+nextLight("red");
+//test cases
+console.log(nextLight("red"), "green");
+console.log(nextLight("green"), "yellow");
+console.log(nextLight("yellow"), "red");
+//P
