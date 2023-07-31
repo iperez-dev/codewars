@@ -689,4 +689,19 @@ nextLight("red");
 console.log(nextLight("red"), "green");
 console.log(nextLight("green"), "yellow");
 console.log(nextLight("yellow"), "red");
-//P
+
+// function updateLight(current) {
+// return current === 'yellow' ? 'red' : current === 'green' ? 'yellow' : 'green';
+// }
+// Question40 | ky8 | Third Angle of a Triangle
+
+/*
+You are given two interior angles (in degrees) of a triangle.
+
+Write a function to return the 3rd.
+
+Note: only positive integers will be tested.
+*/
+function otherAngle(a, b) {
+  return 180 - (a + b);
+}
