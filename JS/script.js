@@ -751,7 +751,7 @@ function sumArray(array) {
 }
 
 /*
-// Question43 | ky8 | Grasshopper - Grade book
+// ccccccccc
 Grade book
 Complete the function so that it finds the average of the three scores passed to it and returns the letter value associated with that grade.
 
