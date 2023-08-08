@@ -905,24 +905,27 @@ function countSheep(num) {
 
 console.log(countSheep(8));
 /*
-Question52 | ky8 | 
-After a hard quarter in the office you decide to get some rest on a vacation. So you will book a flight for you and your girlfriend and try to leave all the mess behind you.
+Question52 | ky8 | Count by X
+Create a function with two arguments that will return an array of the first n multiples of x.
 
-You will need a rental car in order for you to get around in your vacation. The manager of the car rental makes you some good offers.
+Assume both the given number and the number of times to count will be positive numbers greater than 0.
 
+Return the results as an array or list ( depending on language ).
 
-Every day you rent the car costs $40. If you rent the car for 7 or more days, you get $50 off your total. Alternatively, if you rent the car for 3 or more days, you get $20 off your total.
-
-Write a code that gives out the total amount for different days(d).
+Examples
+countBy(1,10) === [1,2,3,4,5,6,7,8,9,10]
+countBy(2,5) === [2,4,6,8,10]
 */
-// $40 day | 7 -$50 | 3-7 -$20
-//posible solutions ->  ternary operator
 
-function totalPrice(days) {
-  return days < 3 ? days * 40 : days < 7 ? days * 40 - 20 : days * 40 - 50;
+//return -> [n * x]
+//posible solutions -> let newArr = [] | for loop  .push()
+
+function multiplesOfx(num1, num2) {
+  let newArr = [];
+  for (let i = num1; i <= num1 * num2; num1++) {
+    return newArr.push(i);
+  }
 }
-
-//test-cases
-console.log(totalPrice(1), "$40");
-console.log(totalPrice(5), "$180");
-console.log(totalPrice(10), "$350");
+// test-cases
+console.log(multiplesOfx(1, 10), [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+console.log(multiplesOfx(2, 5), [2, 4, 6, 8, 10]);
