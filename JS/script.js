@@ -929,3 +929,24 @@ function multiplesOfx(num1, num2) {
 // test-cases
 console.log(multiplesOfx(1, 10), [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
 console.log(multiplesOfx(2, 5), [2, 4, 6, 8, 10]);
+/*
+Question52 | ky8 | Reversed Words
+Complete the solution so that it reverses all of the words within the string passed in.
+
+Words are separated by exactly one space and there are no leading or trailing spaces.
+
+Example(Input --> Output):
+
+"The greatest victory is that which requires no battle" --> "battle no requires which that is victory greatest The"
+*/
+//posible solutions -> .split(' ') .reverse() .join(' ')
+
+function reverseWords(str) {
+  return str.split(" ").reverse().join(" ");
+}
+
+//test-cases
+console.log(
+  reverseWords("The greatest victory is that which requires no battle"),
+  "battle no requires which that is victory greatest The"
+);
