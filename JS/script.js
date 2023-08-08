@@ -950,3 +950,19 @@ console.log(
   reverseWords("The greatest victory is that which requires no battle"),
   "battle no requires which that is victory greatest The"
 );
+/*
+Question53 | ky8 | Get the mean of an array
+It's the academic year's end, fateful moment of your school report. The averages must be calculated. All the students come to you and entreat you to calculate their average for them. Easy ! You just need to write a script.
+Return the average of the given array rounded down to its nearest integer. The array will never be empty.
+*/
+//
+//
+//return -> [ave rounded down ]
+//posible solutions -> ave = (+ all nums) / totalNums | Math.min()
+
+function ave(arr) {
+  return Math.floor(arr.reduce((acc, num) => acc + num) / arr.length);
+}
+//test-cases
+console.log(ave([2, 5, 3, 7, 8, 8]), 5);
+console.log(ave([2, 3, 4, 5, 2, 8]), 4);
