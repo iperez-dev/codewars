@@ -882,13 +882,25 @@ name equals owner	'Hello boss'
 otherwise	'Hello guest'
 */
 
-function greet(nameBoss, owner) {
-  if (nameBoss === owner) {
-    return "Hello boss";
-  }
-  {
-    return "Hello guest";
-  }
+function greet(name, boss) {
+  return name === boss ? "Hello boss" : "Hello guest";
 }
-console.log(greet("Ivan", "Ivan"));
-console.log(greet("Jenny", "Perez"));
+/*
+Question51 | ky8 | If you can't sleep, just count sheep!!
+
+If you can't sleep, just count sheep!!
+
+Task:
+Given a non-negative integer, 3 for example, return a string with a murmur: "1 sheep...2 sheep...3 sheep...". Input will always be valid, i.e. no negative integers.
+*/
+//posible solututions -> for loop i=0 sheep...
+
+function countSheep(num) {
+  let str = "";
+  for (let i = 1; i <= 3; i++) {
+    str += `${i} sheep...`;
+  }
+  return str;
+}
+
+console.log(countSheep(8));
