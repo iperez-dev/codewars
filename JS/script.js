@@ -827,3 +827,68 @@ Constraint:
 1 <= month <= 12
 */
 const quarterOf = (m) => Math.ceil(m / 3);
+/*
+Question49 | ky8 | Total amount of points
+Our football team has finished the championship.
+
+Our team's match results are recorded in a collection of strings. Each match is represented by a string in the format "x:y", where x is our team's score and y is our opponents score.
+
+For example: ["3:1", "2:2", "0:1", ...]
+
+Points are awarded for each match as follows:
+
+if x > y: 3 points (win)
+if x < y: 0 points (loss)
+if x = y: 1 point (tie)
+We need to write a function that takes this collection and returns the number of points our team (x) got in the championship by the rules given above.
+
+Notes:
+
+our team always plays 10 matches in the championship
+0 <= x <= 4
+0 <= y <= 4
+*/
+// x = [our team's score | y = our opponents score]
+// let ourTeam = ["3:1", "2:2", "0:1", ...]
+// posible solution: take the first elem of a string |  reduce()
+
+const points = (games) =>
+  games.reduce((output, current) => {
+    return (output +=
+      current[0] > current[2] ? 3 : current[0] === current[2] ? 1 : 0);
+  }, 0);
+
+// function points(games) {
+//   return games.reduce((output,current)=>{
+//     let x = parseInt(current[0]);
+//     let y = parseInt(current[2]);
+//     let value= x>y ? 3 : x===y ? 1 : 0;
+//     return output+value;
+//   },0)
+// }
+
+//test-cases
+console.log(points(["3:1", "2:2", "0:1"]), 4);
+// console.log(totalPoints(["3:1", "2:2", "0:1", "4:1", "2:1"]), 8);
+
+/*
+Question50 | ky8 | Grasshopper - Personalized Message
+Create a function that gives a personalized greeting. This function takes two parameters: name and owner.
+
+Use conditionals to return the proper message:
+
+case	return
+name equals owner	'Hello boss'
+otherwise	'Hello guest'
+*/
+
+function greet(nameBoss, owner) {
+  if (nameBoss === owner) {
+    return "Hello boss";
+  }
+  {
+    return "Hello guest";
+  }
+}
+console.log(greet("Ivan", "Ivan"));
+console.log(greet("Jenny", "Perez"));
