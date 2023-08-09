@@ -966,3 +966,49 @@ function ave(arr) {
 //test-cases
 console.log(ave([2, 5, 3, 7, 8, 8]), 5);
 console.log(ave([2, 3, 4, 5, 2, 8]), 4);
+/*
+Question54 | ky8 | Get the mean of an array
+It's the academic year's end, fateful moment of your school report. The averages must be calculated. All the students come to you and entreat you to calculate their average for them. Easy ! You just need to write a script.
+Return the average of the given array rounded down to its nearest integer. The array will never be empty.
+*/
+//
+//
+//return -> [ave rounded down ]
+//posible solutions -> ave = (+ all nums) / totalNums | Math.min()
+
+function ave(arr) {
+  return Math.floor(arr.reduce((acc, num) => acc + num) / arr.length);
+}
+//test-cases
+console.log(ave([2, 5, 3, 7, 8, 8]), 5);
+console.log(ave([2, 3, 4, 5, 2, 8]), 4);
+/*
+Question55 | ky8 | Convert a string to an array
+
+Write a function to split a string and convert it into an array of words.
+
+Examples (Input ==> Output):
+"Robin Singh" ==> ["Robin", "Singh"]
+
+"I love arrays they are my favorite" ==> ["I", "love", "arrays", "they", "are", "my", "favorite"]
+*/
+//
+//
+//return = [array of words]
+// solution = .split(' ')
+
+function arrWords(str) {
+  return str.split(" ");
+}
+
+//test-cases
+console.log(arrWords("Robin Singh"), ["Robin", "Singh"]);
+console.log(arrWords("I love arrays they are my favorite"), [
+  "I",
+  "love",
+  "arrays",
+  "they",
+  "are",
+  "my",
+  "favorite",
+]);
