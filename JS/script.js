@@ -1108,3 +1108,32 @@ function betterThanAve(peersScores, yourScore) {
 //test-cases
 console.log(betterThanAve([67, 48, 90, 87, 70], 1), "false");
 console.log(betterThanAve([67, 48, 90, 87, 70], 100), "true");
+/*
+Question60 | ky8 | DNA to RNA Conversion
+
+Deoxyribonucleic acid, DNA is the primary information storage molecule in biological systems. It is composed of four nucleic acid bases Guanine ('G'), Cytosine ('C'), Adenine ('A'), and Thymine ('T').
+
+Ribonucleic acid, RNA, is the primary messenger molecule in cells. RNA differs slightly from DNA its chemical structure and contains no Thymine. In RNA Thymine is replaced by another nucleic acid Uracil ('U').
+
+Create a function which translates a given DNA string into RNA.
+
+For example:
+
+"GCAT"  =>  "GCAU"
+The input string can be of arbitrary length - in particular, it may be empty. All input is guaranteed to be valid, i.e. each input string will only ever consist of 'G', 'C', 'A' and/or 'T'.
+
+*/
+// GCAT - GCAU
+//return = string
+//solution = split('') | replace('T', 'U') | join('')
+
+function dnaToRna(dna) {
+  const splitDna = dna.split("");
+  const replaceDna = splitDna.map((char) => (char === "T" ? "U" : char));
+  const joinDna = replaceDna.join("");
+
+  return joinDna;
+}
+
+//test-cases
+console.log(dnaToRna("GCAT"), "GCAU");
