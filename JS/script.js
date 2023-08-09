@@ -1012,3 +1012,28 @@ console.log(arrWords("I love arrays they are my favorite"), [
   "my",
   "favorite",
 ]);
+/*
+Question56 | ky8 | Sentence Smash
+
+Write a function that takes an array of words and smashes them together into a sentence and returns the sentence. You can ignore any need to sanitize words or add punctuation, but you should add spaces between each word. Be careful, there shouldn't be a space at the beginning or the end of the sentence!
+
+Example
+['hello', 'world', 'this', 'is', 'great']  =>  'hello world this is great'
+*/
+//
+//return = string, no spaces at beginning or end
+//solution = .join(' ') | .trim()
+
+function sentence(arr) {
+  return arr.join(" ").trim();
+}
+
+//test-cases
+console.log(
+  sentence(["hello", "world", "this", "is", "great"]),
+  "hello world this is great"
+);
+console.log(
+  sentence(["Hi", "river", "this", "is", "blue"]),
+  "Hi river this is blue"
+);
