@@ -1058,3 +1058,27 @@ function finalValue(arr) {
 //test-cases
 console.log(finalValue([1, 2, 3, 4]), 24);
 console.log(finalValue([5, 2, 4, 6, 7, 2]), 3360);
+/*
+Question58 | ky8 | Will you make it?
+
+You were camping with your friends far away from home, but when it's time to go back, you realize that your fuel is running out and the nearest pump is 50 miles away! You know that on average, your car runs on about 25 miles per gallon. There are 2 gallons left.
+
+Considering these factors, write a function that tells you if it is possible to get to the pump or not.
+
+Function should return true if it is possible and false if not.
+
+
+
+*/
+//return = true or false
+//solution = 25 miles * gallon - 2 gallons - 50 miles away | if else
+
+function getToPump(num) {
+  return num >= 25 ? true : false;
+}
+
+//test-cases
+console.log(getToPump(25), "true");
+console.log(getToPump(35), "true");
+console.log(getToPump(10), "false");
+console.log(getToPump(1), "false");
