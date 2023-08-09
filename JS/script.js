@@ -1037,3 +1037,24 @@ console.log(
   sentence(["Hi", "river", "this", "is", "blue"]),
   "Hi river this is blue"
 );
+/*
+Question57 | ky8 | Beginner - Reduce but Grow
+
+Given a non-empty array of integers, return the result of multiplying the values together in order. Example:
+
+[1, 2, 3, 4] => 1 * 2 * 3 * 4 = 24
+
+
+*/
+//
+//
+//return = num
+//solution = .sort() | .reduce((acc, num) => acc * num )
+
+function finalValue(arr) {
+  return arr.sort().reduce((acc, num) => acc * num, 1);
+}
+
+//test-cases
+console.log(finalValue([1, 2, 3, 4]), 24);
+console.log(finalValue([5, 2, 4, 6, 7, 2]), 3360);
