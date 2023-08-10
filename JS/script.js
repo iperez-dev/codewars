@@ -1138,7 +1138,7 @@ function dnaToRna(dna) {
 //test-cases
 console.log(dnaToRna("GCAT"), "GCAU");
 /*
-Question60 | ky8 | Simple multiplication
+Question61 | ky8 | Simple multiplication
 
 This kata is about multiplying a given number by eight if it is an even number and by nine otherwise.
 
@@ -1153,3 +1153,30 @@ function evenOrOdd(num) {
 console.log(evenOrOdd(3), 27);
 console.log(evenOrOdd(4), 32);
 console.log(evenOrOdd(10), 80);
+/*
+Question62 | ky8 | Find Maximum and Minimum Values of a List
+
+Your task is to make two functions ( max and min, or maximum and minimum, etc., depending on the language ) that receive a list of integers as input, and return the largest and lowest number in that list, respectively.
+
+Examples (Input -> Output)
+* [4,6,2,1,9,63,-134,566]         -> max = 566, min = -134
+* [-52, 56, 30, 29, -54, 0, -110] -> min = -110, max = 56
+* [42, 54, 65, 87, 0]             -> min = 0, max = 87
+* [5]                             -> min = 5, max = 5
+Notes
+You may consider that there will not be any empty arrays/vectors.
+
+*/
+
+//return = 2 functions (max, min)
+//solution = function(max) -> Math.max | function(min) -> Math.min
+function max(arr) {
+  return Math.max(...arr);
+}
+function min(arr) {
+  return Math.min(...arr);
+}
+
+//test-cases
+console.log(max([2, 5, 3, 7, 9, 4]), 9);
+console.log(min([2, 5, 3, 7, 9, 4]), 2);
