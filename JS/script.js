@@ -1180,3 +1180,23 @@ function min(arr) {
 //test-cases
 console.log(max([2, 5, 3, 7, 9, 4]), 9);
 console.log(min([2, 5, 3, 7, 9, 4]), 2);
+/*
+Question63 | ky8 | Jenny's secret message
+
+Jenny has written a function that returns a greeting for a user. However, she's in love with Johnny, and would like to greet him slightly different. She added a special case to her function, but she made a mistake.
+
+Can you help her?
+
+*/
+
+//
+//return = user -> 'hello' | Johnny -> 'how you doing?'
+//solution = if user -> 'hello' | Johnny -> 'how you doing?' | ternary operator
+
+function specialGreeting(user) {
+  return user === "Johnny" ? "how you doing?" : "hello";
+}
+
+//test-cases
+console.log(specialGreeting("user"), "hello");
+console.log(specialGreeting("Johnny"), "how you doing?");
