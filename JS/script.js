@@ -1137,3 +1137,19 @@ function dnaToRna(dna) {
 
 //test-cases
 console.log(dnaToRna("GCAT"), "GCAU");
+/*
+Question60 | ky8 | Simple multiplication
+
+This kata is about multiplying a given number by eight if it is an even number and by nine otherwise.
+
+*/
+//return = num
+//solutions = even * 8 | odd * 9 -> ternary operator
+function evenOrOdd(num) {
+  return num % 2 === 0 ? num * 8 : num * 9;
+}
+
+//test-cases
+console.log(evenOrOdd(3), 27);
+console.log(evenOrOdd(4), 32);
+console.log(evenOrOdd(10), 80);
