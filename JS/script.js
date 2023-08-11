@@ -1201,35 +1201,23 @@ function specialGreeting(user) {
 console.log(specialGreeting("user"), "hello");
 console.log(specialGreeting("Johnny"), "how you doing?");
 /*
-Question63 | ky8 | Calculate BMI
+Question64 | ky8 | Reversed sequence
 
-Write function bmi that calculates body mass index (bmi = weight / height2).
+Build a function that returns an array of integers from n to 1 where n>0.
 
-if bmi <= 18.5 return "Underweight"
-
-if bmi <= 25.0 return "Normal"
-
-if bmi <= 30.0 return "Overweight"
-
-if bmi > 30 return "Obese"
+Example : n=5 --> [5,4,3,2,1]
 
 */
-//return = bmi <= 18.5 return "Underweight" | bmi <= 25.0 return "Normal" | bmi <= 30.0 return "Overweight" | bmi > 30 return "Obese"
-//solution = bmi = weight / height2 | ternary operator
-function calcBmi(weight, height) {
-  let bmi = weight / (height * 2);
-  if (bmi <= 18.5) {
-    return "Underweight";
-  } else if (bmi <= 25.0) {
-    return "Normal";
-  } else if (bmi <= 30.0) {
-    return "Overweight";
-  } else bmi > 30;
-  return "Obese";
+//return = [from n to 1 where n>0]
+//solution = for loop
+
+function reversedSeq(n) {
+  for (let i = n; i >= 1; i--) {
+    return i;
+  }
 }
 
 //test-cases
-console.log(calcBmi(200, 6), "16.6 Underweight");
-console.log(calcBmi(300, 6), "25 Normal");
-console.log(calcBmi(180, 6), "15 Underweight");
-console.log(calcBmi(1000, 6), "80.3 Obese");
+console.log(reversedSeq(5), [5, 4, 3, 2, 1]);
+console.log(reversedSeq(3), [3, 2, 1]);
+console.log(reversedSeq(6), [6, 5, 4, 3, 2, 1]);
