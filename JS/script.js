@@ -1200,3 +1200,36 @@ function specialGreeting(user) {
 //test-cases
 console.log(specialGreeting("user"), "hello");
 console.log(specialGreeting("Johnny"), "how you doing?");
+/*
+Question63 | ky8 | Calculate BMI
+
+Write function bmi that calculates body mass index (bmi = weight / height2).
+
+if bmi <= 18.5 return "Underweight"
+
+if bmi <= 25.0 return "Normal"
+
+if bmi <= 30.0 return "Overweight"
+
+if bmi > 30 return "Obese"
+
+*/
+//return = bmi <= 18.5 return "Underweight" | bmi <= 25.0 return "Normal" | bmi <= 30.0 return "Overweight" | bmi > 30 return "Obese"
+//solution = bmi = weight / height2 | ternary operator
+function calcBmi(weight, height) {
+  let bmi = weight / (height * 2);
+  if (bmi <= 18.5) {
+    return "Underweight";
+  } else if (bmi <= 25.0) {
+    return "Normal";
+  } else if (bmi <= 30.0) {
+    return "Overweight";
+  } else bmi > 30;
+  return "Obese";
+}
+
+//test-cases
+console.log(calcBmi(200, 6), "16.6 Underweight");
+console.log(calcBmi(300, 6), "25 Normal");
+console.log(calcBmi(180, 6), "15 Underweight");
+console.log(calcBmi(1000, 6), "80.3 Obese");
