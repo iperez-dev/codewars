@@ -1221,3 +1221,24 @@ function reversedSeq(n) {
 console.log(reversedSeq(5), [5, 4, 3, 2, 1]);
 console.log(reversedSeq(3), [3, 2, 1]);
 console.log(reversedSeq(6), [6, 5, 4, 3, 2, 1]);
+/*
+Question65 | ky8 | Is he gonna survive?
+
+A hero is on his way to the castle to complete his mission. However, he's been told that the castle is surrounded with a couple of powerful dragons! each dragon takes 2 bullets to be defeated, our hero has no idea how many bullets he should carry.. Assuming he's gonna grab a specific given number of bullets and move forward to fight another specific given number of dragons, will he survive?
+
+Return true if yes, false otherwise :)
+
+*/
+// 2 bullets per dragon | 10 bullets
+//return = true if yes, false if no
+//solution = bullets / 2 | if numDragons <= 5 ? true : false (ternary operator)
+
+function survive(numDragons, numBullets) {
+  return numDragons <= numBullets / 2 ? true : false;
+}
+
+//test-cases
+console.log(survive(2, 10), true);
+console.log(survive(5, 10), true);
+console.log(survive(10, 10), false);
+console.log(survive(20, 10), false);
