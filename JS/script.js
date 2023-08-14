@@ -1242,3 +1242,18 @@ console.log(survive(2, 10), true);
 console.log(survive(5, 10), true);
 console.log(survive(10, 10), false);
 console.log(survive(20, 10), false);
+/*
+Question66 | ky8 | You only need one - Beginner
+
+You will be given an array a and a value x. All you need to do is check whether the provided array contains the value.
+
+Array can contain numbers or strings. X can be either.
+
+Return true if the array contains the value, false if not.
+
+*/
+// 2 bullets per dragon | 10 bullets
+//return = true if yes, false if no
+//solution = bullets / 2 | if numDragons <= 5 ? true : false (ternary operator)
+
+const check = (a, x) => a.includes(x);
