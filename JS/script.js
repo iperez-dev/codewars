@@ -1257,3 +1257,23 @@ Return true if the array contains the value, false if not.
 //solution = bullets / 2 | if numDragons <= 5 ? true : false (ternary operator)
 
 const check = (a, x) => a.includes(x);
+/*
+Question67 | ky8 | Calculate average
+
+Write a function which calculates the average of the numbers in a given list.
+
+Note: Empty arrays should return 0.
+
+*/
+
+//return = [ave nums] -> num
+//solutions = .reduce() / arr.length
+
+function calcAverage(arrNum) {
+  return arrNum.reduce((acc, value) => acc + value, 0) / arrNum.length;
+}
+
+//test-cases
+console.log(calcAverage([2, 6, 3, 1]), 3);
+console.log(calcAverage([20, 16, 23, 1]), 15);
+console.log(calcAverage([200, 146, 322, 200]), 217);
