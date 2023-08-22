@@ -1277,3 +1277,26 @@ function calcAverage(arrNum) {
 console.log(calcAverage([2, 6, 3, 1]), 3);
 console.log(calcAverage([20, 16, 23, 1]), 15);
 console.log(calcAverage([200, 146, 322, 200]), 217);
+/*
+Question68 | ky8 | Fake Binary
+
+Given a string of digits, you should replace any digit below 5 with '0' and any digit 5 and above with '1'. Return the resulting string.
+
+Note: input will never be an empty string
+
+*/
+
+//return = '00001111'
+//solution = .split('') .map((elem) => elem < 5 ? elem = 0 : elem >= 5 ? 1 ).join('')
+
+function replaceDigits(arr) {
+  const splitStr = arr.split(", ");
+  const replaceStr = splitStr.map((elem) => (elem < 5 ? 0 : 1));
+  const joinArr = replaceStr.join(", ");
+
+  return joinArr;
+}
+
+//test-cases
+console.log(replaceDigits("3, 5, 7, 8, 3, 9"), "0, 1, 1, 1, 0, 1");
+console.log(replaceDigits("4, 7, 3, 1, 8, 3"), "0, 1, 0, 0, 1, 0");
