@@ -1300,3 +1300,35 @@ function replaceDigits(arr) {
 //test-cases
 console.log(replaceDigits("3, 5, 7, 8, 3, 9"), "0, 1, 1, 1, 0, 1");
 console.log(replaceDigits("4, 7, 3, 1, 8, 3"), "0, 1, 0, 0, 1, 0");
+/*
+Question69 | ky8 | Are You Playing Banjo?
+
+Create a function which answers the question "Are you playing banjo?".
+If your name starts with the letter "R" or lower case "r", you are playing banjo!
+
+The function takes a name as its only argument, and returns one of the following strings:
+
+name + " plays banjo" 
+name + " does not play banjo"
+Names given are always valid strings.
+
+*/
+
+//return = name + " plays banjo" || name + " does not play banjo"
+//solution =
+
+function checkPlayer(name) {
+  const nameArr = name.split("");
+  const firstChar = nameArr[0];
+  return firstChar === "R" || firstChar === "r"
+    ? `${name} plays banjo"`
+    : `${name} does not play banjo"`;
+}
+
+// test-cases
+console.log(checkPlayer("Rocio"), "Rocio plays banjo");
+console.log(checkPlayer("rocio"), "Rocio plays banjo");
+console.log(checkPlayer("Ivan"), "Ivan does not play banjo");
+console.log(checkPlayer("ivan"), "ivan does not play banjo");
+console.log(checkPlayer("Raul"), "Raul plays banjo");
+console.log(checkPlayer("Abdiel"), "Abdiel does not plays banjo");
