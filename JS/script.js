@@ -1332,3 +1332,43 @@ console.log(checkPlayer("Ivan"), "Ivan does not play banjo");
 console.log(checkPlayer("ivan"), "ivan does not play banjo");
 console.log(checkPlayer("Raul"), "Raul plays banjo");
 console.log(checkPlayer("Abdiel"), "Abdiel does not plays banjo");
+/*
+Question70 | ky8 | Sum Arrays
+
+
+Write a function that takes an array of numbers and returns the sum of the numbers. The numbers can be negative or non-integer. If the array does not contain any numbers then you should return 0.
+
+Examples
+Input: [1, 5.2, 4, 0, -1]
+Output: 9.2
+
+Input: []
+Output: 0
+
+Input: [-2.398]
+Output: -2.398
+
+Assumptions
+You can assume that you are only given numbers.
+You cannot assume the size of the array.
+You can assume that you do get an array and if the array is empty, return 0.
+What We're Testing
+We're testing basic loops and math operations. This is for beginners who are just learning loops and math operations.
+Advanced users may find this extremely easy and can easily write this in one line.
+
+*/
+
+//return = sum of num | if no num -> return 0
+//solution = [arrNums] -> .reduce((acc, elem) => acc + elem, 0) | if arrNum === '' return 0
+
+function sumNum(arrNums) {
+  if (arrNums === " ") {
+    return 0;
+  } else {
+    return arrNums.reduce((acc, elem) => acc + elem, 0);
+  }
+}
+
+//test-cases
+console.log(sumNum([1, 5.2, 4, 0, -1]), 9.2);
+console.log(sumNum([4, 1.2, 4, 5, -3]), 11.2);
