@@ -1373,7 +1373,7 @@ function sumNum(arrNums) {
 console.log(sumNum([1, 5.2, 4, 0, -1]), 9.2);
 console.log(sumNum([4, 1.2, 4, 5, -3]), 11.2);
 /*
-Question71 | ky8 | Opposites Attracts
+Question71 | ky8 | Invert values
 
 Timmy & Sarah think they are in love, but around where they live, they will only know once they pick a flower each. If one of the flowers has an even number of petals and the other has an odd number of petals it means they are in love.
 
@@ -1392,3 +1392,26 @@ function inLove(TimmyFlower, SarahFlower) {
 console.log(inLove(2, 6), false);
 console.log(inLove(7, 3), false);
 console.log(inLove(3, 4), true);
+/*
+Question72 | ky8 | Invert values
+
+
+Given a set of numbers, return the additive inverse of each. Each positive becomes negatives, and the negatives become positives.
+
+invert([1,2,3,4,5]) == [-1,-2,-3,-4,-5]
+invert([1,-2,3,-4,5]) == [-1,2,-3,4,-5]
+invert([]) == []
+You can assume that all values are integers. Do not mutate the input array/list.
+
+*/
+//return = sum of all inversed nums
+//solution = .split('').map((elem) => elem === '' ? '-' : - ? '').join('')
+
+function inverseNum(arr) {
+  return arr.map((elem) => -elem);
+}
+
+//test-cases
+
+console.log(inverseNum([1, 2, 3, 4, 5]), [-1, -2, -3, -4, -5]);
+console.log(inverseNum([1, -2, 3, -4, 5]), [-1, 2, -3, 4, -5]);
