@@ -1415,3 +1415,28 @@ function inverseNum(arr) {
 
 console.log(inverseNum([1, 2, 3, 4, 5]), [-1, -2, -3, -4, -5]);
 console.log(inverseNum([1, -2, 3, -4, 5]), [-1, 2, -3, 4, -5]);
+/*
+Question73 | ky8 | Beginner Series #1 School Paperwork
+
+Your classmates asked you to copy some paperwork for them. You know that there are 'n' classmates and the paperwork has 'm' pages.
+
+Your task is to calculate how many blank pages do you need. If n < 0 or m < 0 return 0.
+
+Example:
+n= 5, m=5: 25
+n=-5, m=5:  0
+
+*/
+
+//return = num
+//solution = n * m | If n < 0 or m < 0
+
+function blankPages(n, m) {
+  return n < 0 || m < 0 ? 0 : n * m;
+}
+
+//test-cases
+console.log(blankPages(5, 5), 25);
+console.log(blankPages(-5, 5), 0);
+console.log(blankPages(-5, -5), 0);
+console.log(blankPages(3, 10), 30);
