@@ -1440,3 +1440,19 @@ console.log(blankPages(5, 5), 25);
 console.log(blankPages(-5, 5), 0);
 console.log(blankPages(-5, -5), 0);
 console.log(blankPages(3, 10), 30);
+/*
+Question74 | ky8 | MakeUpperCase
+
+Write a function which converts the input string to uppercase.
+
+*/
+//return = str to uppercase
+//solution = toUppercase()
+
+function converUppercase(str) {
+  return str.toUpperCase();
+}
+
+//test-cases
+console.log(converUppercase("hello"), "HELLO");
+console.log(converUppercase("world"), "WORLD");
