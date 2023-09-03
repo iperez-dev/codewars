@@ -1456,3 +1456,28 @@ function converUppercase(str) {
 //test-cases
 console.log(converUppercase("hello"), "HELLO");
 console.log(converUppercase("world"), "WORLD");
+/*
+Question75 | ky8 | Convert to Binary
+
+Given a non-negative integer n, write a function to_binary/ToBinary which returns that number in a binary format.
+
+Start with the number 10.
+Divide it by 2: 10 ÷ 2 = 5 with a remainder of 0. Write down the remainder (0).
+Continue to divide 5 by 2: 5 ÷ 2 = 2 with a remainder of 1. Write down the remainder (1).
+Divide 2 by 2: 2 ÷ 2 = 1 with a remainder of 0. Write down the remainder (0).
+Finally, divide 1 by 2: 1 ÷ 2 = 0 with a remainder of 1. Write down the remainder (1).
+
+Example:
+
+toBinary(1)  should return 1 
+toBinary(5)  should return 101 
+toBinary(11) should return 1011 
+
+*/
+//return = num -> binary format
+//solution = num
+
+let toBinary = (n) => +n.toString(2);
+
+//test-cases
+console.log(toBinary(11), 1011);
