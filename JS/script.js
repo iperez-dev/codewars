@@ -1481,3 +1481,29 @@ let toBinary = (n) => +n.toString(2);
 
 //test-cases
 console.log(toBinary(11), 1011);
+/*
+Question76 | ky8 | Pre-FizzBuzz Workout #1
+This is the first step to understanding FizzBuzz.
+
+Your inputs: a positive integer, n, greater than or equal to one. n is provided, you have NO CONTROL over its value.
+
+Your expected output is an array of positive integers from 1 to n (inclusive).
+
+Your job is to write an algorithm that gets you from the input to the output.
+*/
+
+//result = [1, 2, ... n (inclusive)]
+//solution = n =< 1 | n
+
+function positiveNums(n) {
+  let numArr = [];
+  for (let i = 1; i <= n; i++) {
+    numArr.push(i);
+  }
+  return numArr;
+}
+
+//test-cases
+console.log(positiveNums(4), [1, 2, 3, 4]);
+console.log(positiveNums(1), [1]);
+console.log(positiveNums(5), [1, 2, 3, 4, 5]);
