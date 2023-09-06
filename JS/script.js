@@ -1523,3 +1523,33 @@ const equal2 = () => v3 - v1;
 const equal3 = () => v1 * v5;
 const equal4 = () => v4 / v5;
 const equal5 = () => v2 % v4;
+/*
+Question77 | ky8 | Dollars and Cents
+
+The company you work for has just been awarded a contract to build a payment gateway. In order to help move things along, you have volunteered to create a function that will take a float and return the amount formatting in dollars and cents.
+
+39.99 becomes $39.99
+
+The rest of your team will make sure that the argument is sanitized before being passed to your function although you will need to account for adding trailing zeros if they are missing (though you won't have to worry about a dangling period).
+
+Examples:
+
+3 needs to become $3.00
+
+3.1 needs to become $3.10
+Good luck! Your team knows they can count on you!
+
+*/
+//return = $3.10
+//solution = .toFixed(2) | $ ${value}
+
+function dollarsAndCents(dollars) {
+  return `$ ${dollars.toFixed(2)}`;
+}
+
+//test-cases
+console.log(dollarsAndCents(3), "$3.00");
+console.log(dollarsAndCents(3.1), "$3.10");
+console.log(dollarsAndCents(3.0), "$3.00");
+console.log(dollarsAndCents(3.635485), "$3.63");
+console.log(dollarsAndCents(39.99), "$39.99");
