@@ -1553,3 +1553,24 @@ console.log(dollarsAndCents(3.1), "$3.10");
 console.log(dollarsAndCents(3.0), "$3.00");
 console.log(dollarsAndCents(3.635485), "$3.63");
 console.log(dollarsAndCents(39.99), "$39.99");
+/*
+Question79 | ky8 | FIXME: Replace all dots
+
+The code provided is supposed replace all the dots . in the specified String str with dashes -
+
+But it's not working properly.
+
+Task: Fix the bug so we can all go home early.
+Notes: String str will never be null.
+*/
+
+//return = -
+//solution = split('.') | join('-')
+
+function replaceDot(str) {
+  return str.split(".").join("-");
+}
+
+//test-cases
+console.log(replaceDot("Hello . World"), "Hello - World");
+console.log(replaceDot("red.river"), "red-river");
