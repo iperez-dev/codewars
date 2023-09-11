@@ -1600,3 +1600,29 @@ function dutyFreeBottles(normPrice, discount, holidayPrice) {
 //test-cases
 console.log(dutyFreeBottles(10, 10, 500), 500);
 console.log(dutyFreeBottles(12, 50, 1000), 166.66);
+/*
+Question81 | ky8 | Reversing Words in a String
+
+You need to write a function that reverses the words in a given string. A word can also fit an empty string. If this is not clear enough, here are some examples:
+
+As the input may have trailing spaces, you will also need to ignore unneccesary whitespace.
+
+Example (Input --> Output)
+
+"Hello World" --> "World Hello"
+"Hi There." --> "There. Hi"
+Happy coding!
+
+
+
+*/
+//return = string
+//solution = .split(' ') | .reverse( ) | .join(' ')
+
+function reverseStr(str) {
+  return str.split(" ").reverse().join(" ");
+}
+
+//test-cases
+console.log(reverseStr("Hello World"), "World Hello");
+console.log(reverseStr("Hi There."), "There. Hi");
