@@ -1626,3 +1626,23 @@ function reverseStr(str) {
 //test-cases
 console.log(reverseStr("Hello World"), "World Hello");
 console.log(reverseStr("Hi There."), "There. Hi");
+/*
+Question82 | ky8 | Grasshopper - Basic Function Fixer
+
+I created this function to add five to any number that was passed in to it and return the new value. It doesn't throw any errors but it returns the wrong number.
+
+Can you help me fix the function?
+
+*/
+
+//return = num
+//solution = num + 5
+
+function addFive(num) {
+  return num + 5;
+}
+
+//test-cases
+console.log(addFive(5), 10);
+console.log(addFive(2), 7);
+console.log(addFive(0), 5);
