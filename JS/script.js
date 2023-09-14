@@ -1668,3 +1668,23 @@ console.log(animalTails("leon", "n"), true);
 console.log(animalTails("zebra", "n"), false);
 console.log(animalTails("zebra", "a"), true);
 console.log(animalTails("monkey", "a"), false);
+/*
+Question84 | ky8 | Enumerable Magic #25 - Take the First N Elements
+
+Create a function that accepts a list/array and a number n, and returns a list/array of the first n elements from the list/array.
+
+*/
+
+//return = []
+//solution = for loop
+
+function firstN(arr, num) {
+  for (let i = 0; i <= num; i++) {
+    return arr[i];
+  }
+}
+
+//test-cases
+console.log(firstN([1, 2, 3, 4, 5], 3), [1, 2, 3]);
+console.log(firstN([1, 2, 3, 4, 5], 5), [1, 2, 3, 4, 5]);
+console.log(firstN(["a", "b", "c", "d", "c"], 2), ["a", "b"]);
