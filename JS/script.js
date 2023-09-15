@@ -1714,3 +1714,39 @@ function shortcut(str) {
 console.log(shortcut("Hello World"), "Hll Wrld");
 console.log(shortcut("codewars"), "cdwrs");
 console.log(shortcut("HELLO"), "HELLO");
+/*
+Question85 | ky8 | Count of positives / sum of negatives
+
+Given an array of integers.
+
+Return an array, where the first element is the count of positives numbers and the second element is sum of negative numbers. 0 is neither positive nor negative.
+
+If the input is an empty array or is null, return an empty array.
+
+Example
+For input [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15], you should return [10, -65].
+*/
+
+//return = [ countPositive, sumNegative]
+//solution = 0 is neither positive nor negative | empty array or is null, return an empty array | arr.filter((x) => x > 0) | arr.filter((x) => x < 0) | arr.filter((x) x === 0 || x === null ? '' )
+
+function positiveNegative(arr) {
+  if (arr === null || arr.length === 0) {
+    return "";
+  } else {
+    const positiveNum = arr.filter((elem) => elem > 0);
+    const countPositive = positiveNum.length;
+    const negativeNum = arr.filter((elem) => elem < 0);
+    const sumNegative = negativeNum.reduce((acc, elem) => acc + elem, 0);
+    return [countPositive, sumNegative];
+  }
+}
+
+//test-cases
+console.log(
+  positiveNegative([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15]),
+  [10, -65]
+);
+console.log(positiveNegative([2, 5, 7, 8, 0, -3, -5, -6]), [4, -14]);
+console.log(positiveNegative([null]), [""]);
+console.log(positiveNegative([""]), [""]);
