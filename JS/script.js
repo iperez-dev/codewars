@@ -1715,7 +1715,7 @@ console.log(shortcut("Hello World"), "Hll Wrld");
 console.log(shortcut("codewars"), "cdwrs");
 console.log(shortcut("HELLO"), "HELLO");
 /*
-Question85 | ky8 | Count of positives / sum of negatives
+Question86 | ky8 | Count of positives / sum of negatives
 
 Given an array of integers.
 
@@ -1750,3 +1750,27 @@ console.log(
 console.log(positiveNegative([2, 5, 7, 8, 0, -3, -5, -6]), [4, -14]);
 console.log(positiveNegative([null]), [""]);
 console.log(positiveNegative([""]), [""]);
+/*
+Question87 | ky8 | Is n divisible by x and y?
+
+Create a function that checks if a number n is divisible by two numbers x AND y. All inputs are positive, non-zero numbers.
+
+Examples:
+1) n =   3, x = 1, y = 3 =>  true because   3 is divisible by 1 and 3
+2) n =  12, x = 2, y = 6 =>  true because  12 is divisible by 2 and 6
+3) n = 100, x = 5, y = 3 => false because 100 is not divisible by 3
+4) n =  12, x = 7, y = 5 => false because  12 is neither divisible by 7 nor 5
+
+*/
+//return = boolean
+//solution =  if n/x || n/y = true : false
+
+function divisibleByTwo(n, x, y) {
+  return n % x === 0 || n % y === 0;
+}
+
+//test-cases
+console.log(divisibleByTwo(3, 1, 3), true);
+console.log(divisibleByTwo(12, 2, 6), true);
+console.log(divisibleByTwo(100, 7, 10), false);
+console.log(divisibleByTwo(12, 7, 5), false);
