@@ -1688,3 +1688,29 @@ function firstN(arr, num) {
 console.log(firstN([1, 2, 3, 4, 5], 3), [1, 2, 3]);
 console.log(firstN([1, 2, 3, 4, 5], 5), [1, 2, 3, 4, 5]);
 console.log(firstN(["a", "b", "c", "d", "c"], 2), ["a", "b"]);
+/*
+Question85 | ky8 | Vowel remover
+
+Create a function called shortcut to remove the lowercase vowels (a, e, i, o, u ) in a given string.
+
+Examples
+"hello"     -->  "hll"
+"codewars"  -->  "cdwrs"
+"goodbye"   -->  "gdby"
+"HELLO"     -->  "HELLO"
+don't worry about uppercase vowels
+y is not considered a vowel for this kata
+
+*/
+
+//return = []
+//solution = str.split['a, e, i, o, u'].join['']
+
+function shortcut(str) {
+  return str.split(/[aeiou]/).join("");
+}
+
+//test-cases
+console.log(shortcut("Hello World"), "Hll Wrld");
+console.log(shortcut("codewars"), "cdwrs");
+console.log(shortcut("HELLO"), "HELLO");
