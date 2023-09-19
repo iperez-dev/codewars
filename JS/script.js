@@ -1817,3 +1817,42 @@ function timeSinceMidnight(h, m, s) {
 console.log(timeSinceMidnight(0, 1, 1), 61000);
 console.log(timeSinceMidnight(0, 2, 1), 121000);
 console.log(timeSinceMidnight(54, 2, 1), `This is not a valid time`);
+
+/*
+Question89 | ky8 | A Needle in the Haystack
+
+Can you find the needle in the haystack?
+
+Write a function findNeedle() that takes an array full of junk but containing one "needle"
+
+After your function finds the needle it should return a message (as a string) that says:
+
+"found the needle at position " plus the index it found the needle, so:
+
+Example(Input --> Output)
+
+["hay", "junk", "hay", "hay", "moreJunk", "needle", "randomJunk"] --> "found the needle at position 5" 
+
+*/
+
+// return = `found the needle at position ${indx}`
+// solution = arr.indexOf()
+
+function findNeedle(arr) {
+  const indexOfNeedle = arr.indexOf("needle");
+  return `found the needle at position ${indexOfNeedle}`;
+}
+
+//test-cases
+console.log(
+  findNeedle(["hay", "junk", "hay", "hay", "moreJunk", "needle", "randomJunk"]),
+  `found the needle at position 5`
+);
+console.log(
+  findNeedle(["hay", "hay", "moreJunk", "needle", "randomJunk"]),
+  `found the needle at position 3`
+);
+console.log(
+  findNeedle(["needle", "randomJunk"]),
+  `found the needle at position 0`
+);
