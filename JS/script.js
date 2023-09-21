@@ -1856,3 +1856,31 @@ console.log(
   findNeedle(["needle", "randomJunk"]),
   `found the needle at position 0`
 );
+/*
+Question90 | ky8 | Abbreviate a Two Word Name
+
+Write a function to convert a name into initials. This kata strictly takes two words with one space in between them.
+
+The output should be two capital letters with a dot separating them.
+
+It should look like this:
+
+Sam Harris => S.H
+
+patrick feeney => P.F
+
+*/
+
+// return = str
+// solution = .split(' ') | charAt(0) | toUppercase | .join('.')
+
+function nameIntoInitials(str) {
+  const strToWord = str.split(" ");
+  const firstLetter = strToWord.map((elem) => elem.charAt(0));
+  const joinLetters = firstLetter.join(".").toUpperCase();
+  return joinLetters;
+}
+
+//test-cases
+console.log(nameIntoInitials(`Sam Harris`), `S.H`);
+console.log(nameIntoInitials(`patrick feeney`), `P.F`);
