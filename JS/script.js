@@ -1884,3 +1884,25 @@ function nameIntoInitials(str) {
 //test-cases
 console.log(nameIntoInitials(`Sam Harris`), `S.H`);
 console.log(nameIntoInitials(`patrick feeney`), `P.F`);
+/*
+Question91 | ky8 | Beginner - Lost Without a Map
+
+Given an array of integers, return a new array with each value doubled.
+
+For example:
+
+[1, 2, 3] --> [2, 4, 6]
+
+*/
+
+//return = arr
+//solution = .map((elem) => elem * 2)
+
+function doubledValue(arr) {
+  return arr.map((elem) => elem * 2);
+}
+
+//test-cases
+console.log(doubledValue([1, 2, 3]), [2, 4, 6]);
+console.log(doubledValue([22, 4, 15]), [44, 8, 30]);
+console.log(doubledValue([2, 5, 6]), [4, 10, 12]);
