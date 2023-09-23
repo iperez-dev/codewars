@@ -1906,3 +1906,20 @@ function doubledValue(arr) {
 console.log(doubledValue([1, 2, 3]), [2, 4, 6]);
 console.log(doubledValue([22, 4, 15]), [44, 8, 30]);
 console.log(doubledValue([2, 5, 6]), [4, 10, 12]);
+/*
+Question92 | ky8 | You Can't Code Under Pressure #1
+
+Code as fast as you can! You need to double the integer and return it.
+
+*/
+//return = num
+//solution = num * num
+
+function doubleInteger(num) {
+  return num * 2;
+}
+
+//test-cases
+console.log(doubleInteger(5), 10);
+console.log(doubleInteger(2), 4);
+console.log(doubleInteger(10), 20);
