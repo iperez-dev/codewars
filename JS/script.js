@@ -1923,3 +1923,29 @@ function doubleInteger(num) {
 console.log(doubleInteger(5), 10);
 console.log(doubleInteger(2), 4);
 console.log(doubleInteger(10), 20);
+/*
+Question93 | ky8 | Convert number to reversed array of digits
+
+Given a random non-negative number, you have to return the digits of this number within an array in reverse order.
+
+Example(Input => Output):
+35231 => [1,3,2,5,3]
+0 => [0] 
+num => 0
+*/
+
+//return = arr
+//solution = .toString() | .split('') | .map() | .reverse()
+
+function reverseArray(num) {
+  return String(num).split("").map(Number).reverse();
+}
+
+// 35231
+// '35231'
+// '3','5','2','3','1'
+// '1','3','2','5','3'
+// [13253]
+
+//test-cases
+console.log(reverseArray(35231), [1, 3, 2, 5, 3]);
