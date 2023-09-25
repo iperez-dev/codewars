@@ -1949,3 +1949,21 @@ function reverseArray(num) {
 
 //test-cases
 console.log(reverseArray(35231), [1, 3, 2, 5, 3]);
+/*
+Question94 | ky8 | Convert a Boolean to a String
+
+Implement a function which convert the given boolean value into its string representation.
+
+Note: Only valid inputs will be given.
+*/
+
+//return = 'true' || 'false'
+//solution =
+
+function booleanToString(boolean) {
+  return boolean.toString();
+}
+
+//test-cases
+console.log(booleanToString(true), "true");
+console.log(booleanToString(false), "false");
