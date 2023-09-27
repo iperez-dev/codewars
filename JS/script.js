@@ -2000,3 +2000,22 @@ console.log(mathOperations("+", 4, 7), 11);
 console.log(mathOperations("-", 15, 18), -3);
 console.log(mathOperations("*", 5, 5), 25);
 console.log(mathOperations("/", 49, 7), 7);
+/*
+Question96 | ky8 | Returning Strings
+
+Make a function that will return a greeting statement that uses an input; your program should return, "Hello, <name> how are you doing today?".
+
+[Make sure you type the exact thing I wrote or the program may not execute properly]
+
+*/
+
+//return = str
+//solution =
+
+function greeting(input) {
+  return `Hello, ${input} how are you doing today?`;
+}
+
+//test-cases
+console.log(greeting("Rocio"), `Hello, Rocio how are you doing today?`);
+console.log(greeting("Sofia"), `Hello, Sofia how are you doing today?`);
