@@ -2019,3 +2019,61 @@ function greeting(input) {
 //test-cases
 console.log(greeting("Rocio"), `Hello, Rocio how are you doing today?`);
 console.log(greeting("Sofia"), `Hello, Sofia how are you doing today?`);
+/*
+Question97 | ky8 | Century From Year
+
+The first century spans from the year 1 up to and including the year 100, the second century - from the year 101 up to and including the year 200, etc.
+
+Task
+Given a year, return the century it is in.
+
+Examples
+1705 --> 18
+1900 --> 19
+1601 --> 17
+2000 --> 20
+
+*/
+
+//return = num
+//solution = 1-100 -> 1cen | 101-200 -> 2cen
+
+function returnCentury(year) {
+  return Math.ceil(year / 100);
+}
+
+//test-cases
+console.log(returnCentury(1705), 18);
+console.log(returnCentury(1900), 19);
+console.log(returnCentury(1601), 17);
+console.log(returnCentury(2000), 20);
+/*
+Question98 | ky8 | Keep Hydrated!
+
+Nathan loves cycling.
+
+Because Nathan knows it is important to stay hydrated, he drinks 0.5 litres of water per hour of cycling.
+
+You get given the time in hours and you need to return the number of litres Nathan will drink, rounded to the smallest value.
+
+For example:
+
+time = 3 ----> litres = 1
+
+time = 6.7---> litres = 3
+
+time = 11.8--> litres = 5
+
+*/
+//return = num
+//solution = 0.5 litres of water per hour | time in hours -> number of litres rounded to the smallest value. | Math.floor()
+
+function numberOfLiters(time) {
+  return Math.floor(time * 0.5);
+}
+
+//test-cases
+console.log(numberOfLiters(3), 1);
+console.log(numberOfLiters(6.7), 3);
+console.log(numberOfLiters(11.8), 5);
+console.log(numberOfLiters(110.8), 55);
