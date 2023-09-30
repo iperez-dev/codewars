@@ -2077,3 +2077,29 @@ console.log(numberOfLiters(3), 1);
 console.log(numberOfLiters(6.7), 3);
 console.log(numberOfLiters(11.8), 5);
 console.log(numberOfLiters(110.8), 55);
+/*
+Question99 | ky8 | Convert a String to a Number!
+
+We need a function that can transform a string into a number. What ways of achieving this do you know?
+
+Note: Don't worry, all inputs will be strings, and every string is a perfectly valid representation of an integral number.
+
+Examples
+"1234" --> 1234
+"605"  --> 605
+"1405" --> 1405
+"-7" --> -7
+
+*/
+
+//return = num
+//solution =
+
+function stringToNum(str) {
+  return Number(str);
+}
+
+//test-cases
+console.log(stringToNum("1234"), 1234);
+console.log(stringToNum("605"), 605);
+console.log(stringToNum("1405"), 1405);
