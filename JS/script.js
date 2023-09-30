@@ -1774,3 +1774,46 @@ console.log(divisibleByTwo(3, 1, 3), true);
 console.log(divisibleByTwo(12, 2, 6), true);
 console.log(divisibleByTwo(100, 7, 10), false);
 console.log(divisibleByTwo(12, 7, 5), false);
+/*
+Question88 | ky8 | Beginner Series #2 Clock
+
+Clock shows h hours, m minutes and s seconds after midnight.
+
+Your task is to write a function which returns the time since midnight in milliseconds.
+
+Example:
+h = 0
+m = 1
+s = 1
+
+result = 61000
+Input constraints:
+
+0 <= h <= 23
+0 <= m <= 59
+0 <= s <= 59
+
+*/
+//return = num
+//solution = 1sec -> 1000 milsec | 1min -> 60sec * 1000milsec | 1hr -> 60min * 60sec * 1000 milsec
+
+function timeSinceMidnight(h, m, s) {
+  if (h < 0 || h > 23) {
+    return ` ${(h, m, s)} is not a valid time`;
+  } else if (m < 0 || m > 59) {
+    return ` ${(h, m, s)} is not a valid time`;
+  } else if (s < 0 || s > 59) {
+    return ` ${(h, m, s)} is not a valid time`;
+  } else {
+    const secToMil = s * 1000;
+    const minToMil = m * 60 * 1000;
+    const hrToMill = h * 60 * 60 * 1000;
+
+    return hrToMill + minToMil + secToMil;
+  }
+}
+
+//test-cases
+console.log(timeSinceMidnight(0, 1, 1), 61000);
+console.log(timeSinceMidnight(0, 2, 1), 121000);
+console.log(timeSinceMidnight(54, 2, 1), `This is not a valid time`);
