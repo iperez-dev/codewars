@@ -2103,3 +2103,40 @@ function stringToNum(str) {
 console.log(stringToNum("1234"), 1234);
 console.log(stringToNum("605"), 605);
 console.log(stringToNum("1405"), 1405);
+/*
+Question100 | ky8 | Remove String Spaces
+
+Write a function that removes the spaces from the string, then return the resultant string.
+
+Examples:
+
+Input -> Output
+"8 j 8   mBliB8g  imjB8B8  jl  B" -> "8j8mBliB8gimjB8B8jlB"
+"8 8 Bi fk8h B 8 BB8B B B  B888 c hl8 BhB fd" -> "88Bifk8hB8BB8BBBB888chl8BhBfd"
+"8aaaaa dddd r     " -> "8aaaaaddddr"
+
+*/
+//return = str
+//solution = .split('') | .filter((elem) => elem !== ' ') | .join('') |
+// split('') | join(/' '/)
+
+function removeSpaces(str) {
+  return str.split(" ").join("");
+}
+
+//test-cases
+console.log(
+  removeSpaces("8 j 8   mBliB8g  imjB8B8  jl  B"),
+  "8j8mBliB8gimjB8B8jlB"
+);
+console.log(
+  removeSpaces("8 8 Bi fk8h B 8 BB8B B B  B888 c hl8 BhB fd"),
+  "88Bifk8hB8BB8BBBB888chl8BhBfd"
+);
+console.log(removeSpaces("8aaaaa dddd r     "), "8aaaaaddddr");
+/*
+Question101 | ky7-ky6 | 
+
+
+
+*/
