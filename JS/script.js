@@ -2135,8 +2135,25 @@ console.log(
 );
 console.log(removeSpaces("8aaaaa dddd r     "), "8aaaaaddddr");
 /*
-Question101 | ky7-ky6 | 
+Question101 | ky7 | Vowel Count
 
+Return the number (count) of vowels in the given string.
 
+We will consider a, e, i, o, u as vowels for this Kata (but not y).
+
+The input string will only consist of lower case letters and/or spaces.
 
 */
+
+//return = num
+//solution = .split('') | .filter((elem) elem === 'a', 'e', 'i', 'o', 'u' ) | arr.length
+
+function numberVowels(str) {
+  const vowels = ["a", "e", "i", "o", "u"];
+  return str.split("").filter((elem) => vowels.includes(elem)).length;
+}
+
+//test-cases
+console.log(numberVowels("a, e, f, s, o, d, a"), 4);
+console.log(numberVowels("d, a"), 1);
+console.log(numberVowels("a, e, f, s, o, d, a, a, o, i, e"), 8);
