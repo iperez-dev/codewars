@@ -2157,3 +2157,36 @@ function numberVowels(str) {
 console.log(numberVowels("a, e, f, s, o, d, a"), 4);
 console.log(numberVowels("d, a"), 1);
 console.log(numberVowels("a, e, f, s, o, d, a, a, o, i, e"), 8);
+/*
+Question102 | ky7 | Disemvowel Trolls
+
+Trolls are attacking your comment section!
+
+A common way to deal with this situation is to remove all of the vowels from the trolls' comments, neutralizing the threat.
+
+Your task is to write a function that takes a string and return a new string with all vowels removed.
+
+For example, the string "This website is for losers LOL!" would become "Ths wbst s fr lsrs LL!".
+
+Note: for this kata y isn't considered a vowel.
+
+*/
+
+//return = str
+
+//solution = .split("").filter((elem) => !vowels).join()
+function removeVowels(str) {
+  const vowels = ["a", "e", "i", "o", "u"];
+  return str
+    .split("")
+    .filter((elem) => !vowels.includes(elem))
+    .join("");
+}
+
+//test-cases
+console.log(removeVowels("hello james"), `hll jms`);
+console.log(removeVowels("nice to meet you"), `nc t mt y`);
+console.log(
+  removeVowels("This website is for losers LOL!"),
+  `Ths wbst s fr lsrs LL!`
+);
