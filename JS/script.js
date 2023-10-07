@@ -2251,3 +2251,27 @@ function HighestAndLower(str) {
 console.log(HighestAndLower("1 2 3 4 5"), "5 1");
 console.log(HighestAndLower("1 2 -3 4 5"), "5 -3");
 console.log(HighestAndLower("1 9 3 4 -5"), "9 -5");
+/*
+Question105 | ky7 | Descending Order
+
+Your task is to make a function that can take any non-negative integer as an argument and return it with its digits in descending order. Essentially, rearrange the digits to create the highest possible number.
+
+Examples:
+Input: 42145 Output: 54421
+
+Input: 145263 Output: 654321
+
+Input: 123456789 Output: 987654321
+
+*/
+//return = num
+//solution =
+
+function desendingOrder(num) {
+  return String(num).split("").map(Number).sort().reverse().join("");
+}
+
+//test-cases
+console.log(desendingOrder(42145), 54421);
+console.log(desendingOrder(145263), 654321);
+console.log(desendingOrder(123456789), 987654321);
