@@ -70,12 +70,6 @@ const fruits = ["apple", "banana", "orange", "grape", "kiwi"];
 fruits.splice(2, 2);
 console.log(fruits);
 // Output: ["apple", "banana", "kiwi"]
-Explanation: In this example, we use splice() to add the elements "grape" and "kiwi" at index 1 of the fruits array. The second argument 0 specifies that no elements are to be removed, only elements are added at the specified index.
-
-const fruits = ["apple", "banana", "orange", "grape", "kiwi"];
-fruits.splice(2, 2);
-console.log(fruits);
-// Output: ["apple", "banana", "kiwi"]
 Explanation: In this example, we use splice() to remove two elements starting from index 2 of the fruits array. As a result, "orange" and "grape" are removed from the array.
 
 const fruits = ["apple", "banana", "orange"];
@@ -284,5 +278,14 @@ finds the binary representation for numThree
 ---
 
 
+ARRAYS METHODS
+
+
+.pop() //takes out last element
+.push() //adds last element
+.shift() //takes out elem at the beg
+.unshift() //adds an elem at the beg
+.concat() // concat two arrays tog
+---
 
 */
