@@ -2341,3 +2341,41 @@ function filterStr(arr) {
 console.log(filterStr([1, 2, "a", "b"]), [1, 2]);
 console.log(filterStr([1, "a", "b", 0, 15]), [1, 0, 15]);
 console.log(filterStr([1, 2, "aasf", "1", "123", 123]), [1, 2, 123]);
+/*
+Question108 | ky7 | Exes and Ohs
+
+Check to see if a string has the same amount of 'x's and 'o's. The method must return a boolean and be case insensitive. The string can contain any char.
+
+Examples input/output:
+
+XO("ooxx") => true
+XO("xooxx") => false
+XO("ooxXm") => true
+XO("zpzpzpp") => true // when no 'x' and 'o' is present should return true
+XO("zzoo") => false
+
+*/
+
+//return = boolean
+//pseudo-code = toLowercase | str.split() | .filter((elem) => elem === o) | .filter((elem) => elem === x) | if else
+
+function sameXthanO(str) {
+  const splitStr = str.toLowerCase().split("");
+  const strO = splitStr.filter((elem) => elem === "o");
+  const strX = splitStr.filter((elem) => elem === "x");
+
+  // if (strO.length === strX.length) {
+  //   return true;
+  // } else {
+  //   return false;
+  // }
+
+  return strO.length === strX.length;
+}
+
+//test-cases
+console.log(sameXthanO("ooxx"), true);
+console.log(sameXthanO("xooxx"), false);
+console.log(sameXthanO("ooxXm"), true);
+console.log(sameXthanO("zpzpzpp"), true); // when no 'x' and 'o' is present should return true
+console.log(sameXthanO("zzoo"), false); // when no 'x' and 'o' is present should return true
