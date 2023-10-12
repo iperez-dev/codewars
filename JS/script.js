@@ -2379,3 +2379,32 @@ console.log(sameXthanO("xooxx"), false);
 console.log(sameXthanO("ooxXm"), true);
 console.log(sameXthanO("zpzpzpp"), true); // when no 'x' and 'o' is present should return true
 console.log(sameXthanO("zzoo"), false); // when no 'x' and 'o' is present should return true
+/*
+Question108 | ky7 | Jaden Casing Strings
+
+For simplicity, you'll have to capitalize each word, check out how contractions are expected to be in the example below.
+
+Your task is to convert strings to how they would be written by Jaden Smith. The strings are actual quotes from Jaden Smith, but they are not capitalized in the same way he originally typed them.
+
+Example:
+
+Not Jaden-Cased: "How can mirrors be real if our eyes aren't real"
+Jaden-Cased:     "How Can Mirrors Be Real If Our Eyes Aren't Real"
+
+*/
+//return = str
+//pseudo-code = str.split(' ').toUpperCase(.charAt(0)).join('')
+
+function capitalizeFirstLetter(str) {
+  const splitStr = str.split(" ");
+  const firstLetter = splitStr.map(
+    (elem) => elem[0].toUpperCase() + elem.slice(1)
+  );
+  return firstLetter.join(" ");
+}
+
+//test-cases
+console.log(
+  capitalizeFirstLetter("How can mirrors be real if our eyes aren't real"),
+  "How Can Mirrors Be Real If Our Eyes Aren't Real"
+);
