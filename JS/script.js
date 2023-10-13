@@ -2380,7 +2380,7 @@ console.log(sameXthanO("ooxXm"), true);
 console.log(sameXthanO("zpzpzpp"), true); // when no 'x' and 'o' is present should return true
 console.log(sameXthanO("zzoo"), false); // when no 'x' and 'o' is present should return true
 /*
-Question108 | ky7 | Jaden Casing Strings
+Question109 | ky7 | Jaden Casing Strings
 
 For simplicity, you'll have to capitalize each word, check out how contractions are expected to be in the example below.
 
@@ -2408,3 +2408,21 @@ console.log(
   capitalizeFirstLetter("How can mirrors be real if our eyes aren't real"),
   "How Can Mirrors Be Real If Our Eyes Aren't Real"
 );
+/*
+Question110 | ky7 | Shortest Word
+
+Simple, given a string of words, return the length of the shortest word(s).
+
+String will never be empty and you do not need to account for different data types.
+
+*/
+//return = num
+//pseudo-code = .split(' ').map((elem) => elem.length).sort().charAt(0)
+
+function shortestWord(str) {
+  const arrLength = str.split(" ").map((elem) => elem.length);
+  return Math.min(...arrLength);
+}
+
+//test-cases
+console.log(shortestWord("Hello world, JavaScript is fun"), 2);
