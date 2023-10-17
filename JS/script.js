@@ -2427,8 +2427,34 @@ function shortestWord(str) {
 //test-cases
 console.log(shortestWord("Hello world, JavaScript is fun"), 2);
 /*
-Question111 | ky7 | Complementary DNA
+Question111 | ky7 | Credit Card Mask
 
+Your task is to write a function maskify, which changes all but the last four characters into '#'.
 
+Examples (input --> output):
+"4556364607935616" --> "############5616"
+     "64607935616" -->      "#######5616"
+               "1" -->                "1"
+                "" -->                 ""
+
+// "What was the name of your first pet?"
+"Skippy" --> "##ippy"
+"Nananananananananananananananana Batman!" --> "####################################man!"
 
 */
+//pseudo-code = change all char for # -> !arr.length - 1,2,3,4
+
+function maskify(str) {
+  if (str.length <= 4) {
+    return str;
+  }
+  return "#".repeat(str.length - 4) + str.slice(-4);
+}
+
+// Test cases
+console.log(maskify("4556364607935616")); // Expected: ############5616
+console.log(maskify("64607935616")); // Expected: #######5616
+console.log(maskify("1")); // Expected: 1
+console.log(maskify("")); // Expected:
+console.log(maskify("Skippy")); // Expected: ##ippy
+console.log(maskify("Nananananananananananananananana Batman!")); // Expected: ####################################man!
