@@ -2499,7 +2499,7 @@ Your function should only return a number, not the explanation about how you get
 */
 
 //return = num
-//pseudo-code = a - b | + || - | sum of all nums b/ a && b inclusive | if a = b return a
+//pseudo-code = + || - | sum of all nums b/ a && b inclusive | if a = b return a
 //solution = for loop
 
 function sumNumBetween(num1, num2) {
