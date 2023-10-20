@@ -2459,7 +2459,7 @@ console.log(maskify(""));
 console.log(maskify("Skippy"));
 console.log(maskify("Nananananananananananananananana Batman!"));
 /*
-Question111 | ky7 | Sum of two lowest positive integers
+Question112 | ky7 | Sum of two lowest positive integers
 
 Create a function that returns the sum of the two lowest positive numbers given an array of minimum 4 positive integers. No floats or non-positive integers will be passed.
 
@@ -2480,3 +2480,44 @@ function sumTwoLower(arr) {
 //test-cases
 console.log(sumTwoLower([19, 5, 42, 2, 77]), 7);
 console.log(sumTwoLower([10, 343445353, 3453445, 3453545353453]), 3453455);
+/*
+Question113 | ky7 | Beginner Series #3 Sum of Numbers
+
+Given two integers a and b, which can be positive or negative, find the sum of all the integers between and including them and return it. If the two numbers are equal return a or b.
+
+Note: a and b are not ordered!
+
+Examples (a, b) --> output (explanation)
+(1, 0) --> 1 (1 + 0 = 1)
+(1, 2) --> 3 (1 + 2 = 3)
+(0, 1) --> 1 (0 + 1 = 1)
+(1, 1) --> 1 (1 since both are same)
+(-1, 0) --> -1 (-1 + 0 = -1)
+(-1, 2) --> 2 (-1 + 0 + 1 + 2 = 2)
+Your function should only return a number, not the explanation about how you get that number.
+
+*/
+
+//return = num
+//pseudo-code = a - b | + || - | sum of all nums b/ a && b inclusive | if a = b return a
+//solution = for loop
+
+function sumNumBetween(num1, num2) {
+  if (num1 > num2) {
+    [num1, num2] = [num2, num1];
+  }
+  let sum = 0;
+
+  for (let i = num1; i <= num2; i++) {
+    sum += i;
+  }
+  return sum;
+}
+
+//test-cases
+console.log(sumNumBetween(1, 0), 1);
+console.log(sumNumBetween(1, 2), 3);
+console.log(sumNumBetween(0, 1), 1);
+console.log(sumNumBetween(1, 1), 1);
+console.log(sumNumBetween(-1, 0), -1);
+console.log(sumNumBetween(-1, 2), 2);

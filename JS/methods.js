@@ -193,10 +193,18 @@ Allows you to pass all the elements of an array as individual arguments to a fun
 function shortestWord(str) {
   const arrLength = str.split(" ").map((elem) => elem.length);
   return Math.min(...arrLength);
-  
+
 *str.repeat()
 let str = "abc";
 let repeatedStr = str.repeat(3);
 console.log(repeatedStr);  // Outputs: abcabcabc
 }
+
+*for loops
+  let sum = 0;
+
+  for (let i = num1; i <= num2; i++) {
+    sum += i;
+  }
+  return sum;
 */
