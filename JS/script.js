@@ -2521,3 +2521,32 @@ console.log(sumNumBetween(0, 1), 1);
 console.log(sumNumBetween(1, 1), 1);
 console.log(sumNumBetween(-1, 0), -1);
 console.log(sumNumBetween(-1, 2), 2);
+/*
+Question114 | ky7 | 
+
+Make a program that filters a list of strings and returns a list with only your friends name in it.
+
+If a name has exactly 4 letters in it, you can be sure that it has to be a friend of yours! Otherwise, you can be sure he's not...
+
+Ex: Input = ["Ryan", "Kieran", "Jason", "Yous"], Output = ["Ryan", "Yous"]
+
+i.e.
+
+friend ["Ryan", "Kieran", "Mark"] `shouldBe` ["Ryan", "Mark"]
+Note: keep the original order of the names in the output.
+
+*/
+//return = str
+//pseudo-code = arr['str'] === 4 letters
+//solution = const fourLetters = arr.filter((elem) => elem.length === 4)
+
+function filterFriends(arr) {
+  return arr.filter((elem) => elem.length === 4);
+}
+
+//test-cases
+console.log(filterFriends(["Ryan", "Kieran", "Jason", "Yous"]), [
+  "Ryan",
+  "Yous",
+]);
+console.log(filterFriends(["Ryan", "Kieran", "Mark"]), ["Ryan", "Mark"]);
