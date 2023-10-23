@@ -2522,7 +2522,7 @@ console.log(sumNumBetween(1, 1), 1);
 console.log(sumNumBetween(-1, 0), -1);
 console.log(sumNumBetween(-1, 2), 2);
 /*
-Question114 | ky7 | 
+Question114 | ky7 | Friend or Foe?
 
 Make a program that filters a list of strings and returns a list with only your friends name in it.
 
@@ -2550,3 +2550,39 @@ console.log(filterFriends(["Ryan", "Kieran", "Jason", "Yous"]), [
   "Yous",
 ]);
 console.log(filterFriends(["Ryan", "Kieran", "Mark"]), ["Ryan", "Mark"]);
+/*
+Question115 | ky7 | Categorize New Member
+
+To be a senior, a member must be at least 55 years old and have a handicap greater than 7. In this croquet club, handicaps range from -2 to +26; the better the player the lower the handicap.
+
+Input
+Input will consist of a list of pairs. Each pair contains information for a single potential member. Information consists of an integer for the person's age and an integer for the person's handicap.
+
+Output
+Output will consist of a list of string values (Open or Senior) stating whether the respective member is to be placed in the senior or open category.
+
+Example
+input =  [[18, 20], [45, 2], [61, 12], [37, 6], [21, 21], [78, 9]]
+output = ["Open", "Open", "Senior", "Open", "Open", "Senior"]
+
+*/
+//return = arr
+//pseudo-code = senior >= 55years && handicap > 7 [age, handicap]
+//solution = if arr[0] >= 55 && arr[1] > 7 ? "Senior" : "Open"
+
+function openOrSenior(arr) {
+  return arr.map((elem) => (elem[0] >= 55 && elem[1] > 7 ? "Senior" : "Open"));
+}
+
+//test-cases
+console.log(
+  openOrSenior([
+    [18, 20],
+    [45, 2],
+    [61, 12],
+    [37, 6],
+    [21, 21],
+    [78, 9],
+  ]),
+  ["Open", "Open", "Senior", "Open", "Open", "Senior"]
+);
