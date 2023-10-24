@@ -35,13 +35,6 @@ const arr2 = [3, 4];
 const combinedArray = arr1.concat(arr2);
 console.log(combinedArray); // Output: [1, 2, 3, 4]
 
-*6. slice()          
-Extracts a section of an array and returns a new array
-const numbers = [1, 2, 3, 4, 5];
-const slicedArray = numbers.slice(1, 4);
-console.log(slicedArray); // Output: [2, 3, 4]
-In this example, the slice() method is used to extract a subarray from the original array. It starts at index 1 (inclusive) and goes up to index 4 (exclusive), so it includes elements at indexes 1, 2, and 3.
-
 *6. split('')       
 Split a string into an array of substrings based on a specified separator.
 const sentence = "Hello, how are you today?";
@@ -51,6 +44,13 @@ console.log(words); // Output: ["Hello,", "how", "are", "you", "today?"]
 const fruits = "apple,banana,orange";
 const fruitArray = fruits.split(",");
 console.log(fruitArray); // Output: ["apple", "banana", "orange"]
+
+*6. slice()          
+Extracts a section of an array and returns a new array
+const numbers = [1, 2, 3, 4, 5];
+const slicedArray = numbers.slice(1, 4);
+console.log(slicedArray); // Output: [2, 3, 4]
+In this example, the slice() method is used to extract a subarray from the original array. It starts at index 1 (inclusive) and goes up to index 4 (exclusive), so it includes elements at indexes 1, 2, and 3.
 
 *7. splice()         
 Adds or removes elements from an array at a specified index
@@ -154,9 +154,8 @@ console.log(result); // Output: 5 - (4 - (3 - (2 - 1))) = 3
 
 *20. sort()          
 Sorts the elements of an array in place and returns the sorted array.
-const fruits = ["banana", "apple", "orange", "grape"];
-fruits.sort();
-console.log(fruits); // Output: ["apple", "banana", "grape", "orange"]
+numbers.sort((a, b) => a - b); // Ascending
+numbers.sort((a, b) => b - a); // Descending
 
 *21. reverse()       
 Reverses the order of the elements in an array in place   
@@ -194,5 +193,10 @@ Allows you to pass all the elements of an array as individual arguments to a fun
 function shortestWord(str) {
   const arrLength = str.split(" ").map((elem) => elem.length);
   return Math.min(...arrLength);
+  
+*str.repeat()
+let str = "abc";
+let repeatedStr = str.repeat(3);
+console.log(repeatedStr);  // Outputs: abcabcabc
 }
 */

@@ -2452,9 +2452,31 @@ function maskify(str) {
 }
 
 // Test cases
-console.log(maskify("4556364607935616")); // Expected: ############5616
-console.log(maskify("64607935616")); // Expected: #######5616
-console.log(maskify("1")); // Expected: 1
-console.log(maskify("")); // Expected:
-console.log(maskify("Skippy")); // Expected: ##ippy
-console.log(maskify("Nananananananananananananananana Batman!")); // Expected: ####################################man!
+console.log(maskify("4556364607935616"));
+console.log(maskify("64607935616"));
+console.log(maskify("1"));
+console.log(maskify(""));
+console.log(maskify("Skippy"));
+console.log(maskify("Nananananananananananananananana Batman!"));
+/*
+Question111 | ky7 | Sum of two lowest positive integers
+
+Create a function that returns the sum of the two lowest positive numbers given an array of minimum 4 positive integers. No floats or non-positive integers will be passed.
+
+For example, when an array is passed like [19, 5, 42, 2, 77], the output should be 7.
+
+[10, 343445353, 3453445, 3453545353453] should return 3453455.
+
+*/
+//return = num
+//pseudo-code = [num[0] + num [1] ]
+//solution = arr.sort().slice(0, 2).reduce((a, b) a + b, 0)
+
+function sumTwoLower(arr) {
+  const sortedArr = arr.sort((a, b) => a - b);
+  return sortedArr.slice(0, 2).reduce((a, b) => a + b, 0);
+}
+
+//test-cases
+console.log(sumTwoLower([19, 5, 42, 2, 77]), 7);
+console.log(sumTwoLower([10, 343445353, 3453445, 3453545353453]), 3453455);
