@@ -215,4 +215,9 @@ console.log(result); // Output: 8 (2 * 2 * 2 = 8)
 *Math.sqrt()
 const result = Math.sqrt(16);
 console.log(result); // Output: 4
+
+*str.length
+function printer_error(str) {
+  return str.length;
+}
 */
