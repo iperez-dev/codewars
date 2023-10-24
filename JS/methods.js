@@ -207,4 +207,12 @@ console.log(repeatedStr);  // Outputs: abcabcabc
     sum += i;
   }
   return sum;
+
+*Math.pow()
+const result = Math.pow(2, 3);
+console.log(result); // Output: 8 (2 * 2 * 2 = 8)
+
+*Math.sqrt()
+const result = Math.sqrt(16);
+console.log(result); // Output: 4
 */
