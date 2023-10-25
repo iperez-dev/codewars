@@ -220,4 +220,6 @@ console.log(result); // Output: 4
 function printer_error(str) {
   return str.length;
 }
+*REGEX
+
 */
