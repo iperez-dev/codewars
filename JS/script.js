@@ -2744,3 +2744,26 @@ function nb_year(p0, percent, aug, p) {
 // Example usage:
 console.log(nb_year(1500, 5, 100, 5000)); // Output: 15
 console.log(nb_year(1500000, 2.5, 10000, 2000000)); // Output: 10
+/*
+Question119 | ky7 | Is this a triangle?
+
+Implement a function that accepts 3 integer values a, b, c. The function should return true if a triangle can be built with the sides of given length and false in any other case.
+
+(In this case, all triangles must have surface greater than 0 to be accepted).
+
+*/
+
+//return = boolean
+//pseudo-code = a + b + c = 360 true : false
+
+function isTriangle(a, b, c) {
+  if (a + b > c && a + c > b && b + c > a) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+console.log(isTriangle(3, 4, 5)); // Output: true
+console.log(isTriangle(1, 1, 3)); // Output: false
+console.log(isTriangle(0, 1, 2)); // Output: false
