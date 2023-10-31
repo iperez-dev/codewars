@@ -4,9 +4,11 @@ ARRAYS METHODS
 
 *1. push()           
 Adds one or more elements to the end of an array
+//Ex1
 const numbers = [1, 2, 3];
 numbers.push(4, 5);
 console.log(numbers); // Output: [1, 2, 3, 4, 5]
+
 
 *2. pop()            
 Removes the last element from an array and returns that element.
@@ -44,6 +46,11 @@ console.log(words); // Output: ["Hello,", "how", "are", "you", "today?"]
 const fruits = "apple,banana,orange";
 const fruitArray = fruits.split(",");
 console.log(fruitArray); // Output: ["apple", "banana", "orange"]
+
+*6. Spread Operator (... word)
+const word = "Hello World";
+const spreadOperator = [...word];
+console.log(spreadOperator);
 
 *6. slice()          
 Extracts a section of an array and returns a new array
@@ -194,13 +201,13 @@ function shortestWord(str) {
   const arrLength = str.split(" ").map((elem) => elem.length);
   return Math.min(...arrLength);
 
-*str.repeat()
+*27.str.repeat()
 let str = "abc";
 let repeatedStr = str.repeat(3);
 console.log(repeatedStr);  // Outputs: abcabcabc
 }
 
-*for loops
+*28.for loops
   let sum = 0;
 
   for (let i = num1; i <= num2; i++) {
@@ -208,18 +215,39 @@ console.log(repeatedStr);  // Outputs: abcabcabc
   }
   return sum;
 
-*Math.pow()
+*29.Math.pow()
 const result = Math.pow(2, 3);
 console.log(result); // Output: 8 (2 * 2 * 2 = 8)
 
-*Math.sqrt()
+*30.Math.sqrt()
 const result = Math.sqrt(16);
 console.log(result); // Output: 4
 
-*str.length
+*31.str.length
 function printer_error(str) {
   return str.length;
 }
-*REGEX
+!PRACTICE
+*1 pop() 
+Modify / takes the last element at the end of the array
+*2 push()
+Modify / adds an element at the end of the array
+*3 shift()
+Modify / takes out the first element of the array
+*4 unshift()
+Modify / adds an element at the beginnig of the array
+*5 concat(arr2)
+No Modify / adds two arrays together
+---------------------------------------------------------------
+*6 split("")
+No Modify / splits words onto individual characters, words, or sentences
+*7 spread operator[...word]
+No Modify / spreads out the elements of a string into single characters in an array
+*8 silce(2, 8)
+No Modify / creates a subarray from the specified segment (2 inclusive - 8 exclusive) by the element index
+*9 splice(2, 0, apple)
+Modify / Adds apple at index 2 of the array. 0 means that no elements are removed.
+---------------------------------------------------------------
+
 
 */

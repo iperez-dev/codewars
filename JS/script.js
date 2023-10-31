@@ -2676,3 +2676,9 @@ function validPin(str) {
 console.log(validPin("1234"), true);
 console.log(validPin("12345"), false);
 console.log(validPin("a234"), false);
+/*
+Question118 | ky7 | 
+
+
+
+*/
