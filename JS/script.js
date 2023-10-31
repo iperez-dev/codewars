@@ -2677,8 +2677,27 @@ console.log(validPin("1234"), true);
 console.log(validPin("12345"), false);
 console.log(validPin("a234"), false);
 /*
-Question118 | ky7 | 
+Question118 | ky7 | Binary Addition
 
+Implement a function that adds two numbers together and returns their sum in binary. The conversion can be done before, or after the addition.
 
+The binary number returned should be a string.
+
+Examples:(Input1, Input2 --> Output (explanation)))
+
+1, 1 --> "10" (1 + 1 = 2 in decimal or 10 in binary)
+5, 9 --> "1110" (5 + 9 = 14 in decimal or 1110 in binary)
 
 */
+//return = str
+//pseudo-code = num1 + num2 = num3 -> binary -> to string
+//solution =
+
+function sumToBinary(num1, num2) {
+  const numThree = num1 + num2;
+  return numThree.toString(2);
+}
+
+//test-cases
+console.log(sumToBinary(1, 1), "10");
+console.log(sumToBinary(5, 9), "1110");

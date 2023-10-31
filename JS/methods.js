@@ -227,6 +227,10 @@ console.log(result); // Output: 4
 function printer_error(str) {
   return str.length;
 }
+*.toString()
+converts a number to string
+*numThree.toString(2)
+finds the binary representation for numThree
 !PRACTICE
 *1 pop() 
 Modify / takes the last element at the end of the array
