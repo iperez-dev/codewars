@@ -2745,7 +2745,7 @@ function nb_year(p0, percent, aug, p) {
 console.log(nb_year(1500, 5, 100, 5000)); // Output: 15
 console.log(nb_year(1500000, 2.5, 10000, 2000000)); // Output: 10
 /*
-Question119 | ky7 | Is this a triangle?
+Question120 | ky7 | Is this a triangle?
 
 Implement a function that accepts 3 integer values a, b, c. The function should return true if a triangle can be built with the sides of given length and false in any other case.
 

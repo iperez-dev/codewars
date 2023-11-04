@@ -243,14 +243,7 @@ Modify / adds an element at the beginnig of the array
 *5 concat(arr2)
 No Modify / adds two arrays together
 ---------------------------------------------------------------
-*6 split("")
-No Modify / splits words onto individual characters, words, or sentences
-*7 spread operator[...word]
-No Modify / spreads out the elements of a string into single characters in an array
-*8 silce(2, 8)
-No Modify / creates a subarray from the specified segment (2 inclusive - 8 exclusive) by the element index
-*9 splice(2, 0, apple)
-Modify / Adds apple at index 2 of the array. 0 means that no elements are removed.
+
 ---------------------------------------------------------------
 
 
