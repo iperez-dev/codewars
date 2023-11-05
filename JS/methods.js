@@ -9,7 +9,6 @@ const numbers = [1, 2, 3];
 numbers.push(4, 5);
 console.log(numbers); // Output: [1, 2, 3, 4, 5]
 
-
 *2. pop()            
 Removes the last element from an array and returns that element.
 const fruits = ["apple", "banana", "orange"];
@@ -47,19 +46,19 @@ const fruits = "apple,banana,orange";
 const fruitArray = fruits.split(",");
 console.log(fruitArray); // Output: ["apple", "banana", "orange"]
 
-*6. Spread Operator (... word)
+*7. Spread Operator (... word)
 const word = "Hello World";
 const spreadOperator = [...word];
 console.log(spreadOperator);
 
-*6. slice()          
+*8. slice()          
 Extracts a section of an array and returns a new array
 const numbers = [1, 2, 3, 4, 5];
 const slicedArray = numbers.slice(1, 4);
 console.log(slicedArray); // Output: [2, 3, 4]
 In this example, the slice() method is used to extract a subarray from the original array. It starts at index 1 (inclusive) and goes up to index 4 (exclusive), so it includes elements at indexes 1, 2, and 3.
 
-*7. splice()         
+*9. splice()         
 Adds or removes elements from an array at a specified index
 const fruits = ["apple", "banana", "orange"];
 fruits.splice(1, 0, "grape", "kiwi");
@@ -85,37 +84,57 @@ console.log(fruits);
 // Output: ["apple", "strawberry", "watermelon", "orange"]
 Explanation: Here, we use splice() to replace the element at index 1 ("banana") with "strawberry" and "watermelon". The second argument 1 specifies that one element should be removed before adding the new elements.
 
-*8. indexOf()        
-Searches for a specified element in an array and returns the index of the first occurrence 
+*10. indexOf()        
+Searches for a specified element in an array and returns the index of the first occurrence.
+
 const colors = ["red", "blue", "green", "blue"];
 const index = colors.indexOf("blue");
 console.log(index); // Output: 1
 
-*9. lastIndexOf()    
-Searches for a specified element in an array and returns the index of the last occurrence
+*11. lastIndexOf()    
+Searches for a specified element in an array and returns the index of the last occurrence.
+
 const colors = ["red", "blue", "green", "blue"];
 const lastIndex = colors.lastIndexOf("blue");
 console.log(lastIndex); // Output: 3
 
-*10. find()          
+*12. find()          
 Returns the value of the first element in an array that satisfies a provided testing function.
+
 const numbers = [1, 2, 3, 4, 5];
 const evenNumber = numbers.find((num) => num % 2 === 0);
 console.log(evenNumber); // Output: 2
 
-*11. findIndex()     
-Returns the index of the first element in an array that satisfies a provided testing function
+const names = ["Alice", "Bob", "Charlie", "David", "Eve", "Frank"];
+const result = names.find((name) => name[0] === "C");
+console.log(result); // Output: "Charlie"
+
+const numbers = [-2, -1, 0, 3, 5, -6, 8, 9];
+const positiveNumber = numbers.find((num) => num > 0);
+console.log(positiveNumber); // Output: 3
+
+const emails = ["user1@example.com", "user2@gmail.com", "user3@example.com", "user4@gmail.com"];
+const gmailEmail = emails.find(email => email.includes("@gmail.com"));
+console.log(gmailEmail); // Output: "user2@gmail.com"
+
+const words = ["apple", "banana", "cherry", "date", "elderberry", "fig"];
+const longWord = words.find(word => word.length > 5);
+console.log(longWord); // Output: "banana"
+
+*13. findIndex()     
+Returns the index of the first element in an array that satisfies a provided testing function.
+
 const numbers = [1, 2, 3, 4, 5];
 const indexOfEven = numbers.findIndex((num) => num % 2 === 0);
 console.log(indexOfEven); // Output: 1
 
-*12. includes()      
+*14. includes()      
 Determines whether an array includes a certain element
 const fruits = ["apple", "banana", "orange"];
 const hasBanana = fruits.includes("banana");
 console.log(hasBanana); // Output: true
 
-*13. filter()        
+*15. filter()        
 Creates a new array with all elements that pass the provided testing function
 const numbers = [1, 2, 3, 4, 5];
 const evenNumbers = numbers.filter((num) => num % 2 === 0);
@@ -194,13 +213,6 @@ const numbers = [1, 2, 3, 4, 5];
 const isNumbersArray = Array.isArray(numbers);
 console.log(isNumbersArray); // Output: true
 
-*26. ...arr
-Spread Operator
-Allows you to pass all the elements of an array as individual arguments to a function or to create a new array by spreading the elements of an existing array.
-function shortestWord(str) {
-  const arrLength = str.split(" ").map((elem) => elem.length);
-  return Math.min(...arrLength);
-
 *27.str.repeat()
 let str = "abc";
 let repeatedStr = str.repeat(3);
@@ -243,8 +255,39 @@ Modify / adds an element at the beginnig of the array
 *5 concat(arr2)
 No Modify / adds two arrays together
 ---------------------------------------------------------------
-
+*6 split('')
+convert a string to an array of letters, words, or sentences
+*7 spread operator(...str)
+convert a string to an array of letters, words, or sentences
+*8 slice(1, 3)
+removes all elements by their indexes outside the indicated range (inclusive, exclusive)
+*9 splice(1, 0, 'hello', 'Kathy')
 ---------------------------------------------------------------
+*10. indexOf()        
+Finds the index of the first occurance of a given element in an array
 
+*11. lastIndexOf()    
+Finds the index of the last occurance of an element on an array
 
+*12. find()          
+Returns the value of the first element in an array that satisfies a provided testing function.
+const numbers = [1, 2, 3, 4, 5];
+const evenNumber = numbers.find((num) => num % 2 === 0);
+console.log(evenNumber); // Output: 2
+
+*13. findIndex()     
+Returns the index of the first element in an array that satisfies a provided testing function
+const numbers = [1, 2, 3, 4, 5];
+const indexOfEven = numbers.findIndex((num) => num % 2 === 0);
+console.log(indexOfEven); // Output: 1
+
+*14. includes()      
+Determines whether an array includes a certain element
+const fruits = ["apple", "banana", "orange"];
+const hasBanana = fruits.includes("banana");
+console.log(hasBanana); // Output: true
+---------------------------------------------------------------
 */
+
+// *12. find()
+// Returns the value of the first element in an array that satisfies a provided testing function.
