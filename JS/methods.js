@@ -134,17 +134,40 @@ const fruits = ["apple", "banana", "orange"];
 const hasBanana = fruits.includes("banana");
 console.log(hasBanana); // Output: true
 
-*15. filter()        
+*15. map()           
+Creates a new array by applying a provided function to each element of the original array.
+const numbers = [1, 2, 3, 4, 5];
+const squaredNumbers = numbers.map((num) => num * num);
+console.log(squaredNumbers); // Output: [1, 4, 9, 16, 25]
+
+*16. filter()        
 Creates a new array with all elements that pass the provided testing function
 const numbers = [1, 2, 3, 4, 5];
 const evenNumbers = numbers.filter((num) => num % 2 === 0);
 console.log(evenNumbers); // Output: [2, 4]
 
-*14. map()           
-Creates a new array by applying a provided function to each element of the original array.
+*17. reduce()        
+Reduces the array to a single value by applying a function to each element and accumulating the result.
 const numbers = [1, 2, 3, 4, 5];
-const squaredNumbers = numbers.map((num) => num * num);
-console.log(squaredNumbers); // Output: [1, 4, 9, 16, 25]
+const sum = numbers.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+console.log(sum); // Output: 15
+
+*18. reduceRight()   
+Similar to reduce(), but processes the array from right to left
+const numbers = [1, 2, 3, 4, 5];
+const result = numbers.reduceRight((accumulator, currentValue) => accumulator - currentValue);
+console.log(result); // Output: 5 - (4 - (3 - (2 - 1))) = 3
+
+*19. sort()          
+Sorts the elements of an array in place and returns the sorted array.
+numbers.sort((a, b) => a - b); // Ascending
+numbers.sort((a, b) => b - a); // Descending
+
+*20. reverse()       
+Reverses the order of the elements in an array in place   
+const numbers = [1, 2, 3, 4, 5];
+numbers.reverse();
+console.log(numbers); // Output: [5, 4, 3, 2, 1]
 
 *15. forEach()       
 Executes a provided function once for each array element.
@@ -166,28 +189,7 @@ const numbers = [2, 4, 6, 8, 10];
 const allEven = numbers.every((num) => num % 2 === 0);
 console.log(allEven); // Output: true
 
-*18. reduce()        
-Reduces the array to a single value by applying a function to each element and accumulating the result.
-const numbers = [1, 2, 3, 4, 5];
-const sum = numbers.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
-console.log(sum); // Output: 15
 
-*19. reduceRight()   
-Similar to reduce(), but processes the array from right to left
-const numbers = [1, 2, 3, 4, 5];
-const result = numbers.reduceRight((accumulator, currentValue) => accumulator - currentValue);
-console.log(result); // Output: 5 - (4 - (3 - (2 - 1))) = 3
-
-*20. sort()          
-Sorts the elements of an array in place and returns the sorted array.
-numbers.sort((a, b) => a - b); // Ascending
-numbers.sort((a, b) => b - a); // Descending
-
-*21. reverse()       
-Reverses the order of the elements in an array in place   
-const numbers = [1, 2, 3, 4, 5];
-numbers.reverse();
-console.log(numbers); // Output: [5, 4, 3, 2, 1]
 
 *22. fill()          
 Fills all the elements of an array with a static value  
@@ -244,50 +246,34 @@ converts a number to string
 *numThree.toString(2)
 finds the binary representation for numThree
 !PRACTICE
-*1 pop() 
-Modify / takes the last element at the end of the array
-*2 push()
-Modify / adds an element at the end of the array
-*3 shift()
-Modify / takes out the first element of the array
-*4 unshift()
-Modify / adds an element at the beginnig of the array
-*5 concat(arr2)
-No Modify / adds two arrays together
----------------------------------------------------------------
-*6 split('')
-convert a string to an array of letters, words, or sentences
-*7 spread operator(...str)
-convert a string to an array of letters, words, or sentences
-*8 slice(1, 3)
-removes all elements by their indexes outside the indicated range (inclusive, exclusive)
-*9 splice(1, 0, 'hello', 'Kathy')
----------------------------------------------------------------
-*10. indexOf()        
-Finds the index of the first occurance of a given element in an array
 
-*11. lastIndexOf()    
-Finds the index of the last occurance of an element on an array
 
-*12. find()          
-Returns the value of the first element in an array that satisfies a provided testing function.
-const numbers = [1, 2, 3, 4, 5];
-const evenNumber = numbers.find((num) => num % 2 === 0);
-console.log(evenNumber); // Output: 2
+.pop()
+.push()
+.shift()
+.unshift()
+---
+.split('')
+.slice(2, 4)
+.splice(1, 0, 'hello')
+[..arr]
+---
+.indexOf()
+.lastIndexOf()
+.find()
+.findIndex()
+---
+.map()
+.filter()
+.reduce()
+.reduceRight()
+---
 
-*13. findIndex()     
-Returns the index of the first element in an array that satisfies a provided testing function
-const numbers = [1, 2, 3, 4, 5];
-const indexOfEven = numbers.findIndex((num) => num % 2 === 0);
-console.log(indexOfEven); // Output: 1
 
-*14. includes()      
-Determines whether an array includes a certain element
-const fruits = ["apple", "banana", "orange"];
-const hasBanana = fruits.includes("banana");
-console.log(hasBanana); // Output: true
----------------------------------------------------------------
+
+
+
+
+
+
 */
-
-// *12. find()
-// Returns the value of the first element in an array that satisfies a provided testing function.
