@@ -2767,3 +2767,29 @@ function isTriangle(a, b, c) {
 console.log(isTriangle(3, 4, 5)); // Output: true
 console.log(isTriangle(1, 1, 3)); // Output: false
 console.log(isTriangle(0, 1, 2)); // Output: false
+/*
+Question121 | ky7 | Is this a triangle?
+
+Returns true if the first argument(string) passed in ends with the 2nd argument (also a string).
+
+Examples:
+
+solution('abc', 'bc') // returns true
+solution('abc', 'd') // returns false
+
+*/
+
+//return = boolean
+//pseudo-code = 1st ends = 2nd -> true
+//solution = const str2Length = str2.length | const str1Ending = slice (str1.length - str2Length, str1.length) | if (str2Length === str1Ending)
+
+function equalEnding(str1, str2) {
+  const str2Length = str2.length;
+  const str1Ending = str1.slice(str1.length - str2Length, str1.length);
+  return str1Ending === str2;
+}
+
+//test-cases
+console.log(equalEnding("abc", "bc"), true);
+console.log(equalEnding("abc", "d"), false);
+console.log(equalEnding("hello world", "d"), true);
