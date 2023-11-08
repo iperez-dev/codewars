@@ -189,8 +189,6 @@ const numbers = [2, 4, 6, 8, 10];
 const allEven = numbers.every((num) => num % 2 === 0);
 console.log(allEven); // Output: true
 
-
-
 *22. fill()          
 Fills all the elements of an array with a static value  
 const numbers = [1, 2, 3, 4, 5];
@@ -215,7 +213,7 @@ const numbers = [1, 2, 3, 4, 5];
 const isNumbersArray = Array.isArray(numbers);
 console.log(isNumbersArray); // Output: true
 
-*27.str.repeat()
+*27. str.repeat()
 let str = "abc";
 let repeatedStr = str.repeat(3);
 console.log(repeatedStr);  // Outputs: abcabcabc
@@ -229,15 +227,25 @@ console.log(repeatedStr);  // Outputs: abcabcabc
   }
   return sum;
 
-*29.Math.pow()
+*29 str.endsWith()
+
+
+
+
+
+
+
+  ------
+
+* Math.pow()
 const result = Math.pow(2, 3);
 console.log(result); // Output: 8 (2 * 2 * 2 = 8)
 
-*30.Math.sqrt()
+* Math.sqrt()
 const result = Math.sqrt(16);
 console.log(result); // Output: 4
 
-*31.str.length
+*str.length
 function printer_error(str) {
   return str.length;
 }
@@ -245,35 +253,34 @@ function printer_error(str) {
 converts a number to string
 *numThree.toString(2)
 finds the binary representation for numThree
-!PRACTICE
 
+!PRACTICE
 
 .pop()
 .push()
 .shift()
 .unshift()
 ---
-.split('')
-.slice(2, 4)
-.splice(1, 0, 'hello')
-[..arr]
+.split()
+.slice(1, 4)
+.splice(1, 4, 'hello')
+[...arr]
 ---
 .indexOf()
 .lastIndexOf()
 .find()
 .findIndex()
 ---
-.map()
-.filter()
-.reduce()
+.map((elem) => elem + 3)
+.filter((elem) => elem + 1)
+.reduce((acc, value) => acc + value, 0)
 .reduceRight()
 ---
-
-
-
-
-
-
-
+.sort((a, b) => a - b)          
+.reverse()       
+.forEach(elem => console.log(elem * 3))       
+.every((num) => num % 2 === 0)
+.some((num) => num % 2 === 0)
+---
 
 */
