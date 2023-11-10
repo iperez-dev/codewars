@@ -2913,3 +2913,23 @@ function oddOrEven(arr) {
 
 console.log(oddOrEven([1, 2, 3]));
 console.log(oddOrEven([]));
+
+/*
+Question125 | ky7 | Reverse words
+
+Complete the function that accepts a string parameter, and reverses each word in the string. All spaces in the string should be retained.
+
+*/
+function reverseWords(str) {
+  const wordsAndSpaces = str.split(/(\s+)/);
+
+  const reversed = wordsAndSpaces.map((element) =>
+    element.trim().length > 0 ? element.split("").reverse().join("") : element
+  );
+
+  return reversed.join("");
+}
+
+console.log(reverseWords("Hello world"));
+console.log(reverseWords("a b c d"));
+console.log(reverseWords("double  spaced  words"));
