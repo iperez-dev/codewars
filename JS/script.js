@@ -2821,3 +2821,67 @@ Please keep in mind that the test cases ensure that the number of people in the 
 The second value in the first pair in the array is 0, since the bus is empty in the first bus stop.
 
 */
+//return = num
+//edge-cases =
+//pseudo-code = on the bus : off the bus | return number of people who are still on the bus | people in the bus is always >= 0
+//solution = const onTheBus = .map((arr) => arr[0]) | onTheBus.reduce((acc, value) => acc + value, 0) | same for off the bus | onTheBus + offTheBus = finalNumber | finalNumber >= 0 ? finalNumber : error
+
+function peopleStillOnTheBus(stops) {
+  //people on the bus
+  const firstIndex = stops.map((stop) => stop[0]);
+  const onTheBus = firstIndex.reduce((acc, value) => acc + value);
+  //people off the bus
+  const secondIndex = stops.map((stop) => stop[1]);
+  const offTheBus = secondIndex.reduce((acc, value) => acc + value);
+  //final number of people
+  const peopleOnTheBus = onTheBus - offTheBus;
+  return peopleOnTheBus >= 0 ? peopleOnTheBus : "error";
+}
+
+//test-case1
+//Stop1   [3, 0]
+//Stop2   [4, 2]
+//Stop3   [3, 3]
+//Stop4   [0, 2]
+//On the bus = 3
+//result >= 0 : error
+console.log(
+  peopleStillOnTheBus([
+    [3, 0],
+    [4, 2],
+    [3, 3],
+    [0, 2],
+  ])
+); //3
+
+//test-case2
+//Stop1   [3, 0]
+//Stop2   [4, 2]
+//Stop3   [3, 3]
+//Stop4   [0, 5]
+//On the bus = 0
+//result >= 0 : error
+console.log(
+  peopleStillOnTheBus([
+    [3, 0],
+    [4, 2],
+    [3, 3],
+    [0, 5],
+  ])
+); //0
+
+//test-case3
+//Stop1   [3, 0]
+//Stop2   [4, 2]
+//Stop3   [3, 3]
+//Stop4   [0, 6]
+//On the bus = -1
+//result >= 0 : error
+console.log(
+  peopleStillOnTheBus([
+    [3, 0],
+    [4, 2],
+    [3, 3],
+    [0, 6],
+  ])
+); //error
