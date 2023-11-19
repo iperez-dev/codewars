@@ -3117,3 +3117,30 @@ function countNumbersWithoutFive(start, end) {
 // Example usage
 console.log(countNumbersWithoutFive(1, 9)); // Output: 8
 console.log(countNumbersWithoutFive(4, 17)); // Output: 12
+
+/*
+Question132 | ky7 | Find the stray number
+
+You are given an odd-length array of integers, in which all of them are the same, except for one single number.
+
+Complete the method which accepts such an array, and returns that single different number.
+
+The input array will always be valid! (odd-length >= 3)
+
+Examples
+[1, 1, 2] ==> 2
+[17, 17, 3, 17, 17, 17, 17] ==> 3
+
+*/
+
+function findUniqueNumber(numbers) {
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] !== numbers[i - 1] && numbers[i] !== numbers[i + 1]) {
+      return numbers[i];
+    }
+  }
+}
+
+// Example usage
+console.log(findUniqueNumber([1, 1, 2])); // Output: 2
+console.log(findUniqueNumber([17, 17, 3, 17, 17, 17, 17])); // Output: 3
