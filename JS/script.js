@@ -3229,3 +3229,28 @@ function calculateYears(P, I, T, D) {
 // Example usage
 let yearsNeeded = calculateYears(1000, 0.05, 0.18, 1100);
 console.log(yearsNeeded); // Output will be 3
+
+/*
+Question135 | ky7 | Sort array by string length
+
+Write a function that takes an array of strings as an argument and returns a sorted array containing the same strings, ordered from shortest to longest.
+
+For example, if this array were passed as an argument:
+
+["Telescopes", "Glasses", "Eyes", "Monocles"]
+
+Your function would return the following array:
+
+["Eyes", "Glasses", "Monocles", "Telescopes"]
+
+All of the strings in the array passed to your function will be different lengths, so you will not have to decide how to order multiple strings of the same length.
+
+*/
+
+function sortByLength(arr) {
+  return arr.sort((a, b) => a.length - b.length);
+}
+
+// Example usage
+let sortedArray = sortByLength(["Telescopes", "Glasses", "Eyes", "Monocles"]);
+console.log(sortedArray); // Output will be ["Eyes", "Glasses", "Monocles", "Telescopes"]
