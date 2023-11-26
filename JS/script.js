@@ -3258,11 +3258,24 @@ console.log(sortedArray); // Output will be ["Eyes", "Glasses", "Monocles", "Tel
 /*
 Question136 | ky7 | Breaking chocolate problem
 
-Your task is to split the chocolate bar of given dimension n x m into small squares. Each square is of size 1x1 and unbreakable. Implement a function that will return minimum number of breaks needed.
+Take an integer n (n >= 0) and a digit d (0 <= d <= 9) as an integer.
 
-For example if you are given a chocolate bar of size 2 x 1 you can split it to single squares in just one break, but for size 3 x 1 you must do two breaks.
+Square all numbers k (0 <= k <= n) between 0 and n.
 
-If input data is invalid you should return 0 (as in no breaks are needed if we do not have any chocolate to split). Input will always be a non-negative integer.
+Count the numbers of digits d used in the writing of all the k**2.
+
+Implement the function taking n and d as parameters and returning this count.
+
+Examples:
+n = 10, d = 1 
+the k*k are 0, 1, 4, 9, 16, 25, 36, 49, 64, 81, 100
+We are using the digit 1 in: 1, 16, 81, 100. The total count is then 4.
+
+The function, when given n = 25 and d = 1 as argument, should return 11 since
+the k*k that contain the digit 1 are:
+1, 16, 81, 100, 121, 144, 169, 196, 361, 441.
+So there are 11 digits 1 for the squares of numbers between 0 and 25.
+Note that 121 has twice the digit 1.
 
 */
 
@@ -3278,3 +3291,45 @@ function breakChocolate(n, m) {
 console.log(breakChocolate(2, 1)); // Output: 1
 console.log(breakChocolate(3, 1)); // Output: 2
 console.log(breakChocolate(0, 1)); // Output: 0 (invalid input)
+
+/*
+Question138 | ky7 | Count the Digit
+
+Take an integer n (n >= 0) and a digit d (0 <= d <= 9) as an integer.
+
+Square all numbers k (0 <= k <= n) between 0 and n.
+
+Count the numbers of digits d used in the writing of all the k**2.
+
+Implement the function taking n and d as parameters and returning this count.
+
+Examples:
+n = 10, d = 1 
+the k*k are 0, 1, 4, 9, 16, 25, 36, 49, 64, 81, 100
+We are using the digit 1 in: 1, 16, 81, 100. The total count is then 4.
+
+The function, when given n = 25 and d = 1 as argument, should return 11 since
+the k*k that contain the digit 1 are:
+1, 16, 81, 100, 121, 144, 169, 196, 361, 441.
+So there are 11 digits 1 for the squares of numbers between 0 and 25.
+Note that 121 has twice the digit 1.
+
+*/
+
+function countDigitInSquares(n, d) {
+  let count = 0;
+  for (let k = 0; k <= n; k++) {
+    let square = k * k;
+    let squareStr = square.toString();
+    for (let char of squareStr) {
+      if (char === d.toString()) {
+        count++;
+      }
+    }
+  }
+  return count;
+}
+
+// Example usage:
+console.log(countDigitInSquares(10, 1)); // should return 4
+console.log(countDigitInSquares(25, 1)); // should return 11
