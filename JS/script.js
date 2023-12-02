@@ -3477,3 +3477,27 @@ console.log(sequenceSum(2, 2, 2)); // Output: 2
 console.log(sequenceSum(2, 6, 2)); // Output: 12
 console.log(sequenceSum(1, 5, 1)); // Output: 15
 console.log(sequenceSum(1, 5, 3)); // Output: 5
+
+/*
+Question143 | ky7 | Sort Numbers
+
+Finish the solution so that it sorts the passed in array of numbers. If the function passes in an empty array or null/nil value then it should return an empty array.
+
+For example:
+
+solution([1, 2, 10, 50, 5]); // should return [1,2,5,10,50]
+solution(null); // should return []
+
+*/
+
+function solution(arr) {
+  if (!arr || arr.length === 0) {
+    return [];
+  }
+
+  return arr.sort((a, b) => a - b);
+}
+
+// Test the function
+console.log(solution([1, 2, 10, 50, 5])); // should return [1,2,5,10,50]
+console.log(solution(null)); // should return []
