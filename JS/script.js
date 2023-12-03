@@ -3501,3 +3501,27 @@ function solution(arr) {
 // Test the function
 console.log(solution([1, 2, 10, 50, 5])); // should return [1,2,5,10,50]
 console.log(solution(null)); // should return []
+/*
+Question144 | ky7 | Remove anchor from URL
+
+Complete the function/method so that it returns the url with anything after the anchor (#) removed.
+
+Examples
+"www.codewars.com#about" --> "www.codewars.com"
+"www.codewars.com?page=1" -->"www.codewars.com?page=1"
+
+*/
+
+function removeAnchor(url) {
+  const anchorIndex = url.indexOf("#");
+
+  if (anchorIndex === -1) {
+    return url;
+  }
+
+  return url.substring(0, anchorIndex);
+}
+
+// Testing the function with examples
+console.log(removeAnchor("www.codewars.com#about")); // Expected output: "www.codewars.com"
+console.log(removeAnchor("www.codewars.com?page=1")); // Expected output: "www.codewars.com?page=1"
