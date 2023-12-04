@@ -3525,3 +3525,55 @@ function removeAnchor(url) {
 // Testing the function with examples
 console.log(removeAnchor("www.codewars.com#about")); // Expected output: "www.codewars.com"
 console.log(removeAnchor("www.codewars.com?page=1")); // Expected output: "www.codewars.com?page=1"
+/*
+Question144 | ky7 | Remove anchor from URL
+
+Complete the function/method so that it returns the url with anything after the anchor (#) removed.
+
+Examples
+"www.codewars.com#about" --> "www.codewars.com"
+"www.codewars.com?page=1" -->"www.codewars.com?page=1"
+
+*/
+
+function removeAnchor(url) {
+  const anchorIndex = url.indexOf("#");
+
+  if (anchorIndex === -1) {
+    return url;
+  }
+
+  return url.substring(0, anchorIndex);
+}
+
+// Testing the function with examples
+console.log(removeAnchor("www.codewars.com#about")); // Expected output: "www.codewars.com"
+console.log(removeAnchor("www.codewars.com?page=1")); // Expected output: "www.codewars.com?page=1"
+/*
+Question145 | ky7 | Anagram Detection
+
+An anagram is the result of rearranging the letters of a word to produce a new word (see wikipedia).
+
+Note: anagrams are case insensitive
+
+Complete the function to return true if the two arguments given are anagrams of each other; return false otherwise.
+
+Examples
+"foefet" is an anagram of "toffee"
+
+"Buckethead" is an anagram of "DeathCubeK"
+
+*/
+
+function isAnagram(str1, str2) {
+  // Convert both strings to lower case and sort the characters
+  const sortedStr1 = str1.toLowerCase().split("").sort().join("");
+  const sortedStr2 = str2.toLowerCase().split("").sort().join("");
+
+  // Compare the sorted strings
+  return sortedStr1 === sortedStr2;
+}
+
+// Testing the function with examples
+console.log(isAnagram("foefet", "toffee")); // Expected output: true
+console.log(isAnagram("Buckethead", "DeathCubeK")); // Expected output: true
