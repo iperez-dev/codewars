@@ -3577,3 +3577,23 @@ function isAnagram(str1, str2) {
 // Testing the function with examples
 console.log(isAnagram("foefet", "toffee")); // Expected output: true
 console.log(isAnagram("Buckethead", "DeathCubeK")); // Expected output: true
+/*
+Question146 | ky7 | Find the capitals
+
+Instructions
+Write a function that takes a single string (word) as argument. The function must return an ordered list containing the indexes of all capital letters in the string.
+
+Example (Input --> Output)
+"CodEWaRs" --> [0,3,4,6]
+
+*/
+
+function capitalLetterIndices(word) {
+  return word
+    .split("") // Convert the string into an array of characters
+    .map((char, index) => (char >= "A" && char <= "Z" ? index : null)) // Map to index or null
+    .filter((index) => index !== null); // Filter out the null values
+}
+
+// Testing the function with the example
+console.log(capitalLetterIndices("CodEWaRs")); // Expected output: [0, 3, 4, 6]
