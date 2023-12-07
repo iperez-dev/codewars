@@ -3597,3 +3597,19 @@ function capitalLetterIndices(word) {
 
 // Testing the function with the example
 console.log(capitalLetterIndices("CodEWaRs")); // Expected output: [0, 3, 4, 6]
+/*
+Question146 | ky7 | Small enough? - Beginner
+
+You will be given an array and a limit value. You must check that all values in the array are below or equal to the limit value. If they are, return true. Else, return false.
+
+You can assume all values in the array are numbers.
+
+*/
+
+function checkArrayAgainstLimit(arr, limit) {
+  return arr.every((value) => value <= limit);
+}
+
+// Testing the function with examples
+console.log(checkArrayAgainstLimit([10, 20, 30], 40)); // Expected output: true
+console.log(checkArrayAgainstLimit([10, 20, 30], 25)); // Expected output: false
