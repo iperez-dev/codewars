@@ -3598,7 +3598,7 @@ function capitalLetterIndices(word) {
 // Testing the function with the example
 console.log(capitalLetterIndices("CodEWaRs")); // Expected output: [0, 3, 4, 6]
 /*
-Question146 | ky7 | Small enough? - Beginner
+Question147 | ky7 | Small enough? - Beginner
 
 You will be given an array and a limit value. You must check that all values in the array are below or equal to the limit value. If they are, return true. Else, return false.
 
@@ -3613,3 +3613,33 @@ function checkArrayAgainstLimit(arr, limit) {
 // Testing the function with examples
 console.log(checkArrayAgainstLimit([10, 20, 30], 40)); // Expected output: true
 console.log(checkArrayAgainstLimit([10, 20, 30], 25)); // Expected output: false
+/*
+Question148 | ky7 | Reverse Letter
+
+Task
+Given a string str, reverse it and omit all non-alphabetic characters.
+
+Example
+For str = "krishan", the output should be "nahsirk".
+
+For str = "ultr53o?n", the output should be "nortlu".
+
+Input/Output
+[input] string str
+A string consists of lowercase latin letters, digits and symbols.
+
+[output] a string
+
+*/
+
+function reverseLetter(str) {
+  // Filter out non-alphabetical characters and reverse the remaining characters
+  return str
+    .match(/[a-zA-Z]/g)
+    .reverse()
+    .join("");
+}
+
+// Testing the function with examples
+console.log(reverseLetter("krishan")); // Expected output: "nahsirk"
+console.log(reverseLetter("ultr53o?n")); // Expected output: "nortlu"
