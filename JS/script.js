@@ -3643,3 +3643,28 @@ function reverseLetter(str) {
 // Testing the function with examples
 console.log(reverseLetter("krishan")); // Expected output: "nahsirk"
 console.log(reverseLetter("ultr53o?n")); // Expected output: "nortlu"
+/*
+Question149 | ky7 | Summing a number's digits
+
+Write a function named sumDigits which takes a number as input and returns the sum of the absolute value of each of the number's decimal digits.
+
+For example: (Input --> Output)
+
+10 --> 1
+99 --> 18
+-32 --> 5
+Let's assume that all numbers in the input will be integer values.
+
+*/
+
+function sumDigits(number) {
+  return Math.abs(number)
+    .toString() // Convert the number to a string
+    .split("") // Split into individual characters
+    .reduce((sum, digit) => sum + parseInt(digit), 0); // Sum the digits
+}
+
+// Testing the function with examples
+console.log(sumDigits(10)); // Expected output: 1
+console.log(sumDigits(99)); // Expected output: 18
+console.log(sumDigits(-32)); // Expected output: 5
