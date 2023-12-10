@@ -3668,3 +3668,32 @@ function sumDigits(number) {
 console.log(sumDigits(10)); // Expected output: 1
 console.log(sumDigits(99)); // Expected output: 18
 console.log(sumDigits(-32)); // Expected output: 5
+/*
+Question150 | ky7 | Maximum Multiple
+
+Task
+Given a Divisor and a Bound , Find the largest integer N , Such That ,
+
+Conditions :
+N is divisible by divisor
+
+N is less than or equal to bound
+
+N is greater than 0.
+
+Input >> Output Examples
+divisor = 2, bound = 7 ==> return (6)
+
+*/
+
+function maxMultiple(divisor, bound) {
+  // Starting from the bound, find the largest number that is divisible by the divisor
+  for (let i = bound; i > 0; i--) {
+    if (i % divisor === 0) {
+      return i;
+    }
+  }
+}
+
+// Testing the function with the example
+console.log(maxMultiple(2, 7)); // Expected output: 6
