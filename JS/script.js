@@ -3737,3 +3737,43 @@ console.log(checkExam(["a", "a", "b", "b"], ["a", "c", "b", "d"])); // Expected 
 console.log(checkExam(["a", "a", "c", "b"], ["a", "a", "b", ""])); // Expected output: 7
 console.log(checkExam(["a", "a", "b", "c"], ["a", "a", "b", "c"])); // Expected output: 16
 console.log(checkExam(["b", "c", "b", "a"], ["", "a", "a", "c"])); // Expected output: 0
+/*
+Question152 | ky7 | Fix string case
+
+In this Kata, you will be given a string that may have mixed uppercase and lowercase letters and your task is to convert that string to either lowercase only or uppercase only based on:
+
+make as few changes as possible.
+if the string contains equal number of uppercase and lowercase letters, convert the string to lowercase.
+For example:
+
+solve("coDe") = "code". Lowercase characters > uppercase. Change only the "D" to lowercase.
+solve("CODe") = "CODE". Uppercase characters > lowecase. Change only the "e" to uppercase.
+solve("coDE") = "code". Upper == lowercase. Change all to lowercase.
+
+*/
+
+function solve(str) {
+  let uppercaseCount = 0;
+  let lowercaseCount = 0;
+
+  // Count the uppercase and lowercase characters
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] === str[i].toUpperCase()) {
+      uppercaseCount++;
+    } else {
+      lowercaseCount++;
+    }
+  }
+
+  // Convert to the appropriate case
+  if (uppercaseCount > lowercaseCount) {
+    return str.toUpperCase();
+  } else {
+    return str.toLowerCase();
+  }
+}
+
+// Testing the function with examples
+console.log(solve("coDe")); // Expected output: "code"
+console.log(solve("CODe")); // Expected output: "CODE"
+console.log(solve("coDE")); // Expected output: "code"
