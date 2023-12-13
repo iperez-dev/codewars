@@ -3777,3 +3777,26 @@ function solve(str) {
 console.log(solve("coDe")); // Expected output: "code"
 console.log(solve("CODe")); // Expected output: "CODE"
 console.log(solve("coDE")); // Expected output: "code"
+/*
+Question153 | ky7 | Form The Minimum
+
+Task
+Given a list of digits, return the smallest number that could be formed from these digits, using the digits only once (ignore duplicates).
+
+Notes:
+Only positive integers will be passed to the function (> 0 ), no negatives or zeros.
+Input >> Output Examples
+minValue ({1, 3, 1})  ==> return (13)
+
+*/
+
+function minValue(digits) {
+  // Remove duplicates and sort the digits
+  let uniqueDigits = Array.from(new Set(digits)).sort();
+
+  // Concatenate the digits to form the number
+  return parseInt(uniqueDigits.join(""), 10);
+}
+
+// Testing the function with the example
+console.log(minValue([1, 3, 1])); // Expected output: 13
