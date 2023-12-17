@@ -3906,3 +3906,69 @@ function greatestSequence(digits) {
 // Testing the function with the examples
 console.log(greatestSequence("283910")); // Expected output: 83910
 console.log(greatestSequence("1234567890")); // Expected output: 67890
+/*
+Question157 | ky7 | Are the numbers in order?
+
+In this Kata, your function receives an array of integers as input. Your task is to determine whether the numbers are in ascending order. An array is said to be in ascending order if there are no two adjacent integers where the left integer exceeds the right integer in value.
+
+For the purposes of this Kata, you may assume that all inputs are valid, i.e. arrays containing only integers.
+
+Note that an array of 0 or 1 integer(s) is automatically considered to be sorted in ascending order since all (zero) adjacent pairs of integers satisfy the condition that the left integer does not exceed the right integer in value.
+
+For example:
+
+inAscOrder([1,2,4,7,19]); // returns true
+inAscOrder([1,2,3,4,5]); // returns true
+inAscOrder([1,6,10,18,2,4,20]); // returns false
+inAscOrder([9,8,7,6,5,4,3,2,1]); // returns false because the numbers are in DESCENDING order
+
+*/
+
+function inAscOrder(arr) {
+  for (let i = 0; i < arr.length - 1; i++) {
+    if (arr[i] > arr[i + 1]) {
+      return false;
+    }
+  }
+  return true;
+}
+
+// Testing the function with examples
+console.log(inAscOrder([1, 2, 4, 7, 19])); // Expected output: true
+console.log(inAscOrder([1, 2, 3, 4, 5])); // Expected output: true
+console.log(inAscOrder([1, 6, 10, 18, 2, 4, 20])); // Expected output: false
+console.log(inAscOrder([9, 8, 7, 6, 5, 4, 3, 2, 1])); // Expected output: false
+/*
+Question158 | ky7 | The Coupon Code
+
+Story
+Your online store likes to give out coupons for special occasions. Some customers try to cheat the system by entering invalid codes or using expired coupons.
+
+Task
+Your mission:
+Write a function called checkCoupon which verifies that a coupon code is valid and not expired.
+
+A coupon is no more valid on the day AFTER the expiration date. All dates will be passed as strings in this format: "MONTH DATE, YEAR".
+
+Examples:
+checkCoupon("123", "123", "July 9, 2015", "July 9, 2015")  ===  true
+checkCoupon("123", "123", "July 9, 2015", "July 2, 2015")  ===  false
+
+*/
+
+function checkCoupon(enteredCode, correctCode, currentDate, expirationDate) {
+  // Check if the codes match
+  if (enteredCode !== correctCode) {
+    return false;
+  }
+
+  // Compare the current date and the expiration date
+  const current = new Date(currentDate);
+  const expiration = new Date(expirationDate);
+
+  return current <= expiration;
+}
+
+// Testing the function with examples
+console.log(checkCoupon("123", "123", "July 9, 2015", "July 9, 2015")); // Expected output: true
+console.log(checkCoupon("123", "123", "July 9, 2015", "July 2, 2015")); // Expected output: false
