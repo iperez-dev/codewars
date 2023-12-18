@@ -3972,3 +3972,41 @@ function checkCoupon(enteredCode, correctCode, currentDate, expirationDate) {
 // Testing the function with examples
 console.log(checkCoupon("123", "123", "July 9, 2015", "July 9, 2015")); // Expected output: true
 console.log(checkCoupon("123", "123", "July 9, 2015", "July 2, 2015")); // Expected output: false
+/*
+Question159 | ky7 | 
+Sorted? yes? no? how?
+
+Complete the method which accepts an array of integers, and returns one of the following:
+
+"yes, ascending" - if the numbers in the array are sorted in an ascending order
+"yes, descending" - if the numbers in the array are sorted in a descending order
+"no" - otherwise
+You can assume the array will always be valid, and there will always be one correct answer.
+
+*/
+
+function isSortedAndHow(array) {
+  let isAscending = true;
+  let isDescending = true;
+
+  for (let i = 0; i < array.length - 1; i++) {
+    if (array[i] < array[i + 1]) {
+      isDescending = false;
+    } else if (array[i] > array[i + 1]) {
+      isAscending = false;
+    }
+  }
+
+  if (isAscending) {
+    return "yes, ascending";
+  } else if (isDescending) {
+    return "yes, descending";
+  } else {
+    return "no";
+  }
+}
+
+// Testing the function with examples
+console.log(isSortedAndHow([1, 2, 3, 4, 5])); // Expected output: "yes, ascending"
+console.log(isSortedAndHow([5, 4, 3, 2, 1])); // Expected output: "yes, descending"
+console.log(isSortedAndHow([1, 3, 2, 5, 4])); // Expected output: "no"
