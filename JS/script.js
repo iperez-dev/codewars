@@ -3973,8 +3973,7 @@ function checkCoupon(enteredCode, correctCode, currentDate, expirationDate) {
 console.log(checkCoupon("123", "123", "July 9, 2015", "July 9, 2015")); // Expected output: true
 console.log(checkCoupon("123", "123", "July 9, 2015", "July 2, 2015")); // Expected output: false
 /*
-Question159 | ky7 | 
-Sorted? yes? no? how?
+Question159 | ky7 | Sorted? yes? no? how?
 
 Complete the method which accepts an array of integers, and returns one of the following:
 
@@ -4010,3 +4009,74 @@ function isSortedAndHow(array) {
 console.log(isSortedAndHow([1, 2, 3, 4, 5])); // Expected output: "yes, ascending"
 console.log(isSortedAndHow([5, 4, 3, 2, 1])); // Expected output: "yes, descending"
 console.log(isSortedAndHow([1, 3, 2, 5, 4])); // Expected output: "no"
+/*
+Question160 | ky7 | Alphabet war
+
+There is a war and nobody knows - the alphabet war!
+There are two groups of hostile letters. The tension between left side letters and right side letters was too high and the war began.
+
+Task
+Write a function that accepts fight string consists of only small letters and return who wins the fight. When the left side wins return Left side wins!, when the right side wins return Right side wins!, in other case return Let's fight again!.
+
+The left side letters and their power:
+
+ w - 4
+ p - 3
+ b - 2
+ s - 1
+The right side letters and their power:
+
+ m - 4
+ q - 3
+ d - 2
+ z - 1
+The other letters don't have power and are only victims.
+
+Example
+alphabetWar("z");        //=> Right side wins!
+alphabetWar("zdqmwpbs"); //=> Let's fight again!
+alphabetWar("zzzzs");    //=> Right side wins!
+alphabetWar("wwwwwwz");  //=> Left side wins!
+
+*/
+
+function alphabetWar(fight) {
+  // Define the power of each letter for both sides
+  const leftSide = { w: 4, p: 3, b: 2, s: 1 };
+  const rightSide = { m: 4, q: 3, d: 2, z: 1 };
+
+  // Initialize total power of each side
+  let leftTotal = 0;
+  let rightTotal = 0;
+
+  // Calculate the total power of each side
+  for (const char of fight) {
+    if (leftSide[char]) {
+      leftTotal += leftSide[char];
+    } else if (rightSide[char]) {
+      rightTotal += rightSide[char];
+    }
+  }
+
+  // Determine the winner and return the appropriate message
+  if (leftTotal > rightTotal) {
+    return "Left side wins!";
+  } else if (rightTotal > leftTotal) {
+    return "Right side wins!";
+  } else {
+    return "Let's fight again!";
+  }
+}
+
+// Test cases
+console.log(alphabetWar("z")); //=> Right side wins!
+console.log(alphabetWar("zdqmwpbs")); //=> Let's fight again!
+console.log(alphabetWar("zzzzs")); //=> Right side wins!
+console.log(alphabetWar("wwwwwwz")); //=> Left side wins!
+
+/*
+Question161 | ky7 | 
+
+
+
+*/
