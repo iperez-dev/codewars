@@ -4075,8 +4075,27 @@ console.log(alphabetWar("zzzzs")); //=> Right side wins!
 console.log(alphabetWar("wwwwwwz")); //=> Left side wins!
 
 /*
-Question161 | ky7 | 
+Question161 | ky7 | Even numbers in an array
 
+Given an array of numbers, return a new array of length number containing the last even numbers from the original array (in the same order). The original array will be not empty and will contain at least "number" even numbers.
 
+For example:
+
+([1, 2, 3, 4, 5, 6, 7, 8, 9], 3) => [4, 6, 8]
+([-22, 5, 3, 11, 26, -6, -7, -8, -9, -8, 26], 2) => [-8, 26]
+([6, -25, 3, 7, 5, 5, 7, -3, 23], 1) => [6]
 
 */
+
+function evenNumbers(array, number) {
+  // Step 1: Filter out the even numbers
+  const evenArray = array.filter((item) => item % 2 === 0);
+
+  // Step 2: Grab the last 'number' of elements from the evenArray
+  return evenArray.slice(-number);
+}
+
+// Example usage:
+console.log(evenNumbers([1, 2, 3, 4, 5, 6, 7, 8, 9], 3)); // Should log [4, 6, 8]
+console.log(evenNumbers([-22, 5, 3, 11, 26, -6, -7, -8, -9, -8, 26], 2)); // Should log [-8, 26]
+console.log(evenNumbers([6, -25, 3, 7, 5, 5, 7, -3, 23], 1)); // Should log [6]
