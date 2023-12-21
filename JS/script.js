@@ -4099,3 +4099,23 @@ function evenNumbers(array, number) {
 console.log(evenNumbers([1, 2, 3, 4, 5, 6, 7, 8, 9], 3)); // Should log [4, 6, 8]
 console.log(evenNumbers([-22, 5, 3, 11, 26, -6, -7, -8, -9, -8, 26], 2)); // Should log [-8, 26]
 console.log(evenNumbers([6, -25, 3, 7, 5, 5, 7, -3, 23], 1)); // Should log [6]
+/*
+Question162 | ky7 | Bumps in the Road
+
+Your car is old, it breaks easily. The shock absorbers are gone and you think it can handle about 15 more bumps before it dies totally.
+
+Unfortunately for you, your drive is very bumpy! Given a string showing either flat road (_) or bumps (n). If you are able to reach home safely by encountering 15 bumps or less, return Woohoo!, otherwise return Car Dead
+
+*/
+
+function bump(x) {
+  // Step 1: Count the bumps
+  const bumps = x.split("").filter((char) => char === "n").length;
+
+  // Step 2: Compare to the threshold and return the appropriate message
+  return bumps <= 15 ? "Woohoo!" : "Car Dead";
+}
+
+// Example usage:
+console.log(bump("_nnnnnnn_n__n______nn__nn_nnn")); // Possible output: 'Car Dead'
+console.log(bump("______n___n_")); // Possible output: 'Woohoo!'
