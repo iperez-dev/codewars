@@ -4119,3 +4119,44 @@ function bump(x) {
 // Example usage:
 console.log(bump("_nnnnnnn_n__n______nn__nn_nnn")); // Possible output: 'Car Dead'
 console.log(bump("______n___n_")); // Possible output: 'Woohoo!'
+/*
+Question163 | ky7 | Fizz Buzz
+
+Return an array containing the numbers from 1 to N, where N is the parametered value.
+
+Replace certain values however if any of the following conditions are met:
+
+If the value is a multiple of 3: use the value "Fizz" instead
+If the value is a multiple of 5: use the value "Buzz" instead
+If the value is a multiple of 3 & 5: use the value "FizzBuzz" instead
+N will never be less than 1.
+
+Method calling example:
+
+fizzbuzz(3) -->  [1, 2, "Fizz"]
+
+*/
+
+function fizzbuzz(N) {
+  let result = []; // Step 1: Initialize the result array
+  for (let i = 1; i <= N; i++) {
+    // Step 2: Loop from 1 to N
+    // Step 3: Check the conditions and push the appropriate values to the array
+    if (i % 15 === 0) {
+      // Multiple of both 3 and 5
+      result.push("FizzBuzz");
+    } else if (i % 3 === 0) {
+      // Multiple of 3
+      result.push("Fizz");
+    } else if (i % 5 === 0) {
+      // Multiple of 5
+      result.push("Buzz");
+    } else {
+      // None of the above, push the number itself
+      result.push(i);
+    }
+  }
+  return result; // Step 4: Return the result array
+}
+
+console.log(fizzbuzz(3)); // Example usage
