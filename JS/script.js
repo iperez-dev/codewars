@@ -4160,3 +4160,35 @@ function fizzbuzz(N) {
 }
 
 console.log(fizzbuzz(3)); // Example usage
+/*
+Question165 | ky7 | Maximum Product
+
+Task
+Given an array of integers , Find the maximum product obtained from multiplying 2 adjacent numbers in the array.
+
+Notes
+Array/list size is at least 2.
+
+Array/list numbers could be a mixture of positives, negatives also zeroes .
+
+Input >> Output Examples
+adjacentElementsProduct([1, 2, 3]); ==> return 6
+
+*/
+
+function adjacentElementsProduct(array) {
+  let maxProduct = array[0] * array[1]; // Step 1: Initialize with the product of the first two elements
+
+  for (let i = 1; i < array.length - 1; i++) {
+    // Step 2: Loop through the array
+    let product = array[i] * array[i + 1]; // Step 3: Calculate the product of adjacent elements
+    if (product > maxProduct) {
+      // Step 4: Check if the current product is greater than the maxProduct
+      maxProduct = product; // Update maxProduct if the current product is greater
+    }
+  }
+
+  return maxProduct; // Step 5: Return the maximum product
+}
+
+console.log(adjacentElementsProduct([1, 2, 3])); // Example usage
