@@ -4192,3 +4192,21 @@ function adjacentElementsProduct(array) {
 }
 
 console.log(adjacentElementsProduct([1, 2, 3])); // Example usage
+/*
+Question166 | ky7 | Number of Decimal Digits
+
+Determine the total number of digits in the integer (n>=0) given as input to the function. For example, 9 is a single digit, 66 has 2 digits and 128685 has 6 digits. Be careful to avoid overflows/underflows.
+
+*/
+
+function digitCount(n) {
+  // Step 1: Convert the integer to a string
+  let str = n.toString();
+
+  // Step 2: Return the length of the string
+  return str.length;
+}
+
+console.log(digitCount(9)); // 1
+console.log(digitCount(66)); // 2
+console.log(digitCount(128685)); // 6
