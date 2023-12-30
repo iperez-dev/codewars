@@ -4210,3 +4210,26 @@ function digitCount(n) {
 console.log(digitCount(9)); // 1
 console.log(digitCount(66)); // 2
 console.log(digitCount(128685)); // 6
+/*
+Question167 | ky7 | Greet Me
+
+Write a method that takes one argument as name and then greets that name, capitalized and ends with an exclamation point.
+
+Example:
+
+"riley" --> "Hello Riley!"
+"JACK"  --> "Hello Jack!"
+
+*/
+
+function greet(name) {
+  // Step 1 & 2: Capitalize the first letter and make sure the rest are lowercase
+  let formattedName =
+    name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
+
+  // Step 3: Concatenate the greeting with the name and an exclamation point
+  return `Hello ${formattedName}!`;
+}
+
+console.log(greet("riley")); // "Hello Riley!"
+console.log(greet("JACK")); // "Hello Jack!"
