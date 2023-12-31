@@ -4233,3 +4233,41 @@ function greet(name) {
 
 console.log(greet("riley")); // "Hello Riley!"
 console.log(greet("JACK")); // "Hello Jack!"
+/*
+Question167 | ky7 | Find the vowels
+
+We want to know the index of the vowels in a given word, for example, there are two vowels in the word super (the second and fourth letters).
+
+So given a string "super", we should return a list of [2, 4].
+
+Some examples:
+Mmmm  => []
+Super => [2,4]
+Apple => [1,5]
+YoMama -> [1,2,4,6]
+NOTES
+Vowels in this context refers to: a e i o u y (including upper case)
+This is indexed from [1..n] (not zero indexed!)
+
+*/
+
+function vowelIndices(word) {
+  let vowels = "aeiouyAEIOUY"; // Step 1: Define vowels (including uppercase)
+  let indices = []; // Initialize an array to hold indices
+
+  for (let i = 0; i < word.length; i++) {
+    // Step 2: Loop through each character
+    if (vowels.indexOf(word[i]) !== -1) {
+      // Step 3: Check if the character is a vowel
+      indices.push(i + 1); // Step 4: Push the index to the array (consider 1-based indexing)
+    }
+  }
+
+  return indices; // Step 5: Return the result array
+}
+
+// Test cases
+console.log(vowelIndices("Mmmm")); // []
+console.log(vowelIndices("Super")); // [2, 4]
+console.log(vowelIndices("Apple")); // [1, 5]
+console.log(vowelIndices("YoMama")); // [1, 2, 4, 6]
