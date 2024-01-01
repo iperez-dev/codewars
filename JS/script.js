@@ -4234,7 +4234,7 @@ function greet(name) {
 console.log(greet("riley")); // "Hello Riley!"
 console.log(greet("JACK")); // "Hello Jack!"
 /*
-Question167 | ky7 | Find the vowels
+Question168 | ky7 | Find the vowels
 
 We want to know the index of the vowels in a given word, for example, there are two vowels in the word super (the second and fourth letters).
 
@@ -4271,3 +4271,25 @@ console.log(vowelIndices("Mmmm")); // []
 console.log(vowelIndices("Super")); // [2, 4]
 console.log(vowelIndices("Apple")); // [1, 5]
 console.log(vowelIndices("YoMama")); // [1, 2, 4, 6]
+/*
+Question169 | ky7 | Convert an array of strings to array of numbers
+
+Oh no!
+Some really funny web dev gave you a sequence of numbers from his API response as an sequence of strings!
+
+You need to cast the whole array to the correct type.
+
+Create the function that takes as a parameter a sequence of numbers represented as strings and outputs a sequence of numbers.
+
+ie:["1", "2", "3"] to [1, 2, 3]
+
+Note that you can receive floats as well.
+*/
+
+function toNumberArray(stringArray) {
+  return stringArray.map((str) => parseFloat(str));
+}
+
+// Test cases
+console.log(toNumberArray(["1", "2", "3"])); // [1, 2, 3]
+console.log(toNumberArray(["1.5", "2.3", "3"])); // [1.5, 2.3, 3]
