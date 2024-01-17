@@ -4459,27 +4459,31 @@ function solve(words) {
 }
 
 /*
-Question174 | ky7 | Sum even numbers
+Question174 | ky7 | All unique
 
-Complete the function that takes a sequence of numbers as single parameter. Your function must return the sum of the even values of this sequence.
+Write a program to determine if a string contains only unique characters. Return true if it does and false otherwise.
 
-Only numbers without decimals like 4 or 4.0 can be even.
-
-The input is a sequence of numbers: integers and/or floats.
-
-Examples
-[4, 3, 1, 2, 5, 10, 6, 7, 9, 8]  -->  30   # because 4 + 2 + 10 + 6 + 8 = 30
-[]                               -->  0
+The string may contain any of the 128 ASCII characters. Characters are case-sensitive, e.g. 'a' and 'A' are considered different characters.
 
 */
 
-function sumEvenNumbers(sequence) {
-  // Filter out even numbers and sum them up
-  return sequence
-    .filter((number) => number % 2 === 0 && Number.isInteger(number))
-    .reduce((acc, current) => acc + current, 0);
+function hasUniqueChars(str) {
+  const charSet = new Set();
+
+  for (let i = 0; i < str.length; i++) {
+    const char = str[i];
+    if (charSet.has(char)) {
+      // If the character is already in the set, return false
+      return false;
+    }
+    charSet.add(char);
+  }
+
+  // If no duplicates are found, return true
+  return true;
 }
 
 // Example usage
-console.log(sumEvenNumbers([4, 3, 1, 2, 5, 10, 6, 7, 9, 8])); // Expected output: 30
-console.log(sumEvenNumbers([])); // Expected output: 0
+console.log(hasUniqueChars("abcdefg")); // Expected output: true
+console.log(hasUniqueChars("hello")); // Expected output: false
+console.log(hasUniqueChars("AaBbCc")); // Expected output: true
