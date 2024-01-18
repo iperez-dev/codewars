@@ -4459,31 +4459,36 @@ function solve(words) {
 }
 
 /*
-Question174 | ky7 | All unique
+Question175 | ky7 | Simple remove duplicates
 
-Write a program to determine if a string contains only unique characters. Return true if it does and false otherwise.
+Remove the duplicates from a list of integers, keeping the last ( rightmost ) occurrence of each element.
 
-The string may contain any of the 128 ASCII characters. Characters are case-sensitive, e.g. 'a' and 'A' are considered different characters.
+Example:
+For input: [3, 4, 4, 3, 6, 3]
+
+remove the 3 at index 0
+remove the 4 at index 1
+remove the 3 at index 3
+Expected output: [4, 6, 3]
+
+More examples can be found in the test cases.
 
 */
 
-function hasUniqueChars(str) {
-  const charSet = new Set();
+function removeDuplicatesKeepLast(arr) {
+  const seen = new Set();
+  const result = [];
 
-  for (let i = 0; i < str.length; i++) {
-    const char = str[i];
-    if (charSet.has(char)) {
-      // If the character is already in the set, return false
-      return false;
+  for (let i = arr.length - 1; i >= 0; i--) {
+    if (!seen.has(arr[i])) {
+      // Since we're iterating from the end, prepend the unique element to the result array
+      result.unshift(arr[i]);
+      seen.add(arr[i]);
     }
-    charSet.add(char);
   }
 
-  // If no duplicates are found, return true
-  return true;
+  return result;
 }
 
 // Example usage
-console.log(hasUniqueChars("abcdefg")); // Expected output: true
-console.log(hasUniqueChars("hello")); // Expected output: false
-console.log(hasUniqueChars("AaBbCc")); // Expected output: true
+console.log(removeDuplicatesKeepLast([3, 4, 4, 3, 6, 3])); // Expected output: [4, 6, 3]
