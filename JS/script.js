@@ -4541,3 +4541,33 @@ function palindromeSteps(num) {
 
 // Example usage
 console.log(palindromeSteps(87)); // Expected output: 4
+/*
+Question178 | ky7 | max diff - easy
+
+You must implement a function that returns the difference between the largest and the smallest value in a given list / array (lst) received as the parameter.
+
+lst contains integers, that means it may contain some negative numbers
+if lst is empty or contains a single element, return 0
+lst is not sorted
+[1, 2, 3, 4]   //  returns 3 because 4 -   1  == 3
+[1, 2, 3, -4]  //  returns 7 because 3 - (-4) == 7
+
+*/
+
+function differenceLargestSmallest(lst) {
+  if (lst.length <= 1) {
+    // If the list is empty or contains a single element, return 0
+    return 0;
+  }
+
+  // Find the largest and smallest values in the list
+  const maxVal = Math.max(...lst);
+  const minVal = Math.min(...lst);
+
+  // Return the difference between the largest and smallest values
+  return maxVal - minVal;
+}
+
+// Example usage
+console.log(differenceLargestSmallest([1, 2, 3, 4])); // Expected output: 3
+console.log(differenceLargestSmallest([1, 2, 3, -4])); // Expected output: 7
