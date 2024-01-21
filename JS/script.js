@@ -4571,3 +4571,36 @@ function differenceLargestSmallest(lst) {
 // Example usage
 console.log(differenceLargestSmallest([1, 2, 3, 4])); // Expected output: 3
 console.log(differenceLargestSmallest([1, 2, 3, -4])); // Expected output: 7
+/*
+Question179 | ky7 | Ordered Count of Characters
+
+Count the number of occurrences of each character and return it as a (list of tuples) in order of appearance. For empty output return (an empty list).
+
+Consult the solution set-up for the exact data structure implementation depending on your language.
+
+Example:
+
+orderedCount("abracadabra") == [['a', 5], ['b', 2], ['r', 2], ['c', 1], ['d', 1]]
+
+*/
+
+function orderedCount(input) {
+  const countMap = new Map();
+
+  for (const char of input) {
+    if (!countMap.has(char)) {
+      // If the character is not already in the map, add it with count 1
+      countMap.set(char, 1);
+    } else {
+      // If the character is already in the map, increment its count
+      countMap.set(char, countMap.get(char) + 1);
+    }
+  }
+
+  // Convert the map to a list of tuples
+  const resultList = Array.from(countMap).map(([char, count]) => [char, count]);
+  return resultList;
+}
+
+// Example usage
+console.log(orderedCount("abracadabra")); // Expected output: [['a', 5], ['b', 2], ['r', 2], ['c', 1], ['d', 1]]
