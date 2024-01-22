@@ -4604,3 +4604,22 @@ function orderedCount(input) {
 
 // Example usage
 console.log(orderedCount("abracadabra")); // Expected output: [['a', 5], ['b', 2], ['r', 2], ['c', 1], ['d', 1]]
+/*
+Question179 | ky7 | esreveR
+
+Write a function reverse which reverses a list (or in clojure's case, any list-like data structure)
+
+(the dedicated builtin(s) functionalities are deactivated)
+
+*/
+
+function reverse(list) {
+  const reversedList = [];
+  for (let i = list.length - 1; i >= 0; i--) {
+    reversedList.push(list[i]);
+  }
+  return reversedList;
+}
+
+// Example usage
+console.log(reverse([1, 2, 3, 4, 5])); // Expected output: [5, 4, 3, 2, 1]
