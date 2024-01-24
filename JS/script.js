@@ -4623,3 +4623,28 @@ function reverse(list) {
 
 // Example usage
 console.log(reverse([1, 2, 3, 4, 5])); // Expected output: [5, 4, 3, 2, 1]
+/*
+Question180 | ky7 | Sum of Odd Cubed Numbers
+
+Find the sum of the odd numbers within an array, after cubing the initial integers. The function should return undefined if any of the values aren't numbers.
+
+*/
+
+function sumOfCubedOdds(arr) {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (typeof arr[i] !== "number") {
+      return undefined;
+    }
+    const cubed = Math.pow(arr[i], 3);
+    if (cubed % 2 !== 0) {
+      sum += cubed;
+    }
+  }
+  return sum;
+}
+
+// Example usage
+console.log(sumOfCubedOdds([1, 2, 3, 4])); // Expected output: 28 (1^3 + 3^3 = 1 + 27 = 28)
+console.log(sumOfCubedOdds([2, 4, 6])); // Expected output: 0 (no odd numbers after cubing)
+console.log(sumOfCubedOdds([1, "a", 3])); // Expected output: undefined (not all elements are numbers)
