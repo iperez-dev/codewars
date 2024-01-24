@@ -4648,3 +4648,48 @@ function sumOfCubedOdds(arr) {
 console.log(sumOfCubedOdds([1, 2, 3, 4])); // Expected output: 28 (1^3 + 3^3 = 1 + 27 = 28)
 console.log(sumOfCubedOdds([2, 4, 6])); // Expected output: 0 (no odd numbers after cubing)
 console.log(sumOfCubedOdds([1, "a", 3])); // Expected output: undefined (not all elements are numbers)
+/*
+Question181 | ky7 | Find the nth Digit of a Number
+
+Complete the function that takes two numbers as input, num and nth and return the nth digit of num (counting from right to left).
+
+Note
+If num is negative, ignore its sign and treat it as a positive value
+If nth is not positive, return -1
+Keep in mind that 42 = 00042. This means that findDigit(42, 5) would return 0
+Examples(num, nth --> output)
+5673, 4 --> 5
+129, 2 --> 2
+-2825, 3 --> 8
+-456, 4 --> 0
+0, 20 --> 0
+65, 0 --> -1
+24, -8 --> -1
+
+*/
+
+function findDigit(num, nth) {
+  if (nth <= 0) {
+    return -1;
+  }
+
+  num = Math.abs(num); // Make sure num is positive
+  const numStr = num.toString(); // Convert num to string
+
+  const index = numStr.length - nth; // Calculate index from right
+
+  if (index < 0) {
+    return 0; // nth digit does not exist, return 0
+  }
+
+  return parseInt(numStr[index], 10); // Return nth digit as a number
+}
+
+// Example usage
+console.log(findDigit(5673, 4)); // Expected output: 5
+console.log(findDigit(129, 2)); // Expected output: 2
+console.log(findDigit(-2825, 3)); // Expected output: 8
+console.log(findDigit(-456, 4)); // Expected output: 0
+console.log(findDigit(0, 20)); // Expected output: 0
+console.log(findDigit(65, 0)); // Expected output: -1
+console.log(findDigit(24, -8)); // Expected output: -1
