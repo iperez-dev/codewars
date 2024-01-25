@@ -4693,3 +4693,36 @@ console.log(findDigit(-456, 4)); // Expected output: 0
 console.log(findDigit(0, 20)); // Expected output: 0
 console.log(findDigit(65, 0)); // Expected output: -1
 console.log(findDigit(24, -8)); // Expected output: -1
+/*
+Question182 | ky7 | Lost number in number sequence
+
+An ordered sequence of numbers from 1 to N is given. One number might have deleted from it, then the remaining numbers were mixed. Find the number that was deleted.
+
+Example:
+
+The starting array sequence is [1,2,3,4,5,6,7,8,9]
+The mixed array with one deleted number is [3,2,4,6,7,8,1,9]
+Your function should return the int 5.
+If no number was deleted from the starting array, your function should return the int 0.
+
+Note: N may be 1 or less (in the latter case, the first array will be []).
+
+*/
+
+function findDeletedNumber(arr, mixedArr) {
+  // Calculate the sum of the complete sequence from 1 to N (N is the length of arr)
+  const totalSum = arr.reduce((acc, cur) => acc + cur, 0);
+  // Calculate the sum of the mixed array
+  const mixedSum = mixedArr.reduce((acc, cur) => acc + cur, 0);
+  // The difference will be the deleted number
+  const deletedNumber = totalSum - mixedSum;
+
+  return deletedNumber || 0; // Return the deleted number or 0 if no number was deleted
+}
+
+// Example usage
+console.log(
+  findDeletedNumber([1, 2, 3, 4, 5, 6, 7, 8, 9], [3, 2, 4, 6, 7, 8, 1, 9])
+); // Expected output: 5
+console.log(findDeletedNumber([1], [])); // Expected output: 1
+console.log(findDeletedNumber([], [])); // Expected output: 0
