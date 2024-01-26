@@ -4423,3 +4423,41 @@ function isRubyComing(list) {
 }
 
 console.log(isRubyComing(list1)); // This should return true
+/*
+Question174 | ky7 | Alphabet symmetry
+
+Consider the word "abode". We can see that the letter a is in position 1 and b is in position 2. In the alphabet, a and b are also in positions 1 and 2. Notice also that d and e in abode occupy the positions they would occupy in the alphabet, which are positions 4 and 5.
+
+Given an array of words, return an array of the number of letters that occupy their positions in the alphabet for each word. For example,
+
+solve(["abode","ABc","xyzD"]) = [4, 3, 1]
+See test cases for more examples.
+
+Input will consist of alphabet characters, both uppercase and lowercase. No spaces.
+
+Good luck!
+
+*/
+
+function solve(words) {
+  // Define the alphabet for easy reference of positions
+  const alphabet = "abcdefghijklmnopqrstuvwxyz";
+
+  // Map each word to its count of letters in their correct positions
+  return words.map((word) => {
+    // Convert word to lowercase to make the function case-insensitive
+    word = word.toLowerCase();
+    // Count how many letters are in their correct alphabetical position
+    let count = 0;
+    for (let i = 0; i < word.length; i++) {
+      if (i === alphabet.indexOf(word[i])) {
+        count++;
+      }
+    }
+    return count;
+  });
+}
+
+// Example usage
+const result = solve(["abode", "ABc", "xyzD"]);
+console.log(result); // Expected output: [4, 3, 1]
