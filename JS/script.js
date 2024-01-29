@@ -4741,3 +4741,44 @@ function spacify(str) {
 
 // Example usage
 console.log(spacify("hello world")); // Expected output: "h e l l o   w o r l d"
+/*
+Question184 | ky7 | Alphabetical Addition
+
+Your task is to add up letters to one letter.
+
+The function will be given a variable amount of arguments, each one being a letter to add.
+
+Notes:
+Letters will always be lowercase.
+Letters can overflow (see second to last example of the description)
+If no letters are given, the function should return 'z'
+Examples:
+addLetters('a', 'b', 'c') = 'f'
+addLetters('a', 'b') = 'c'
+addLetters('z') = 'z'
+addLetters('z', 'a') = 'a'
+addLetters('y', 'c', 'b') = 'd' // notice the letters overflowing
+addLetters() = 'z'
+
+*/
+
+function addLetters(...letters) {
+  if (letters.length === 0) return "z"; // If no letters are given, return 'z'
+
+  const alphabet = "abcdefghijklmnopqrstuvwxyz";
+  let sum = 0;
+
+  letters.forEach((letter) => {
+    const number = alphabet.indexOf(letter) + 1; // Convert letter to its position number
+    sum += number;
+  });
+
+  sum = sum % 26 || 26; // Use modulo to handle overflow, default to 26 if sum is 0
+
+  return alphabet[sum - 1]; // Convert the sum back to a letter
+}
+
+// Example usage
+console.log(addLetters("a", "b", "c")); // Expected output: 'f'
+console.log(addLetters("a", "b")); // Expected output: 'c'
+console.log(addLetters("z")); // Expected output: 'z'
