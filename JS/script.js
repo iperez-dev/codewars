@@ -4837,3 +4837,28 @@ function min(array, returnType) {
 // Example usage
 console.log(min([1, 2, 3, 4, 5], "value")); // => 1
 console.log(min([1, 2, 3, 4, 5], "index")); // => 0
+/*
+Question188 | ky7 | Currying functions: multiply all elements in an array
+
+To complete this Kata you need to make a function multiplyAll/multiply_all which takes an array of integers as an argument. This function must return another function, which takes a single integer as an argument and returns a new array.
+
+The returned array should consist of each of the elements from the first array multiplied by the integer.
+
+Example:
+
+multiplyAll([1, 2, 3])(2) = [2, 4, 6];
+You must not mutate the original array.
+
+*/
+
+function multiplyAll(arr) {
+  // Return a new function that captures arr and takes a single integer multiplier
+  return function (multiplier) {
+    // Return a new array with each element of arr multiplied by the multiplier
+    return arr.map((element) => element * multiplier);
+  };
+}
+
+// Example usage
+const result = multiplyAll([1, 2, 3])(2); // => [2, 4, 6]
+console.log(result);
