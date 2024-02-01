@@ -4887,3 +4887,41 @@ console.log(addOne(3)); // Output: 4
 
 var addThree = add(3);
 console.log(addThree(3)); // Output: 6
+/*
+Question189 | ky7 | Array element parity
+
+In this Kata, you will be given an array of integers whose elements have both a negative and a positive value, except for one integer that is either only negative or only positive. Your task will be to find that integer.
+
+Examples:
+
+[1, -1, 2, -2, 3] => 3
+
+3 has no matching negative appearance
+
+[-3, 1, 2, 3, -1, -4, -2] => -4
+
+-4 has no matching positive appearance
+
+[1, -1, 2, -2, 3, 3] => 3
+
+(the only-positive or only-negative integer may appear more than once)
+
+Good luck!
+
+*/
+
+function findUnique(numbers) {
+  const numSet = new Set(numbers); // Create a set for faster lookup
+
+  for (let num of numbers) {
+    // If either the positive or negative counterpart is missing, return the number
+    if (!numSet.has(-num)) {
+      return num;
+    }
+  }
+}
+
+// Example usage
+console.log(findUnique([1, -1, 2, -2, 3])); // Output: 3
+console.log(findUnique([-3, 1, 2, 3, -1, -4, -2])); // Output: -4
+console.log(findUnique([1, -1, 2, -2, 3, 3])); // Output: 3
