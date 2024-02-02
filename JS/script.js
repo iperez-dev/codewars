@@ -4925,3 +4925,26 @@ function findUnique(numbers) {
 console.log(findUnique([1, -1, 2, -2, 3])); // Output: 3
 console.log(findUnique([-3, 1, 2, 3, -1, -4, -2])); // Output: -4
 console.log(findUnique([1, -1, 2, -2, 3, 3])); // Output: 3
+/*
+Question189 | ky7 | Greatest common divisor
+
+
+Find the greatest common divisor of two positive integers. The integers can be large, so you need to find a clever solution.
+
+The inputs x and y are always greater or equal to 1, so the greatest common divisor will always be an integer that is also greater or equal to 1.
+
+*/
+
+function gcd(x, y) {
+  // Base case: if y is 0, x is the GCD
+  if (y === 0) {
+    return x;
+  } else {
+    // Recursive case: return the GCD of y and the remainder of x divided by y
+    return gcd(y, x % y);
+  }
+}
+
+// Example usage
+console.log(gcd(48, 18)); // Output: 6
+console.log(gcd(123456, 789012)); // Output: 12
