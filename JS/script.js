@@ -4948,3 +4948,50 @@ function gcd(x, y) {
 // Example usage
 console.log(gcd(48, 18)); // Output: 6
 console.log(gcd(123456, 789012)); // Output: 12
+/*
+Question189 | ky7 | FIXME: Get Full Name
+
+The code provided is supposed return a person's Full Name given their first and last names.
+
+But it's not working properly.
+
+Notes
+The first and/or last names are never null, but may be empty.
+
+Task
+Fix the bug so we can all go home early.
+
+*/
+
+class Person {
+  constructor(firstName, lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+
+  getFullName() {
+    // Check if either first name or last name is empty and return appropriately
+    if (!this.firstName && !this.lastName) {
+      return "";
+    } else if (!this.firstName) {
+      return this.lastName;
+    } else if (!this.lastName) {
+      return this.firstName;
+    } else {
+      return `${this.firstName} ${this.lastName}`;
+    }
+  }
+}
+
+// Example usage
+let person1 = new Person("John", "Doe");
+console.log(person1.getFullName()); // Expected output: "John Doe"
+
+let person2 = new Person("John", "");
+console.log(person2.getFullName()); // Expected output: "John"
+
+let person3 = new Person("", "Doe");
+console.log(person3.getFullName()); // Expected output: "Doe"
+
+let person4 = new Person("", "");
+console.log(person4.getFullName()); // Expected output: ""
