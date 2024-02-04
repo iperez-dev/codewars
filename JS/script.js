@@ -4949,7 +4949,7 @@ function gcd(x, y) {
 console.log(gcd(48, 18)); // Output: 6
 console.log(gcd(123456, 789012)); // Output: 12
 /*
-Question189 | ky7 | FIXME: Get Full Name
+Question190 | ky7 | FIXME: Get Full Name
 
 The code provided is supposed return a person's Full Name given their first and last names.
 
@@ -4983,15 +4983,42 @@ class Person {
   }
 }
 
+/*
+Question191 | ky7 | Indexed capitalization
+
+Given a string and an array of integers representing indices, capitalize all letters at the given indices.
+
+For example:
+
+capitalize("abcdef",[1,2,5]) = "aBCdeF"
+capitalize("abcdef",[1,2,5,100]) = "aBCdeF". There is no index 100.
+The input will be a lowercase string with no spaces and an array of digits.
+
+Good luck!
+
+Be sure to also try:
+
+Alternate capitalization
+
+String array revisal
+
+*/
+
+function capitalize(str, indices) {
+  // Convert the string to an array of characters
+  let chars = str.split("");
+
+  // Iterate through the indices and capitalize characters at those indices
+  indices.forEach((index) => {
+    if (index < chars.length) {
+      chars[index] = chars[index].toUpperCase();
+    }
+  });
+
+  // Join the characters back into a string
+  return chars.join("");
+}
+
 // Example usage
-let person1 = new Person("John", "Doe");
-console.log(person1.getFullName()); // Expected output: "John Doe"
-
-let person2 = new Person("John", "");
-console.log(person2.getFullName()); // Expected output: "John"
-
-let person3 = new Person("", "Doe");
-console.log(person3.getFullName()); // Expected output: "Doe"
-
-let person4 = new Person("", "");
-console.log(person4.getFullName()); // Expected output: ""
+console.log(capitalize("abcdef", [1, 2, 5])); // Expected output: "aBCdeF"
+console.log(capitalize("abcdef", [1, 2, 5, 100])); // Expected output: "aBCdeF"
