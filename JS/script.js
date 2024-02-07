@@ -5061,3 +5061,40 @@ console.log(calculate(-4, "*", 8)); // Should return -32
 console.log(calculate(49, "/", -7)); // Should return -7
 console.log(calculate(8, "m", 2)); // Should return null
 console.log(calculate(4, "/", 0)); // Should return null
+/*
+Question193 | ky7 | The old switcheroo
+
+Write a function
+
+vowel2index(str)
+that takes in a string and replaces all the vowels [a,e,i,o,u] with their respective positions within that string.
+E.g:
+
+vowel2index('this is my string') == 'th3s 6s my str15ng'
+vowel2index('Codewars is the best site in the world') == 'C2d4w6rs 10s th15 b18st s23t25 27n th32 w35rld'
+vowel2index('') == ''
+
+*/
+
+function vowel2index(str) {
+  const vowels = "aeiou";
+  // Convert the string to an array and use map to transform it
+  return str
+    .split("")
+    .map((char, index) => {
+      // Check if the character is a vowel, considering case insensitivity
+      if (vowels.includes(char.toLowerCase())) {
+        // Replace vowel with its position (index + 1)
+        return index + 1;
+      } else {
+        // Keep the character as is if it's not a vowel
+        return char;
+      }
+    })
+    .join(""); // Join the array back into a string
+}
+
+// Example usage
+console.log(vowel2index("this is my string")); // 'th3s 6s my str15ng'
+console.log(vowel2index("Codewars is the best site in the world")); // 'C2d4w6rs 10s th15 b18st s23t25 27n th32 w35rld'
+console.log(vowel2index("")); // ''
