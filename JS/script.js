@@ -5098,3 +5098,26 @@ function vowel2index(str) {
 console.log(vowel2index("this is my string")); // 'th3s 6s my str15ng'
 console.log(vowel2index("Codewars is the best site in the world")); // 'C2d4w6rs 10s th15 b18st s23t25 27n th32 w35rld'
 console.log(vowel2index("")); // ''
+/*
+Question194 | ky7 | Sum of integers in string
+
+Your task in this kata is to implement a function that calculates the sum of the integers inside a string. For example, in the string "The30quick20brown10f0x1203jumps914ov3r1349the102l4zy dog", the sum of the integers is 3635.
+
+Note: only positive integers will be tested.
+
+*/
+
+function sumOfIntegersInString(str) {
+  // Use a regular expression to find all occurrences of digits
+  const numbers = str.match(/\d+/g) || [];
+
+  // Convert each string of digits into an integer and sum them
+  return numbers.reduce((acc, num) => acc + parseInt(num, 10), 0);
+}
+
+// Example usage
+console.log(
+  sumOfIntegersInString(
+    "The30quick20brown10f0x1203jumps914ov3r1349the102l4zy dog"
+  )
+); // 3635
