@@ -5121,3 +5121,34 @@ console.log(
     "The30quick20brown10f0x1203jumps914ov3r1349the102l4zy dog"
   )
 ); // 3635
+/*
+Question195 | ky7 | Longest vowel chain
+
+The vowel substrings in the word codewarriors are o,e,a,io. The longest of these has a length of 2. Given a lowercase string that has alphabetic characters only (both vowels and consonants) and no spaces, return the length of the longest vowel substring. Vowels are any of aeiou.
+
+Good luck!
+
+*/
+
+function longestVowelSubstringLength(str) {
+  const vowels = "aeiou";
+  let maxLength = 0;
+  let currentLength = 0;
+
+  for (const char of str) {
+    if (vowels.includes(char)) {
+      // If the character is a vowel, increase the current length
+      currentLength++;
+      // Update the maximum length if the current length is greater
+      maxLength = Math.max(maxLength, currentLength);
+    } else {
+      // If the character is not a vowel, reset the current length
+      currentLength = 0;
+    }
+  }
+
+  return maxLength;
+}
+
+// Example usage
+console.log(longestVowelSubstringLength("codewarriors")); // 2
