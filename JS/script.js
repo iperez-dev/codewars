@@ -5213,3 +5213,22 @@ function unluckyDays(year) {
 // Example usage
 console.log(unluckyDays(2015)); // Output: 3
 console.log(unluckyDays(1986)); // Output: 1
+/*
+Question198 | ky7 | Numbers in strings
+
+In this Kata, you will be given a string that has lowercase letters and numbers. Your task is to compare the number groupings and return the largest number. Numbers will not have leading zeros.
+
+For example, solve("gh12cdy695m1") = 695, because this is the largest of all number groupings.
+
+*/
+
+function solve(s) {
+  // Use a regular expression to match all groups of digits in the string
+  const numbers = s.match(/\d+/g).map(Number);
+
+  // Find the largest number using Math.max applied to the numbers array
+  return Math.max(...numbers);
+}
+
+// Example usage
+console.log(solve("gh12cdy695m1")); // Output: 695
