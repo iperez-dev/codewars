@@ -6036,6 +6036,54 @@ console.log(toCamelCase("hello case"));      // Output: "HelloCase"
 console.log(toCamelCase("camel case word")); // Output: "CamelCaseWord"
 
 
+/*ky6 | IP Validation
+
+Write an algorithm that will identify valid IPv4 addresses in dot-decimal format. IPs should be considered valid if they consist of four octets, with values between 0 and 255, inclusive.
+
+Valid inputs examples:
+Examples of valid inputs:
+1.2.3.4
+123.45.67.89
+Invalid input examples:
+1.2.3
+1.2.3.4.5
+123.456.78.90
+123.045.067.089
+Notes:
+Leading zeros (e.g. 01.02.03.04) are considered invalid
+Inputs are guaranteed to be a single string
+
+*/
+
+function isValidIPv4(ip) {
+  const octets = ip.split('.');
+  
+  // Check if there are exactly 4 octets
+  if (octets.length !== 4) {
+    return false;
+  }
+
+  // Check each octet
+  for (let octet of octets) {
+    // Check if octet is a valid number and within range
+    if (!/^\d+$/.test(octet) || octet < 0 || octet > 255 || (octet.length > 1 && octet.startsWith('0'))) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+// Test cases
+console.log(isValidIPv4("1.2.3.4"));        // Output: true
+console.log(isValidIPv4("123.45.67.89"));   // Output: true
+console.log(isValidIPv4("1.2.3"));          // Output: false
+console.log(isValidIPv4("1.2.3.4.5"));      // Output: false
+console.log(isValidIPv4("123.456.78.90"));  // Output: false
+console.log(isValidIPv4("123.045.067.089"));// Output: false
+
+
+
 
 
 
