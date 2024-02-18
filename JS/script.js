@@ -5257,5 +5257,28 @@ function sumOfMultiples(n) {
 
 // Example usage:
 console.log(sumOfMultiples(10)); // Output should be 23
+/*
+Question200 | ky6 | Stop gninnipS My sdroW!
+
+Write a function that takes in a string of one or more words, and returns the same string, but with all words that have five or more letters reversed (Just like the name of this Kata). Strings passed in will consist of only letters and spaces. Spaces will be included only when more than one word is present.
+
+Examples:
+
+"Hey fellow warriors"  --> "Hey wollef sroirraw" 
+"This is a test        --> "This is a test" 
+"This is another test" --> "This is rehtona test"
+*/
+
+function reverseWords(str) {
+  return str.split(' ').map(word => {
+      return (word.length >= 5) ? word.split('').reverse().join('') : word;
+  }).join(' ');
+}
+
+// Examples:
+console.log(reverseWords("Hey fellow warriors")); // Output: "Hey wollef sroirraw"
+console.log(reverseWords("This is a test")); // Output: "This is a test"
+console.log(reverseWords("This is another test")); // Output: "This is rehtona test"
+
 
 
