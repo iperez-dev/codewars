@@ -6017,6 +6017,26 @@ console.log(twoSum([1, 2, 3], 4)); // Output: [0, 2] or [2, 0]
 console.log(twoSum([3, 2, 4], 6)); // Output: [1, 2] or [2, 1]
 
 
+/*ky6 | CamelCase Method
+
+Write a method (or function, depending on the language) that converts a string to camelCase, that is, all words must have their first letter capitalized and spaces must be removed.
+
+Examples (input --> output):
+"hello case" --> "HelloCase"
+"camel case word" --> "CamelCaseWord"
+
+*/
+
+function toCamelCase(str) {
+  return str.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join('');
+}
+
+// Test cases
+console.log(toCamelCase("hello case"));      // Output: "HelloCase"
+console.log(toCamelCase("camel case word")); // Output: "CamelCaseWord"
+
+
+
 
 
 
