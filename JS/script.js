@@ -5962,6 +5962,30 @@ console.log(isPrime(2));   // Output: true
 console.log(isPrime(-1));  // Output: false
 
 
+/*ky6 | Count characters in your string
+
+The main idea is to count all the occurring characters in a string. If you have a string like aba, then the result should be {'a': 2, 'b': 1}.
+
+What if the string is empty? Then the result should be empty object literal, {}.
+
+*/
+
+function countCharacters(str) {
+  const charCount = {};
+
+  for (let char of str) {
+    charCount[char] = (charCount[char] || 0) + 1;
+  }
+
+  return charCount;
+}
+
+// Test cases
+console.log(countCharacters("aba"));  // Output: { 'a': 2, 'b': 1 }
+console.log(countCharacters(""));     // Output: {}
+
+
+
 
 
 
