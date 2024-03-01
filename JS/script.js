@@ -5851,8 +5851,7 @@ console.log(countSmileys([';]', ':[', ';*', ':$', ';-D'])); // Output: 1
 
 
 
-/*
-ky6 | Valid Braces
+/*ky6 | Valid Braces
 
 Write a function that takes a string of braces, and determines if the order of the braces is valid. It should return true if the string is valid, and false if it's invalid.
 
@@ -5901,6 +5900,28 @@ console.log(isValidBraces("([{}])"));    // Output: true
 console.log(isValidBraces("(}"));        // Output: false
 console.log(isValidBraces("[(])"));      // Output: false
 console.log(isValidBraces("[({})](]"));  // Output: false
+
+
+
+/*ky6 | Break camelCase
+
+Complete the solution so that the function will break up camel casing, using a space between words.
+
+Example
+"camelCasing"  =>  "camel Casing"
+"identifier"   =>  "identifier"
+""             =>  ""
+*/
+
+function breakCamelCase(str) {
+  return str.replace(/([a-z])([A-Z])/g, '$1 $2');
+}
+
+// Test cases
+console.log(breakCamelCase("camelCasing"));  // Output: "camel Casing"
+console.log(breakCamelCase("identifier"));   // Output: "identifier"
+console.log(breakCamelCase(""));             // Output: ""
+
 
 
 
