@@ -5808,8 +5808,7 @@ console.log(deleteNth([20,37,20,21], 1));      // Output: [20, 37, 21]
 
 
 /*
-ky6 | 
-Count the smiley faces!
+ky6 | Count the smiley faces!
 
 Given an array (arr) as an argument complete the function countSmileys that should return the total number of smiling faces.
 
@@ -5849,6 +5848,60 @@ function countSmileys(arr) {
 console.log(countSmileys([':)', ';(', ';}', ':-D']));       // Output: 2
 console.log(countSmileys([';D', ':-(', ':-)', ';~)']));     // Output: 3
 console.log(countSmileys([';]', ':[', ';*', ':$', ';-D'])); // Output: 1
+
+
+
+/*
+ky6 | Valid Braces
+
+Write a function that takes a string of braces, and determines if the order of the braces is valid. It should return true if the string is valid, and false if it's invalid.
+
+This Kata is similar to the Valid Parentheses Kata, but introduces new characters: brackets [], and curly braces {}. Thanks to @arnedag for the idea!
+
+All input strings will be nonempty, and will only consist of parentheses, brackets and curly braces: ()[]{}.
+
+What is considered Valid?
+A string of braces is considered valid if all braces are matched with the correct brace.
+
+Examples
+"(){}[]"   =>  True
+"([{}])"   =>  True
+"(}"       =>  False
+"[(])"     =>  False
+"[({})](]" =>  False
+
+*/
+
+function isValidBraces(str) {
+  const stack = [];
+  const pairs = {
+    '(': ')',
+    '[': ']',
+    '{': '}'
+  };
+
+  for (let i = 0; i < str.length; i++) {
+    const char = str[i];
+    if (char === '(' || char === '[' || char === '{') {
+      stack.push(char);
+    } else {
+      const lastOpening = stack.pop();
+      if (pairs[lastOpening] !== char) {
+        return false;
+      }
+    }
+  }
+
+  return stack.length === 0;
+}
+
+// Test cases
+console.log(isValidBraces("(){}[]"));    // Output: true
+console.log(isValidBraces("([{}])"));    // Output: true
+console.log(isValidBraces("(}"));        // Output: false
+console.log(isValidBraces("[(])"));      // Output: false
+console.log(isValidBraces("[({})](]"));  // Output: false
+
 
 
 
