@@ -5427,6 +5427,52 @@ console.log(countBits(1234)); // Output: 5
 
 
 
+/*
+ky6 | Find The Parity Outlier
+
+You are given an array (which will have a length of at least 3, but could be very large) containing integers. The array is either entirely comprised of odd integers or entirely comprised of even integers except for a single integer N. Write a method that takes the array as an argument and returns this "outlier" N.
+
+Examples
+[2, 4, 0, 100, 4, 11, 2602, 36] -->  11 (the only odd number)
+
+[160, 3, 1719, 19, 11, 13, -21] --> 160 (the only even number)
+
+*/
+
+function findOutlier(integers) {
+  // Count the number of even and odd integers in the array
+  let evenCount = 0;
+  let oddCount = 0;
+  
+  // Iterate through the array to count even and odd numbers
+  for (let num of integers) {
+      if (num % 2 === 0) {
+          evenCount++;
+      } else {
+          oddCount++;
+      }
+  }
+  
+  // Determine whether the majority is even or odd
+  const majorityIsEven = evenCount > oddCount;
+  
+  // Find the outlier based on the majority parity
+  for (let num of integers) {
+      if (majorityIsEven && num % 2 !== 0) {
+          return num;
+      } else if (!majorityIsEven && num % 2 === 0) {
+          return num;
+      }
+  }
+}
+
+// Test cases
+console.log(findOutlier([2, 4, 0, 100, 4, 11, 2602, 36])); // Output: 11
+console.log(findOutlier([160, 3, 1719, 19, 11, 13, -21])); // Output: 160
+
+
+
+
 
 
 
