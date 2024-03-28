@@ -5381,7 +5381,6 @@ console.log(arrayDiff([1, 2], [1]));             // Output: [2]
 console.log(arrayDiff([1, 2, 2, 2, 3], [2]));    // Output: [1, 3]
 
 
-
 /*
 ky6 | Create Phone Number
 
@@ -5407,6 +5406,25 @@ function createPhoneNumber(numbers) {
 
 // Test case
 console.log(createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0])); // Output: "(123) 456-7890"
+
+
+/*
+ky6 | Bit Counting
+
+Write a function that takes an integer as input, and returns the number of bits that are equal to one in the binary representation of that number. You can guarantee that input is non-negative.
+
+Example: The binary representation of 1234 is 10011010010, so the function should return 5 in this case
+
+*/
+
+function countBits(n) {
+  // Convert the integer to binary and count the number of '1's
+  return n.toString(2).split('').filter(bit => bit === '1').length;
+}
+
+// Test case
+console.log(countBits(1234)); // Output: 5
+
 
 
 
