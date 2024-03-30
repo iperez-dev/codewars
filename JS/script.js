@@ -5319,5 +5319,46 @@ console.log(formatLikes(["Max", "John", "Mark"])); // "Max, John and Mark like t
 console.log(formatLikes(["Alex", "Jacob", "Mark", "Max"])); // "Alex, Jacob and 2 others like this"
 
 
+/*
+ky6 | Sum of Digits / Digital Root
+
+Digital root is the recursive sum of all the digits in a number.
+
+Given n, take the sum of the digits of n. If that value has more than one digit, continue reducing in this way until a single-digit number is produced. The input will be a non-negative integer.
+
+Examples
+    16  -->  1 + 6 = 7
+   942  -->  9 + 4 + 2 = 15  -->  1 + 5 = 6
+132189  -->  1 + 3 + 2 + 1 + 8 + 9 = 24  -->  2 + 4 = 6
+493193  -->  4 + 9 + 3 + 1 + 9 + 3 = 29  -->  2 + 9 = 11  -->  1 + 1 = 2
+*/
+
+function digitalRoot(n) {
+  // Convert the number to a string to easily access individual digits
+  let numString = n.toString();
+  
+  // Base case: If the number has only one digit, return it
+  if (numString.length === 1) {
+      return parseInt(numString);
+  }
+  
+  // Calculate the sum of the digits
+  let sum = 0;
+  for (let digit of numString) {
+      sum += parseInt(digit);
+  }
+  
+  // Recursively call digitalRoot with the sum
+  return digitalRoot(sum);
+}
+
+// Test cases
+console.log(digitalRoot(16));     // Output: 7
+console.log(digitalRoot(942));    // Output: 6
+console.log(digitalRoot(132189)); // Output: 6
+console.log(digitalRoot(493193)); // Output: 2
+
+
+
 
 
