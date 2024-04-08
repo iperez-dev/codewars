@@ -5469,11 +5469,35 @@ function findOutlier(integers) {
 // Test cases
 console.log(findOutlier([2, 4, 0, 100, 4, 11, 2602, 36])); // Output: 11
 console.log(findOutlier([160, 3, 1719, 19, 11, 13, -21])); // Output: 160
+/*
+ky6 | Convert string to camel case
 
 
+Complete the method/function so that it converts dash/underscore delimited words into camel casing. The first word within the output should be capitalized only if the original word was capitalized (known as Upper Camel Case, also often referred to as Pascal case). The next words should be always capitalized.
+
+Examples
+"the-stealth-warrior" gets converted to "theStealthWarrior"
+
+"The_Stealth_Warrior" gets converted to "TheStealthWarrior"
+
+"The_Stealth-Warrior" gets converted to "TheStealthWarrior"
+
+*/
 
 
+function toCamelCase(s) {
+  let parts = s.replace(/[-_]/g, '_').split('_'); // Replace dashes with underscores and split
+  let camelCaseString = parts[0]; // First word remains as it is
+  for (let i = 1; i < parts.length; i++) {
+    camelCaseString += parts[i][0].toUpperCase() + parts[i].slice(1).toLowerCase();
+  }
+  return camelCaseString;
+}
 
+// Test cases
+console.log(toCamelCase("the-stealth-warrior")); // Output: theStealthWarrior
+console.log(toCamelCase("The_Stealth_Warrior")); // Output: TheStealthWarrior
+console.log(toCamelCase("The_Stealth-Warrior")); // Output: TheStealthWarrior
 
 
 
