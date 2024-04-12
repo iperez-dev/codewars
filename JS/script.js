@@ -6338,43 +6338,32 @@ console.log(processString(""));              // Output: ""
 
 
 
-/*ky6 | The Vowel Code
+/*ky6 | Valid Phone Number
 
-Step 1: Create a function called encode() to replace all the lowercase vowels in a given string with numbers according to the following pattern:
+Write a function that accepts a string, and returns true if it is in the form of a phone number.
+Assume that any integer from 0-9 in any of the spots will produce a valid phone number.
 
-a -> 1
-e -> 2
-i -> 3
-o -> 4
-u -> 5
-For example, encode("hello") would return "h2ll4". There is no need to worry about uppercase vowels in this kata.
+Only worry about the following format:
+(123) 456-7890 (don't forget the space after the close parentheses)
 
-Step 2: Now create a function called decode() to turn the numbers back into vowels according to the same pattern shown above.
+Examples:
 
-For example, decode("h3 th2r2") would return "hi there".
-
-For the sake of simplicity, you can assume that any numbers passed into the function will correspond to vowels.
+"(123) 456-7890"  => true
+"(1111)555 2345"  => false
+"(098) 123 4567"  => false
 
 */
-//STEP1
-function encode(string) {
-  const vowelToNumber = { 'a': '1', 'e': '2', 'i': '3', 'o': '4', 'u': '5' };
-  return string.replace(/[aeiou]/g, match => vowelToNumber[match]);
+
+function isValidPhoneNumber(phoneNumber) {
+  const phoneRegex = /^\(\d{3}\) \d{3}-\d{4}$/;
+  return phoneRegex.test(phoneNumber);
 }
 
 // Example usage
-console.log(encode("hello")); // Output: "h2ll4"
-console.log(encode("hi there")); // Output: "h3 th2r2"
+console.log(isValidPhoneNumber("(123) 456-7890"));  // Output: true
+console.log(isValidPhoneNumber("(1111)555 2345"));  // Output: false
+console.log(isValidPhoneNumber("(098) 123 4567"));  // Output: false
 
-//STEP2
-function decode(string) {
-  const numberToVowel = { '1': 'a', '2': 'e', '3': 'i', '4': 'o', '5': 'u' };
-  return string.replace(/[12345]/g, match => numberToVowel[match]);
-}
-
-// Example usage
-console.log(decode("h3 th2r2")); // Output: "hi there"
-console.log(decode("h2ll4")); // Output: "hello"
 
 
 
