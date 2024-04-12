@@ -6300,6 +6300,44 @@ console.log(solve("zodiacs")); // Output: 26
 console.log(solve("strength")); // Output: 57
 
 
+/*ky6 | Backspaces in string
+
+Assume "#" is like a backspace in string. This means that string "a#bc#d" actually is "bd"
+
+Your task is to process a string with "#" symbols.
+
+Examples
+"abc#d##c"      ==>  "ac"
+"abc##d######"  ==>  ""
+"#######"       ==>  ""
+""              ==>  ""
+
+*/
+
+function processString(s) {
+  const stack = [];
+  
+  for (const char of s) {
+      if (char === '#') {
+          if (stack.length > 0) {
+              stack.pop();
+          }
+      } else {
+          stack.push(char);
+      }
+  }
+  
+  return stack.join('');
+}
+
+// Example usage
+console.log(processString("abc#d##c"));      // Output: "ac"
+console.log(processString("abc##d######"));  // Output: ""
+console.log(processString("#######"));       // Output: ""
+console.log(processString(""));              // Output: ""
+
+
+
 
 
 
