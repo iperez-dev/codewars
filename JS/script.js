@@ -6366,6 +6366,53 @@ console.log(isValidPhoneNumber("(098) 123 4567"));  // Output: false
 
 
 
+/*ky6 | Highest Rank Number in an Array
+
+Complete the method which returns the number which is most frequent in the given input array. If there is a tie for most frequent number, return the largest number among them.
+
+Note: no empty arrays will be given.
+
+Examples
+[12, 10, 8, 12, 7, 6, 4, 10, 12]              -->  12
+[12, 10, 8, 12, 7, 6, 4, 10, 12, 10]          -->  12
+[12, 10, 8, 8, 3, 3, 3, 3, 2, 4, 10, 12, 10]  -->   3
+
+*/
+
+function mostFrequentNumber(arr) {
+  const frequencyMap = new Map();
+
+  // Count the frequency of each number in the array
+  for (const num of arr) {
+      if (frequencyMap.has(num)) {
+          frequencyMap.set(num, frequencyMap.get(num) + 1);
+      } else {
+          frequencyMap.set(num, 1);
+      }
+  }
+
+  // Find the number with the highest frequency
+  let maxFreq = 0;
+  let mostFrequentNum = -Infinity;
+
+  for (const [num, freq] of frequencyMap) {
+      if (freq > maxFreq || (freq === maxFreq && num > mostFrequentNum)) {
+          maxFreq = freq;
+          mostFrequentNum = num;
+      }
+  }
+
+  return mostFrequentNum;
+}
+
+// Example usage
+console.log(mostFrequentNumber([12, 10, 8, 12, 7, 6, 4, 10, 12]));              // Output: 12
+console.log(mostFrequentNumber([12, 10, 8, 12, 7, 6, 4, 10, 12, 10]));          // Output: 12
+console.log(mostFrequentNumber([12, 10, 8, 8, 3,
+
+
+
+
 
 
 
