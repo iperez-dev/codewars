@@ -6405,10 +6405,51 @@ function mostFrequentNumber(arr) {
   return mostFrequentNum;
 }
 
-// Example usage
-console.log(mostFrequentNumber([12, 10, 8, 12, 7, 6, 4, 10, 12]));              // Output: 12
-console.log(mostFrequentNumber([12, 10, 8, 12, 7, 6, 4, 10, 12, 10]));          // Output: 12
-console.log(mostFrequentNumber([12, 10, 8, 8, 3,
+/*ky6 | Triple trouble
+
+Write a function
+
+tripledouble(num1,num2)
+which takes numbers num1 and num2 and returns 1 if there is a straight triple of a number at any place in num1 and also a straight double of the same number in num2.
+
+If this isn't the case, return 0
+
+Examples
+tripledouble(451999277, 41177722899) == 1 // num1 has straight triple 999s and 
+                                          // num2 has straight double 99s
+
+tripledouble(1222345, 12345) == 0 // num1 has straight triple 2s but num2 has only a single 2
+
+tripledouble(12345, 12345) == 0
+
+tripledouble(666789, 12345667) == 1
+
+*/
+
+function tripledouble(num1, num2) {
+  // Convert numbers to strings to facilitate checking sequences
+  let str1 = num1.toString();
+  let str2 = num2.toString();
+  
+  // Check for triple in num1 and double in num2
+  for (let i = 0; i <= 9; i++) {
+      let triple = i.toString() + i.toString() + i.toString(); // Generate triple
+      let double = i.toString() + i.toString(); // Generate double
+      
+      if (str1.includes(triple) && str2.includes(double)) {
+          return 1; // Found both triple and double
+      }
+  }
+  
+  return 0; // Did not find matching triple and double
+}
+
+// Examples
+console.log(tripledouble(451999277, 41177722899)); // Output: 1
+console.log(tripledouble(1222345, 12345)); // Output: 0
+console.log(tripledouble(12345, 12345)); // Output: 0
+console.log(tripledouble(666789, 12345667)); // Output: 1
+
 
 
 
