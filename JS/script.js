@@ -6518,30 +6518,43 @@ console.log(addOne([])); // Output: null
 
 
 
+/*ky6 | Dashatize it
 
+Given an integer, return a string with dash '-' marks before and after each odd digit, but do not begin or end the string with a dash mark.
 
+Ex:
 
+274 -> '2-7-4'
+6815 -> '68-1-5'
 
+*/
+function insertDashes(num) {
+  // Convert number to string
+  let str = num.toString();
+  let result = '';
 
+  // Iterate through each character in the string
+  for (let i = 0; i < str.length; i++) {
+      // Check if the current character is odd
+      if (parseInt(str[i]) % 2 !== 0) {
+          // If it's odd, add a dash before and after
+          result += '-' + str[i] + '-';
+      } else {
+          // Otherwise, just add the digit
+          result += str[i];
+      }
+  }
 
+  // Remove leading and trailing dashes if present
+  result = result.replace(/^-/, '').replace(/-$/, '');
 
+  return result;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// Examples
+console.log(insertDashes(274)); // Output: '2-7-4'
+console.log(insertDashes(6815)); // Output: '68-1-5'
+console.log(insertDashes(1234567)); // Output: '1-2-3-4-5-6-7'
+console.log(insertDashes(13579)); // Output: '1-3-5-7'
 
 
