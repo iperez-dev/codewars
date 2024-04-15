@@ -6592,3 +6592,38 @@ console.log(reverseEveryOtherWord("   Hello   World   ")); // Output: "Hello dlr
 console.log(reverseEveryOtherWord("")); // Output: ""
 
 
+/*ky6 | Kebabize
+
+Modify the kebabize function so that it converts a camel case string into a kebab case.
+
+"camelsHaveThreeHumps"  -->  "camels-have-three-humps"
+"camelsHave3Humps"  -->  "camels-have-humps"
+"CAMEL"  -->  "c-a-m-e-l"
+Notes:
+
+the returned string should only contain lowercase letters
+
+*/
+
+function kebabize(str) {
+  // Replace all uppercase letters with '-<lowercase>'
+  let kebabCase = str.replace(/([A-Z])/g, (match, group1) => {
+      return '-' + group1.toLowerCase();
+  });
+
+  // Remove leading '-' if present
+  if (kebabCase.charAt(0) === '-') {
+      kebabCase = kebabCase.slice(1);
+  }
+
+  return kebabCase;
+}
+
+// Examples
+console.log(kebabize("camelsHaveThreeHumps")); // Output: "camels-have-three-humps"
+console.log(kebabize("camelsHave3Humps")); // Output: "camels-have-humps"
+console.log(kebabize("CAMEL")); // Output: "c-a-m-e-l"
+console.log(kebabize("myCamelCasedVariable")); // Output: "my-camel-cased-variable"
+
+
+
