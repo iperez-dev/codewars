@@ -6452,6 +6452,73 @@ console.log(tripledouble(666789, 12345667)); // Output: 1
 
 
 
+/*ky6 | +1 Array
+
+Given an array of integers of any length, return an array that has 1 added to the value represented by the array.
+
+the array can't be empty
+only non-negative, single digit integers are allowed
+Return nil (or your language's equivalent) for invalid inputs.
+
+Examples
+Valid arrays
+
+[4, 3, 2, 5] would return [4, 3, 2, 6]
+[1, 2, 3, 9] would return [1, 2, 4, 0]
+[9, 9, 9, 9] would return [1, 0, 0, 0, 0]
+[0, 1, 3, 7] would return [0, 1, 3, 8]
+
+Invalid arrays
+
+[1, -9] is invalid because -9 is not a non-negative integer
+
+[1, 2, 33] is invalid because 33 is not a single-digit integer
+
+*/
+
+function addOne(arr) {
+  // Check if array is valid
+  if (!Array.isArray(arr) || arr.length === 0) {
+      return null; // Return null for invalid inputs
+  }
+  
+  // Check if all elements are valid single-digit non-negative integers
+  for (let num of arr) {
+      if (typeof num !== 'number' || num < 0 || num > 9) {
+          return null; // Return null for invalid inputs
+      }
+  }
+  
+  // Add 1 starting from the least significant digit
+  let carry = 1;
+  for (let i = arr.length - 1; i >= 0; i--) {
+      let sum = arr[i] + carry;
+      arr[i] = sum % 10;
+      carry = Math.floor(sum / 10);
+  }
+  
+  // If there's a carry left after iterating through all digits, prepend it
+  if (carry > 0) {
+      arr.unshift(carry);
+  }
+  
+  return arr;
+}
+
+// Examples
+console.log(addOne([4, 3, 2, 5])); // Output: [4, 3, 2, 6]
+console.log(addOne([1, 2, 3, 9])); // Output: [1, 2, 4, 0]
+console.log(addOne([9, 9, 9, 9])); // Output: [1, 0, 0, 0, 0]
+console.log(addOne([0, 1, 3, 7])); // Output: [0, 1, 3, 8]
+
+// Invalid examples
+console.log(addOne([1, -9])); // Output: null
+console.log(addOne([1, 2, 33])); // Output: null
+console.log(addOne([])); // Output: null
+
+
+
+
 
 
 
