@@ -6148,6 +6148,49 @@ console.log(revrot("563000655734469485", 4));// Output: "0365065073456944"
 
 
 
+/*ky6 | Find the missing term in an Arithmetic Progression
+
+An Arithmetic Progression is defined as one in which there is a constant difference between the consecutive terms of a given series of numbers. You are provided with consecutive elements of an Arithmetic Progression. There is however one hitch: exactly one term from the original series is missing from the set of numbers which have been given to you. The rest of the given series is the same as the original AP. Find the missing term.
+
+You have to write a function that receives a list, list size will always be at least 3 numbers. The missing term will never be the first or last one.
+
+Example
+findMissing([1, 3, 5, 9, 11]) == 7
+
+*/
+
+function findMissing(arr) {
+  const n = arr.length;
+  
+  // Calculate the common difference (d)
+  const d = (arr[n - 1] - arr[0]) / n;
+  
+  // Use binary search to find the missing term
+  let low = 0, high = n - 1;
+  while (low <= high) {
+      const mid = Math.floor((low + high) / 2);
+      
+      // If the difference between the mid element and the first element
+      // divided by the common difference does not match the index, then the
+      // missing element is on the left side
+      if ((arr[mid] - arr[0]) / d !== mid) {
+          high = mid - 1;
+      } else {
+          low = mid + 1;
+      }
+  }
+  
+  // Return the missing term
+  return arr[0] + low * d;
+}
+
+// Example usage
+console.log(findMissing([1, 3, 5, 9, 11])); // Output: 7
+
+
+
+
+
 
 
 
