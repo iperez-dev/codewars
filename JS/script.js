@@ -6558,3 +6558,37 @@ console.log(insertDashes(1234567)); // Output: '1-2-3-4-5-6-7'
 console.log(insertDashes(13579)); // Output: '1-3-5-7'
 
 
+
+
+/*ky6 | Reverse every other word in the string
+
+Reverse every other word in a given string, then return the string. Throw away any leading or trailing whitespace, while ensuring there is exactly one space between each word. Punctuation marks should be treated as if they are a part of the word in this kata.
+
+*/
+
+function reverseEveryOtherWord(str) {
+  // Trim leading and trailing whitespace
+  str = str.trim();
+
+  // Split the string into words based on whitespace
+  let words = str.split(/\s+/);
+
+  // Iterate through the words array and reverse every other word
+  for (let i = 1; i < words.length; i += 2) {
+      words[i] = words[i].split('').reverse().join('');
+  }
+
+  // Join the modified words array into a single string with spaces
+  let result = words.join(' ');
+
+  return result;
+}
+
+// Examples
+console.log(reverseEveryOtherWord("Hello World")); // Output: "Hello dlroW"
+console.log(reverseEveryOtherWord("This is a test")); // Output: "This si a tset"
+console.log(reverseEveryOtherWord("Coding is fun!")); // Output: "Coding si fun!"
+console.log(reverseEveryOtherWord("   Hello   World   ")); // Output: "Hello dlroW"
+console.log(reverseEveryOtherWord("")); // Output: ""
+
+
